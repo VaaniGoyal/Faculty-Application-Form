@@ -18,6 +18,9 @@ function Login_Page() {
         email: email,
         password: password,
       });
+      //Store the reg_id in local storage
+      localStorage.setItem("reg_id", response.data.reg_id);
+      // variable=localStorage.getItem("reg_id");
       // Handle successful login here
       alert("Logged in Successfully");
     //   navigate("/User_Page"); // Redirect to user page upon successful login

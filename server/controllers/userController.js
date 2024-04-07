@@ -2,6 +2,7 @@
 const { hashSync } = require("bcryptjs");
 const User = require('../models/user'); // Import Sequelize model
 
+
 async function createUser(req, res) {
   try {
     const { f_name, l_name, email, category, password } = req.body;
@@ -17,8 +18,8 @@ async function createUser(req, res) {
     if (typeof category !== 'string') {
       throw new Error(' First name must be strings');
     }
-    if (typeof password !== 'string' || password.length < 8) {
-      throw new Error('Password must be a string with a minimum length of 8 characters');
+    if (typeof password !== 'string') {
+      throw new Error('Password must be a string');
     }
     const newUser = await User.create({ f_name, l_name, email, category, password });
     return res.status(201).json(newUser);
@@ -30,11 +31,17 @@ async function createUser(req, res) {
 
 async function getUser(req, res) {
   try {
-    const users = await User.findAll();
-    return res.status(200).json(users);
+    const { reg_id } = req.params; 
+    const user = await User.findByPk(reg_id, { attributes: ['name'] });
+
+    if (user) {
+      return res.status(200).json({ name: user.name });
+    } else {
+      return res.status(404).json({ message: "User not found." });
+    }
   } catch (error) {
-    console.error("Error fetching users:", error);
-    return res.status(500).json({ message: "Failed to fetch users." });
+    console.error("Error fetching user:", error);
+    return res.status(500).json({ message: "Failed to fetch user." });
   }
 }
 
@@ -47,14 +54,13 @@ async function login(req, res) {
       return res.status(400).json({ message: "Email not found!" });
     }
 
-    if (password != user.password) {
+    if (password !== user.password) {
       return res.status(400).json({ message: "Incorrect password!" });
     }
-    const reg_id = user.reg_id;
 
     res.json({
-      message: `Welcome, ${user.name}`,
-      reg_id: reg_id,
+      message: `Welcome, ${user.f_name}`,
+      reg_id: user.reg_id, // Include the reg_id in the response
     });
   } catch (error) {
     console.error("Error during login:", error);
@@ -62,4 +68,30 @@ async function login(req, res) {
   }
 }
 
-module.exports = { getUser, createUser, login };
+
+async function changePassword(req, res) {
+  try {
+    const { reg_id, currentPassword, newPassword } = req.body;
+    
+    const user = await User.findByPk(reg_id);
+    if (!user) {
+      return res.status(404).json({ message: "User not found." });
+    }
+
+    // Verify current password
+    if (currentPassword !== user.password) {
+      return res.status(400).json({ message: "Incorrect current password." });
+    }
+
+    // Update user's password
+    await user.update({ password: newPassword });
+
+    return res.status(200).json({ message: "Password changed successfully." });
+  } catch (error) {
+    console.error("Error changing password:", error);
+    return res.status(500).json({ message: "Failed to change password." });
+  }
+}
+
+
+module.exports = { getUser, createUser, login, changePassword };
