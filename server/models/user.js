@@ -3,12 +3,24 @@ const sequelize = require('../config/database');
 
 const User = sequelize.define('User', {
 
-  id: {
+  reg_id: {
     type: DataTypes.INTEGER,
     primaryKey: true,
     autoIncrement: true
   },
-  name: {
+  f_name: {
+    type: DataTypes.STRING,
+    allowNull: false
+  },
+  l_name: {
+    type: DataTypes.STRING,
+    allowNull: false
+  },
+  email: {
+    type: DataTypes.STRING,
+    allowNull: false
+  },
+  category: {
     type: DataTypes.STRING,
     allowNull: false
   },
@@ -16,6 +28,8 @@ const User = sequelize.define('User', {
     type: DataTypes.STRING,
     allowNull: false
   }
+}, {
+  timestamps: false // Exclude createdAt and updatedAt columns
 });
 
 module.exports = User;
