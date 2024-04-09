@@ -5,6 +5,7 @@ import { Header, Footer } from "./template";
 import Login_Page from "./Login_Page";
 import Create_Account from "./Create_Account";
 import Personal_Details from "./Personal_Details";
+import Reset_Password from "./Reset_Password";
 import "./App.css";
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
           <Route path="/" element={<Login_Page />} />
           <Route path="/Create_Account" element={<Create_Account />} />
           <Route path="/Personal_Details" element={<Personal_Details />} />
+          <Route path="/Reset_Password" element={<Reset_Password />} />
         </Routes>
       </div>
     </Router>
