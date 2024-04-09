@@ -12,6 +12,12 @@ function Login_Page() {
   const handleCreateButtonClick = async () => {
     navigate("/Create_Account");
   }
+
+  const handleResetPasswordClick = async () => {
+    navigate("/Reset_Password");
+  }
+  
+
   const handleButtonClick = async () => {
     try {
       const response = await axios.post("http://localhost:3000/api/users/login", {
@@ -69,8 +75,8 @@ function Login_Page() {
               style={{ backgroundColor: '#4CAF50', marginLeft: '24rem' }}
             > Login </button>
             <button
-              onClick={handleButtonClick}
-              type="submit"
+              onClick={handleResetPasswordClick} // Added event handler for reset password button
+              type="button"
               className="universal-button"
               style={{ backgroundColor: '#F44336', marginLeft: '10.5rem' }}
             > Reset Password </button>
