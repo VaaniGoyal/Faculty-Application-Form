@@ -1,15 +1,17 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./App.css";
 
 function Reset_Password() {
   const [email, setEmail] = useState("");
   const [error, setError] = useState("");
+  const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.post("http://localhost:3000/api/users/resetpassword", {
+      const response = await axios.post("http://localhost:3000/api/users/resetPass", {
         email: email,
       });
       // Handle successful reset password here
@@ -18,6 +20,10 @@ function Reset_Password() {
       setError("Failed to send reset password link. Please try again.");
     }
   };
+
+  const handleLoginClick = async () => {
+    navigate('/');
+}
 
   return (
     <div className="Reset_Password">
@@ -51,9 +57,8 @@ function Reset_Password() {
                     <button type="submit" className="cancelbtn">Submit</button>
                   </div>
                   <div className="col-md-9">
-                    <a href="https://ofa.iiti.ac.in/facrec_che_2023_july_02/faculty/login">
-                      <button type="button" className="loginbtn pull-right">Login Area</button>
-                    </a>
+                    
+                      <button type="button" className="universal-button" onClick={handleLoginClick}>Login Area</button>
                   </div>
                 </div>
               </form>
