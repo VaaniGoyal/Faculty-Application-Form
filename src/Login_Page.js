@@ -42,7 +42,7 @@ function Login_Page() {
       <h3 style={{ color: '#e10425', marginTop: '6rem', fontWeight: 'bold', textAlign: 'center', fontFamily: 'Noto Serif, serif', fontSize: '1.5rem' }}>Application for Faculty Position</h3>
       <div className="container" style={{ borderRadius: '10rem', height: '7.5rem', marginTop: '-1rem', marginLeft: '12rem', marginRight: '12rem' }}>
         
-          <div className="row" style={{ borderWidth: '0.1rem', borderStyle: 'solid', borderRadius: '1rem', boxShadow: '0rem 1rem 9rem 1rem #284d7a', backgroundColor: '#F7FFFF' }}>
+          <div className="row" style={{ borderWidth: '0.2rem', borderStyle: 'solid', borderRadius: '1rem', boxShadow: '0rem 1rem 9rem 1rem #284d7a', backgroundColor: '#F7FFFF' }}>
             <div className="col-md-6" style={{ height: '25rem', borderRadius: '10px 0px 0px 10px' }}>
             <img src="https://i.postimg.cc/d37BZqr2/iitplogo.png" style={{ marginTop: '7.5%', marginLeft: '7.5%', height: '70%' }} />
             <p style={{ textAlign: 'center' }}></p>
