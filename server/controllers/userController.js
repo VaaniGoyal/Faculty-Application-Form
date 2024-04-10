@@ -110,8 +110,6 @@ async function resetPassword(req, res) {
 
     // Create a nodemailer transporter
     const transporter = nodemailer.createTransport({
-      // Configure your email service provider here
-      // For example, for Gmail:
       service: 'Gmail',
       auth: {
         user: 'madlover619619@gmail.com',
@@ -131,6 +129,8 @@ async function resetPassword(req, res) {
 
     // Send the email
     await transporter.sendMail(mailOptions);
+    
+    console.log("Temporary password sent to email:", email);
 
     return res.status(200).json({ message: "Temporary password sent to your email." });
   } catch (error) {
@@ -138,6 +138,7 @@ async function resetPassword(req, res) {
     return res.status(500).json({ message: "Failed to reset password." });
   }
 }
+
 
 
 module.exports = { getUser, createUser, login, changePassword, resetPassword };
