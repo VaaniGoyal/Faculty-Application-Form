@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 
 const PersonalDetailsForm = () => {
+    reg_id=localStorage.getItem("reg_id");
     const [formData, setFormData] = useState({
         firstName: "",
         middleName: "",
@@ -14,12 +15,18 @@ const PersonalDetailsForm = () => {
         category: "",
         idProofFile: null,
     });
+    const [formData1, setFormData1] = useState({
+        reg_id: reg_id,
+        
+    });
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post("your_api_endpoint", formData);
+            const response = await axios.post("http://localhost:3000/api/application/addPersonalDetails", formData);
             console.log(response.data);
+            localStorage.setItem("app_number", response.data.app_number);
+            // app_number=localStorage.getItem("app_number");
         } catch (error) {
             console.error("Error submitting form:", error);
         }
