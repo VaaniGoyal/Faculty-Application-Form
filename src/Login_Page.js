@@ -26,7 +26,7 @@ function Login_Page() {
       });
       //Store the reg_id in local storage
       localStorage.setItem("reg_id", response.data.reg_id);
-      // variable=localStorage.getItem("reg_id");
+      
       // Handle successful login here
       alert("Logged in Successfully");
        navigate("/Personal_Details"); 
