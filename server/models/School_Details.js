@@ -8,7 +8,7 @@ const School_Details = sequelize.define('School_Details', {
     primaryKey: true,
     autoIncrement: true
   },
-  class: {
+  std: {
     type: DataTypes.INTEGER,
     allowNull: false
   },

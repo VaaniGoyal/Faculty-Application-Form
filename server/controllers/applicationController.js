@@ -20,7 +20,7 @@ async function createApplication(req, res) {
       throw new Error('Post must be a string');
     }
     const newApplication = await Application.create({ app_number, add_number, dept, date, post });
-    return res.status(201).json(newApplication);
+    return res.status(201).json({ app_number: newApplication.app_number });
   } catch (error) {
     console.error("Error creating application:", error);
     return res.status(500).json({ message: "Failed to create application." });

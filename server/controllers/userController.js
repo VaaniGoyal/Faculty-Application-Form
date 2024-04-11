@@ -57,7 +57,7 @@ async function login(req, res) {
     if (password !== user.password) {
       return res.status(400).json({ message: "Incorrect password!" });
     }
-
+    
     res.json({
       message: `Welcome, ${user.f_name}`,
       reg_id: user.reg_id, // Include the reg_id in the response
