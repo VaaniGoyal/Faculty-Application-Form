@@ -52,7 +52,7 @@ const Personal_Details = sequelize.define('Personal_Details', {
     type: DataTypes.STRING,
     allowNull: false
   },
-  mobile: {
+  mob: {
     type: DataTypes.STRING,
     allowNull: false
   },
@@ -72,51 +72,11 @@ const Personal_Details = sequelize.define('Personal_Details', {
     type: DataTypes.STRING,
     allowNull: false
   },
-  c_hno: {
+  c_address: {
     type: DataTypes.STRING,
     allowNull: false
   },
-  c_street: {
-    type: DataTypes.STRING,
-    allowNull: false
-  },
-  c_city: {
-    type: DataTypes.STRING,
-    allowNull: false
-  },
-  c_state: {
-    type: DataTypes.STRING,
-    allowNull: false
-  },
-  c_country: {
-    type: DataTypes.STRING,
-    allowNull: false
-  },
-  c_postal_code: {
-    type: DataTypes.STRING,
-    allowNull: false
-  },
-  p_hno: {
-    type: DataTypes.STRING,
-    allowNull: false
-  },
-  p_street: {
-    type: DataTypes.STRING,
-    allowNull: false
-  },
-  p_city: {
-    type: DataTypes.STRING,
-    allowNull: false
-  },
-  p_state: {
-    type: DataTypes.STRING,
-    allowNull: false
-  },
-  p_country: {
-    type: DataTypes.STRING,
-    allowNull: false
-  },
-  p_postal_code: {
+  p_address: {
     type: DataTypes.STRING,
     allowNull: false
   }

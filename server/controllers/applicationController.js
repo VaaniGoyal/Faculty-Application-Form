@@ -30,8 +30,8 @@ async function createApplication(req, res) {
 
 async function addPersonalDetails(req, res) {
     try {
-      const { app_number, f_name, m_name, l_name, nationality, dob, gender, marital_status, category, id_proof, father_name, mobile, email, alt_mob, alt_email, landline, c_hno, c_street, c_city, c_state, c_country, c_postal_code, p_hno, p_street, p_city, p_state, p_country, p_postal_code } = req.body;
-      const newDetails = await Personal_Details.create({ app_number, f_name, m_name, l_name, nationality, dob, gender, marital_status, category, id_proof, father_name, mobile, email, alt_mob, alt_email, landline, c_hno, c_street, c_city, c_state, c_country, c_postal_code, p_hno, p_street, p_city, p_state, p_country, p_postal_code });
+      const { app_number, f_name, m_name, l_name, nationality, dob, gender, marital_status, category, id_proof, father_name, mob, email, alt_mob, alt_email, landline, c_address, p_address } = req.body;
+      const newDetails = await Personal_Details.create({ app_number, f_name, m_name, l_name, nationality, dob, gender, marital_status, category, id_proof, father_name, mob, email, alt_mob, alt_email, landline, c_address, p_address });
       return res.status(201).json(newDetails);
     } catch (error) {
       console.error("Error adding personal details:", error);
