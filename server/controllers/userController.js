@@ -1,6 +1,6 @@
 //userController.js
 const { hashSync } = require("bcryptjs");
-const nodemailer = require('nodemailer');
+// const nodemailer = require('nodemailer');
 const User = require('../models/user'); // Import Sequelize model
 
 async function createUser(req, res) {
