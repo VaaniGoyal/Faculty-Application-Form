@@ -6,7 +6,7 @@ const Personal_Details = require('../models/Personal_Details');
 
 async function createApplication(req, res) {
   try {
-    const { reg_id, app_number, add_number, dept, date, post } = req.body;
+    const { app_number, add_number, dept, date, post } = req.body;
     if (typeof app_number !== 'string') {
       throw new Error(' Application number must be strings');
     }

@@ -1,5 +1,6 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../config/database');
+const Employment = require('./Employment');
 
 const Teach_Experience = sequelize.define('Teach_Experience', {
     
@@ -31,6 +32,13 @@ const Teach_Experience = sequelize.define('Teach_Experience', {
   },
   duration: {
     type: DataTypes.INTEGER,
+  },
+  emp_id: {
+    type: DataTypes.INTEGER,
+    references: {
+        model: Employment,
+        key: 'id'
+      }
   }
 }, {
   timestamps: false // Exclude createdAt and updatedAt columns

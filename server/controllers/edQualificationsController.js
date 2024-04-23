@@ -18,8 +18,8 @@ async function createEducationalQualifications(req, res) {
 
 async function addPhdDetails(req, res) {
     try {
-      const { phd_id, university, dept, supervisor, year, date_defence, date_award, title } = req.body;
-      const newPhdDetails = await Phd_Details.create({ phd_id, university, dept, supervisor, year, date_defence, date_award, title });
+      const { university, dept, supervisor, year, date_defence, date_award, title } = req.body;
+      const newPhdDetails = await Phd_Details.create({ university, dept, supervisor, year, date_defence, date_award, title });
       return res.status(201).json(newPhdDetails);
     } catch (error) {
       console.error("Error adding phd details:", error);
@@ -29,8 +29,8 @@ async function addPhdDetails(req, res) {
 
 async function addPgDetails(req, res) {
     try {
-      const { pg_id, degree, university, branch, year_join, year_complete, duration, cgpa, division } = req.body;
-      const newPgDetails = await Pg_Details.create({ pg_id, degree, university, branch, year_join, year_complete, duration, cgpa, division });
+      const { degree, university, branch, year_join, year_complete, duration, cgpa, division } = req.body;
+      const newPgDetails = await Pg_Details.create({ degree, university, branch, year_join, year_complete, duration, cgpa, division });
       return res.status(201).json(newPgDetails);
     } catch (error) {
       console.error("Error adding pg details:", error);
@@ -40,8 +40,8 @@ async function addPgDetails(req, res) {
 
 async function addUgDetails(req, res) {
     try {
-      const { ug_id, degree, university, branch, year_join, year_complete, duration, cgpa, division } = req.body;
-      const newUgDetails = await Ug_Details.create({ ug_id, degree, university, branch, year_join, year_complete, duration, cgpa, division });
+      const { degree, university, branch, year_join, year_complete, duration, cgpa, division } = req.body;
+      const newUgDetails = await Ug_Details.create({ degree, university, branch, year_join, year_complete, duration, cgpa, division });
       return res.status(201).json(newUgDetails);
     } catch (error) {
       console.error("Error adding ug details:", error);
@@ -51,8 +51,8 @@ async function addUgDetails(req, res) {
 
 async function addSchoolDetails(req, res) {
     try {
-      const { school_id, std, school, year, cgpa, division } = req.body;
-      const newSchoolDetails = await School_Details.create({ school_id, std, school, year, cgpa, division });
+      const { std, school, year, cgpa, division } = req.body;
+      const newSchoolDetails = await School_Details.create({ std, school, year, cgpa, division });
       return res.status(201).json(newSchoolDetails);
     } catch (error) {
       console.error("Error adding school details:", error);
@@ -62,8 +62,8 @@ async function addSchoolDetails(req, res) {
 
 async function addAdditionalQualifications(req, res) {
     try {
-      const { id, degree, university, branch, year_join, year_complete, duration, cgpa, division } = req.body;
-      const newAdditionalQualifications = await Additional_Qualifications.create({ id, degree, university, branch, year_join, year_complete, duration, cgpa, division });
+      const { degree, university, branch, year_join, year_complete, duration, cgpa, division } = req.body;
+      const newAdditionalQualifications = await Additional_Qualifications.create({ degree, university, branch, year_join, year_complete, duration, cgpa, division });
       return res.status(201).json(newAdditionalQualifications);
     } catch (error) {
       console.error("Error adding Additional Qualifications:", error);

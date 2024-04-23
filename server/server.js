@@ -5,6 +5,7 @@ const sequelize = require('./config/database');
 const userRoutes = require('./routes/userRoutes');
 const applicationRoutes = require('./routes/applicationRoutes');
 const edQualificationsRoutes = require('./routes/edQualificationsRoutes');
+const employmentRoutes = require('./routes/employmentRoutes');
 
 const app = express();
 const port = 3000;
@@ -17,6 +18,7 @@ app.use(bodyParser.json());
 app.use('/api/users', userRoutes);
 app.use('/api/application', applicationRoutes);
 app.use('/api/edqualifications', edQualificationsRoutes);
+app.use('/api/employment', employmentRoutes);
 async function ConnectToDatabaseAuthentication() {
   try {
     await sequelize.authenticate();
