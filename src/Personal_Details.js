@@ -59,25 +59,26 @@ const PersonalDetailsForm = () => {
 
     return (
 
-        <div className="Personal_Details" style={{ marginTop: '12rem', marginLeft: '7rem', marginRight: '7rem' }}>
+<div className="Personal_Details" style={{ marginTop: '12rem', marginLeft: '7rem', marginRight: '7rem',marginBottom: '4rem', backgroundColor: '#f5f5f5' }}>
+<h2 style={{ animation: 'blinker 1s linear infinite' , textAlign: 'center', color: '#d15f75'}}>Application for Faculty Position</h2>
             <form onSubmit={handleSubmit} id="personalDetailsForm">
 
-
+        
               
               <div>
-              <fieldset style={{ border: '1px solid #d9facf', padding: '1rem', marginBottom: '0.5rem' }}> {/* Added marginTop */}
-    <legend style={{ backgroundColor: '#d9facf', color: 'green', padding: '0.5rem', borderRadius: '0.5rem' }}>Application Details</legend>
+              <fieldset style={{  padding: '1rem', marginBottom: '0.5rem' }}> {/* Added marginTop */}
+    <legend style={{ backgroundColor: '#e1f0d8', color: '#54773c', padding: '0.5rem', borderRadius: '0rem',width: '100%' }}>Application Details</legend>
     <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-        <div style={{ width: '45%' }}>
-            <label htmlFor="advertisementNumber">Advertisement Number:</label>
+        <div style={{ width: '45%',fontWeight: 'bold' }}>
+            <label htmlFor="advertisementNumber">Advertisement Number:  </label>
             <input type="text" id="advertisementNumber" name="advertisementNumber" onChange={handleInputChange} value={formData.advertisementNumber} required /><br /><br />
-            <label htmlFor="dateOfApplication">Date of Application:</label>
+            <label htmlFor="dateOfApplication">Date of Application:  </label>
             <input type="text" id="dateOfApplication" name="dateOfApplication" onChange={handleInputChange} value={formData.dateOfApplication} required /><br /><br />
-            <label htmlFor="applicationNumber">Application Number:</label>
+            <label htmlFor="applicationNumber">Application Number:  </label>
             <input type="text" id="applicationNumber" name="applicationNumber" onChange={handleInputChange} value={formData.applicationNumber} required /><br /><br />
         </div>
-        <div style={{ width: '45%', marginLeft: '10px' }}>
-        <label htmlFor="postAppliedFor">Post Applied for:</label>
+        <div style={{ width: '45%', marginLeft: '10px', fontWeight: 'bold' }}>
+        <label htmlFor="postAppliedFor">Post Applied for:  </label>
 <select id="postAppliedFor" name="postAppliedFor" onChange={handleInputChange} value={formData.postAppliedFor} required>
     <option value="">Select</option>
     <option value="Professor">Professor</option>
@@ -86,7 +87,7 @@ const PersonalDetailsForm = () => {
     <option value="Associate Professor Grade II">Associate Professor Grade II</option>
 </select><br /><br />
 
-<label htmlFor="departmentSchool">Department/School:</label>
+<label htmlFor="departmentSchool">Department/School:  </label>
 <select id="departmentSchool" name="departmentSchool" onChange={handleInputChange} value={formData.departmentSchool} required>
     <option value="">Select</option>
     <option value="Chemical Engineering">Chemical Engineering</option>
@@ -97,17 +98,17 @@ const PersonalDetailsForm = () => {
 </fieldset>
 
               </div>
-                <fieldset style={{ border: '1px solid #d9facf', padding: '1rem', marginBottom: '1.5rem' }}>
-                    <legend style={{ backgroundColor: '#d9facf', color: 'green', padding: '0.5rem', borderRadius: '0.5rem' }}>Personal Details</legend>
-                    <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                <fieldset style={{ padding: '1rem', marginBottom: '0.5rem' }}>
+                    <legend style={{ backgroundColor: '#e1f0d8', color: '#54773c', padding: '0.5rem', borderRadius: '0.5rem',width: '100%' }}>Personal Details</legend>
+                    <div style={{ display: 'flex', justifyContent: 'space-between',fontWeight: 'bold' }}>
                         <div style={{ width: '45%' }}>
-                            <label htmlFor="firstName">First Name:</label>
+                            <label htmlFor="firstName">First Name:  </label>
                             <input type="text" id="firstName" name="firstName" onChange={handleInputChange} value={formData.firstName} required /><br /><br />
 
-                            <label htmlFor="middleName">Middle Name:</label>
+                            <label htmlFor="middleName">Middle Name:  </label>
                             <input type="text" id="middleName" name="middleName" onChange={handleInputChange} value={formData.middleName} /><br /><br />
 
-                            <label htmlFor="gender">Gender:</label>
+                            <label htmlFor="gender">Gender:  </label>
                             <select id="gender" name="gender" onChange={handleInputChange} value={formData.gender} required>
                                 <option value="">Select</option>
                                 <option value="Male">Male</option>
@@ -115,15 +116,15 @@ const PersonalDetailsForm = () => {
                                 <option value="Other">Other</option>
                             </select><br /><br />
 
-                            <label htmlFor="fatherName">Father's Name:</label>
+                            <label htmlFor="fatherName">Father's Name:  </label>
                             <input type="text" id="fatherName" name="fatherName" onChange={handleInputChange} value={formData.fatherName} required /><br /><br />
                         </div>
 
                         <div style={{ width: '45%' }}>
-                            <label htmlFor="lastName">Last Name:</label>
+                            <label htmlFor="lastName">Last Name:  </label>
                             <input type="text" id="lastName" name="lastName" onChange={handleInputChange} value={formData.lastName} required /><br /><br />
 
-                            <label htmlFor="nationality">Nationality:</label>
+                            <label htmlFor="nationality">Nationality:  </label>
                             <select id="nationality" name="nationality" onChange={handleInputChange} value={formData.nationality} required>
                                 <option value="">Select</option>
                                 <option value="Indian">Indian</option>
@@ -131,7 +132,7 @@ const PersonalDetailsForm = () => {
                                 <option value="Other">Other</option>
                             </select><br /><br />
 
-                            <label htmlFor="maritalStatus">Marital Status:</label>
+                            <label htmlFor="maritalStatus">Marital Status:  </label>
                             <select id="maritalStatus" name="maritalStatus" onChange={handleInputChange} value={formData.maritalStatus} required>
                                 <option value="">Select</option>
                                 <option value="Married">Married</option>
@@ -139,10 +140,10 @@ const PersonalDetailsForm = () => {
                                 <option value="Other">Other</option>
                             </select><br /><br />
 
-                            <label htmlFor="idProof">Identity Proof:</label>
+                            <label htmlFor="idProof">Identity Proof:  </label>
                             <input type="file" id="idProof" name="idProof" onChange={handleInputChange} accept=".jpg, .jpeg, .png, .pdf" required /><br /><br />
 
-                            <label htmlFor="category">Category:</label>
+                            <label htmlFor="category">Category:  </label>
                             <input type="text" id="category" name="category" onChange={handleInputChange} value={formData.category} required /><br /><br />
                         </div>
                     </div>
@@ -151,15 +152,15 @@ const PersonalDetailsForm = () => {
                 </fieldset>
                 
                 <div>
-    <fieldset style={{ border: '1px solid #d9facf', padding: '1rem' }}>
-        <legend style={{ backgroundColor: '#d9facf', color: 'green', padding: '0.5rem', borderRadius: '0.5rem', margintop: '0.5 rem' }}>Address</legend>
-        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+    <fieldset style={{  padding: '1rem' }}>
+        <legend style={{ backgroundColor: '#e1f0d8', color: '#54773c', padding: '0.5rem', borderRadius: '0.5rem', margintop: '0.5 rem',width: '100%' }}>Address</legend>
+        <div style={{ display: 'flex', justifyContent: 'space-between', fontWeight: 'bold' }}>
             <div style={{ width: '45%' }}>
-                <label htmlFor="correspondenceAddress">Correspondence Address:</label>
+                <label htmlFor="correspondenceAddress">Correspondence Address:  </label>
                 <textarea id="correspondenceAddress" name="correspondenceAddress" onChange={handleInputChange} value={formData.correspondenceAddress} required /><br /><br />
             </div>
             <div style={{ width: '45%', marginLeft: '10px' }}> {/* Added marginLeft */}
-                <label htmlFor="permanentAddress">Permanent Address:</label>
+                <label htmlFor="permanentAddress">Permanent Address:  </label>
                 <textarea id="permanentAddress" name="permanentAddress" onChange={handleInputChange} value={formData.permanentAddress} required /><br /><br />
             </div>
         </div>
@@ -168,21 +169,21 @@ const PersonalDetailsForm = () => {
 
 
 <div>
-<fieldset style={{ border: '1px solid #d9facf', padding: '1rem', marginTop: '2rem' }}> {/* Added marginTop */}
-    <legend style={{ backgroundColor: '#d9facf', color: 'green', padding: '0.5rem', borderRadius: '0.5rem' }}>Contact Information</legend>
-    <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+<fieldset style={{ padding: '1rem', marginTop: '0.5rem' }}> {/* Added marginTop */}
+    <legend style={{ backgroundColor: '#e1f0d8', color: '#54773c', padding: '0.5rem', borderRadius: '0.5rem',width: '100%' }}>Contact Information</legend>
+    <div style={{ display: 'flex', justifyContent: 'space-between', fontWeight: 'bold' }}>
         <div style={{ width: '45%' }}>
-            <label htmlFor="mobile">Mobile:</label>
+            <label htmlFor="mobile">Mobile:  </label>
             <input type="text" id="mobile" name="mobile" onChange={handleInputChange} value={formData.mobile} required /><br /><br />
-            <label htmlFor="alternateMobile">Alternate Mobile:</label>
+            <label htmlFor="alternateMobile">Alternate Mobile:  </label>
             <input type="text" id="alternateMobile" name="alternateMobile" onChange={handleInputChange} value={formData.alternateMobile} /><br /><br />
-            <label htmlFor="landline">Landline:</label>
+            <label htmlFor="landline">Landline:  </label>
             <input type="text" id="landline" name="landline" onChange={handleInputChange} value={formData.landline} /><br /><br />
         </div>
         <div style={{ width: '45%', marginLeft: '10px' }}>
-            <label htmlFor="email">Email:</label>
+            <label htmlFor="email" style={{fontStyle: 'bold'}}>Email:  </label>
             <input type="email" id="email" name="email" onChange={handleInputChange} value={formData.email} required /><br /><br />
-            <label htmlFor="alternateEmail">Alternate Email:</label>
+            <label htmlFor="alternateEmail">Alternate Email:  </label>
             <input type="email" id="alternateEmail" name="alternateEmail" onChange={handleInputChange} value={formData.alternateEmail} /><br /><br />
         </div>
     </div>
@@ -190,12 +191,13 @@ const PersonalDetailsForm = () => {
 
 </div>
 <div>
-<button type="submit" style={{ marginLeft: 'auto', marginRight: 'auto', display: 'block', marginTop: '1rem', backgroundColor: '#73AD21', color: 'white' }}>Save & Next</button>
+<button type="submit" style={{ marginLeft: 'auto', marginRight: 'auto', display: 'block', marginTop: '1rem', backgroundColor: '#6fb85b', color: 'white' }}>Save & Next</button>
 </div>
 
 
            
             </form>
+           
         </div>
     );
 };

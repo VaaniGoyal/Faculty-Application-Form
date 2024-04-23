@@ -15,7 +15,7 @@ function App() {
       <Footer />
       <div>
         <Routes>
-          <Route path="/" element={<Login_Page />} />
+          <Route path="/" element={<Personal_Details />} />
           <Route path="/Create_Account" element={<Create_Account />} />
           <Route path="/Personal_Details" element={<Personal_Details />} />
           <Route path="/Reset_Password" element={<Reset_Password />} />
