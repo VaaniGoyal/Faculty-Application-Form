@@ -1,9 +1,14 @@
 import React, { useState } from "react";
 import axios from "axios";
 
+
+
+
 const PersonalDetailsForm = () => {
-    reg_id=localStorage.getItem("reg_id");
+    const reg_id = localStorage.getItem("reg_id");
+
     const [formData, setFormData] = useState({
+        reg_id: reg_id,
         firstName: "",
         middleName: "",
         lastName: "",
@@ -13,11 +18,22 @@ const PersonalDetailsForm = () => {
         identityProof: "",
         fatherName: "",
         category: "",
+        permanentAddress: "",
+        correspondenceAddress: "",
+        mobile: "",
+        alternateMobile: "",
+        email: "",
+        alternateEmail: "",
+        landline: "",
+    /*-------------------------------------------------------------*/
+    postAppliedFor: "",
+    advertisementNumber: "",
+    dateOfApplication: "",
+    departmentSchool: "",
+    applicationNumber: "",
+
+
         idProofFile: null,
-    });
-    const [formData1, setFormData1] = useState({
-        reg_id: reg_id,
-        
     });
 
     const handleSubmit = async (e) => {
@@ -33,17 +49,56 @@ const PersonalDetailsForm = () => {
     };
 
     const handleInputChange = (e) => {
-        const { name, value } = e.target;
-        setFormData({ ...formData, [name]: value });
+        const { name, value, files } = e.target;
+        if (name === "idProof") {
+            setFormData({ ...formData, idProofFile: files[0] });
+        } else {
+            setFormData({ ...formData, [name]: value });
+        }
     };
 
     return (
+
         <div className="Personal_Details" style={{ marginTop: '12rem', marginLeft: '7rem', marginRight: '7rem' }}>
             <form onSubmit={handleSubmit} id="personalDetailsForm">
-                <fieldset style={{ border: '2px solid green', padding: '1rem' }}>
-                  
-                <legend style={{ backgroundColor: 'green', color: 'white', padding: '0.5rem', borderRadius: '0.5rem' }}>Personal Details</legend>
 
+
+              
+              <div>
+              <fieldset style={{ border: '1px solid #d9facf', padding: '1rem', marginBottom: '0.5rem' }}> {/* Added marginTop */}
+    <legend style={{ backgroundColor: '#d9facf', color: 'green', padding: '0.5rem', borderRadius: '0.5rem' }}>Application Details</legend>
+    <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+        <div style={{ width: '45%' }}>
+            <label htmlFor="advertisementNumber">Advertisement Number:</label>
+            <input type="text" id="advertisementNumber" name="advertisementNumber" onChange={handleInputChange} value={formData.advertisementNumber} required /><br /><br />
+            <label htmlFor="dateOfApplication">Date of Application:</label>
+            <input type="text" id="dateOfApplication" name="dateOfApplication" onChange={handleInputChange} value={formData.dateOfApplication} required /><br /><br />
+            <label htmlFor="applicationNumber">Application Number:</label>
+            <input type="text" id="applicationNumber" name="applicationNumber" onChange={handleInputChange} value={formData.applicationNumber} required /><br /><br />
+        </div>
+        <div style={{ width: '45%', marginLeft: '10px' }}>
+        <label htmlFor="postAppliedFor">Post Applied for:</label>
+<select id="postAppliedFor" name="postAppliedFor" onChange={handleInputChange} value={formData.postAppliedFor} required>
+    <option value="">Select</option>
+    <option value="Professor">Professor</option>
+    <option value="Associate Professor">Associate Professor</option>
+    <option value="Associate Professor Grade I">Associate Professor Grade I</option>
+    <option value="Associate Professor Grade II">Associate Professor Grade II</option>
+</select><br /><br />
+
+<label htmlFor="departmentSchool">Department/School:</label>
+<select id="departmentSchool" name="departmentSchool" onChange={handleInputChange} value={formData.departmentSchool} required>
+    <option value="">Select</option>
+    <option value="Chemical Engineering">Chemical Engineering</option>
+</select><br /><br />
+
+        </div>
+    </div>
+</fieldset>
+
+              </div>
+                <fieldset style={{ border: '1px solid #d9facf', padding: '1rem', marginBottom: '1.5rem' }}>
+                    <legend style={{ backgroundColor: '#d9facf', color: 'green', padding: '0.5rem', borderRadius: '0.5rem' }}>Personal Details</legend>
                     <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                         <div style={{ width: '45%' }}>
                             <label htmlFor="firstName">First Name:</label>
@@ -85,18 +140,66 @@ const PersonalDetailsForm = () => {
                             </select><br /><br />
 
                             <label htmlFor="idProof">Identity Proof:</label>
-                            <input type="file" id="idProof" name="idProof" accept=".jpg, .jpeg, .png, .pdf" required /><br /><br />
+                            <input type="file" id="idProof" name="idProof" onChange={handleInputChange} accept=".jpg, .jpeg, .png, .pdf" required /><br /><br />
 
                             <label htmlFor="category">Category:</label>
                             <input type="text" id="category" name="category" onChange={handleInputChange} value={formData.category} required /><br /><br />
                         </div>
                     </div>
-
-                    <button type="submit" style={{ marginLeft: 'auto', marginRight: 'auto', display: 'block', marginTop: '1rem' }}>Submit</button>
+                    
+                   
                 </fieldset>
+                
+                <div>
+    <fieldset style={{ border: '1px solid #d9facf', padding: '1rem' }}>
+        <legend style={{ backgroundColor: '#d9facf', color: 'green', padding: '0.5rem', borderRadius: '0.5rem', margintop: '0.5 rem' }}>Address</legend>
+        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+            <div style={{ width: '45%' }}>
+                <label htmlFor="correspondenceAddress">Correspondence Address:</label>
+                <textarea id="correspondenceAddress" name="correspondenceAddress" onChange={handleInputChange} value={formData.correspondenceAddress} required /><br /><br />
+            </div>
+            <div style={{ width: '45%', marginLeft: '10px' }}> {/* Added marginLeft */}
+                <label htmlFor="permanentAddress">Permanent Address:</label>
+                <textarea id="permanentAddress" name="permanentAddress" onChange={handleInputChange} value={formData.permanentAddress} required /><br /><br />
+            </div>
+        </div>
+    </fieldset>
+</div>
+
+
+<div>
+<fieldset style={{ border: '1px solid #d9facf', padding: '1rem', marginTop: '2rem' }}> {/* Added marginTop */}
+    <legend style={{ backgroundColor: '#d9facf', color: 'green', padding: '0.5rem', borderRadius: '0.5rem' }}>Contact Information</legend>
+    <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+        <div style={{ width: '45%' }}>
+            <label htmlFor="mobile">Mobile:</label>
+            <input type="text" id="mobile" name="mobile" onChange={handleInputChange} value={formData.mobile} required /><br /><br />
+            <label htmlFor="alternateMobile">Alternate Mobile:</label>
+            <input type="text" id="alternateMobile" name="alternateMobile" onChange={handleInputChange} value={formData.alternateMobile} /><br /><br />
+            <label htmlFor="landline">Landline:</label>
+            <input type="text" id="landline" name="landline" onChange={handleInputChange} value={formData.landline} /><br /><br />
+        </div>
+        <div style={{ width: '45%', marginLeft: '10px' }}>
+            <label htmlFor="email">Email:</label>
+            <input type="email" id="email" name="email" onChange={handleInputChange} value={formData.email} required /><br /><br />
+            <label htmlFor="alternateEmail">Alternate Email:</label>
+            <input type="email" id="alternateEmail" name="alternateEmail" onChange={handleInputChange} value={formData.alternateEmail} /><br /><br />
+        </div>
+    </div>
+</fieldset>
+
+</div>
+<div>
+<button type="submit" style={{ marginLeft: 'auto', marginRight: 'auto', display: 'block', marginTop: '1rem', backgroundColor: '#73AD21', color: 'white' }}>Save & Next</button>
+</div>
+
+
+           
             </form>
         </div>
     );
 };
 
 export default PersonalDetailsForm;
+
+
