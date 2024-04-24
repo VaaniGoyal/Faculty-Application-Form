@@ -6,7 +6,8 @@ const Consultancy_Projects = require('../models/Consultancy_Projects');
 const Phd_Supervisions = require('../models/Phd_Supervisions');
 const Master_Supervisions = require('../models/Master_Supervisions');
 const Bachelor_Supervisions = require('../models/Bachelor_Supervisions');
-
+const Contributions = require('../models/Contributions');
+const Referees = require('../models/Referees');
 
 async function addMemberships(req, res) {
     try {
@@ -96,4 +97,26 @@ async function addBachelorSupervsions(req, res) {
     }
 }
 
-module.exports = { addMemberships, addTrainings, addAwards, addSponsoredProjects, addConsultancyProjects, addPhdSupervsions, addMasterSupervsions, addBachelorSupervsions };
+async function addContributions(req, res) {
+  try {
+    const { app_number, research_contri, teaching_contri, other_info, professional_service, list_journalpub, list_conferencepub } = req.body;
+    const newContributions = await Contributions.create({ app_number, research_contri, teaching_contri, other_info, professional_service, list_journalpub, list_conferencepub });
+    return res.status(201).json(newContributions);
+  } catch (error) {
+    console.error("Error adding contributions:", error);
+    return res.status(500).json({ message: "Failed to add contributions." });
+  }
+}
+
+async function addReferees(req, res) {
+  try {
+    const { app_number, name, position, association, organisation, email, contact } = req.body;
+    const newReferees = await Referees.create({ app_number, name, position, association, organisation, email, contact });
+    return res.status(201).json(newReferees);
+  } catch (error) {
+    console.error("Error ading referees:", error);
+    return res.status(500).json({ message: "Failed to add referees." });
+  }
+}
+
+module.exports = { addMemberships, addTrainings, addAwards, addSponsoredProjects, addConsultancyProjects, addPhdSupervsions, addMasterSupervsions, addBachelorSupervsions, addContributions, addReferees };
