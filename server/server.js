@@ -7,6 +7,7 @@ const applicationRoutes = require('./routes/applicationRoutes');
 const edQualificationsRoutes = require('./routes/edQualificationsRoutes');
 const employmentRoutes = require('./routes/employmentRoutes');
 const publicationsRoutes = require('./routes/publicationsRoutes');
+const otherRoutes = require('./routes/otherRoutes');
 
 const app = express();
 const port = 3000;
@@ -21,6 +22,7 @@ app.use('/api/application', applicationRoutes);
 app.use('/api/edqualifications', edQualificationsRoutes);
 app.use('/api/employment', employmentRoutes);
 app.use('/api/publications', publicationsRoutes);
+app.use('/api/other', otherRoutes);
 async function ConnectToDatabaseAuthentication() {
   try {
     await sequelize.authenticate();
