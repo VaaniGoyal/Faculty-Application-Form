@@ -43,8 +43,8 @@ async function addPatents(req, res) {
 
 async function addBooks(req, res) {
     try {
-      const { author, title, year, isbn } = req.body;
-      const newBooks = await Books.create({ author, title, year, isbn });
+      const { author, title, year, isbn, pub_id } = req.body;
+      const newBooks = await Books.create({ author, title, year, isbn, pub_id });
       return res.status(201).json(newBooks);
     } catch (error) {
       console.error("Error adding books:", error);
@@ -54,8 +54,8 @@ async function addBooks(req, res) {
 
 async function addBookChapters(req, res) {
     try {
-      const { author, title, year, isbn } = req.body;
-      const newBookChapters = await Book_Chapters.create({ author, title, year, isbn });
+      const { author, title, year, isbn, pub_id } = req.body;
+      const newBookChapters = await Book_Chapters.create({ author, title, year, isbn, pub_id });
       return res.status(201).json(newBookChapters);
     } catch (error) {
       console.error("Error adding book chapters:", error);
