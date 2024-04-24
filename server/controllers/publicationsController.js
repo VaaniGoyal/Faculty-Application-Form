@@ -7,8 +7,8 @@ const Book_Chapters = require('../models/Book_Chapters');
 
 async function createPublications(req, res) {
     try {
-      const { intj_paper, natj_paper, intc_paper, natc_paper, no_patent, no_book, no_bookch, google_link } = req.body;
-      const newPublications = await Publications.create({ intj_paper, natj_paper, intc_paper, natc_paper, no_patent, no_book, no_bookch, google_link });
+      const { intj_paper, natj_paper, intc_paper, natc_paper, no_patent, no_book, no_bookch, google_link, app_number } = req.body;
+      const newPublications = await Publications.create({ intj_paper, natj_paper, intc_paper, natc_paper, no_patent, no_book, no_bookch, google_link, app_number });
       res.status(201).json({
             ...newPublications.toJSON(),
             pub_id: newPublications.id, // Include the pub_id in the response

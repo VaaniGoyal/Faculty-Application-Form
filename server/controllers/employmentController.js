@@ -7,8 +7,8 @@ const Industry_Experience = require('../models/Industry_Experience');
 
 async function createEmployment(req, res) {
     try {
-      const { present_position, status, date_leave, organisation, date_join, duration, isExperience, area_special, current_area } = req.body;
-      const newEmployment = await Employment.create({ present_position, status, date_leave, organisation, date_join, duration, isExperience, area_special, current_area });
+      const { present_position, status, date_leave, organisation, date_join, duration, isExperience, area_special, current_area, app_number } = req.body;
+      const newEmployment = await Employment.create({ present_position, status, date_leave, organisation, date_join, duration, isExperience, area_special, current_area, app_number });
       res.status(201).json({
         ...newEmployment.toJSON(),
         emp_id: newEmployment.id, 

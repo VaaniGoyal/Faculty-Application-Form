@@ -1,5 +1,6 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../config/database');
+const application = require('./application');
 
 const Employment = sequelize.define('Employment', {
 
@@ -35,6 +36,13 @@ const Employment = sequelize.define('Employment', {
   current_area: {
     type: DataTypes.TEXT,
   },
+  app_number: {
+    type: DataTypes.STRING,
+    references: {
+      model: application,
+      key: 'app_number'
+    }
+  }
 }, {
   timestamps: false // Exclude createdAt and updatedAt columns
 });

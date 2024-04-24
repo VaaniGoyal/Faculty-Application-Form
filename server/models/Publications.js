@@ -1,5 +1,6 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../config/database');
+const application = require('./application');
 
 const Publications = sequelize.define('Publications', {
     
@@ -31,6 +32,13 @@ const Publications = sequelize.define('Publications', {
   },
   google_link: {
     type: DataTypes.STRING,
+  },
+  app_number: {
+    type: DataTypes.STRING,
+    references: {
+      model: application,
+      key: 'app_number'
+    }
   }
 }, {
   timestamps: false // Exclude createdAt and updatedAt columns

@@ -20,7 +20,10 @@ async function addPhdDetails(req, res) {
     try {
       const { university, dept, supervisor, year, date_defence, date_award, title } = req.body;
       const newPhdDetails = await Phd_Details.create({ university, dept, supervisor, year, date_defence, date_award, title });
-      return res.status(201).json(newPhdDetails);
+      res.status(201).json({
+        ...newPhdDetails.toJSON(),
+        phd_id: newPhdDetails.phd_id, 
+      });
     } catch (error) {
       console.error("Error adding phd details:", error);
       return res.status(500).json({ message: "Failed to add phd details." });
@@ -31,7 +34,10 @@ async function addPgDetails(req, res) {
     try {
       const { degree, university, branch, year_join, year_complete, duration, cgpa, division } = req.body;
       const newPgDetails = await Pg_Details.create({ degree, university, branch, year_join, year_complete, duration, cgpa, division });
-      return res.status(201).json(newPgDetails);
+      res.status(201).json({
+        ...newPgDetails.toJSON(),
+        pg_id: newPgDetails.phg_id, 
+      });
     } catch (error) {
       console.error("Error adding pg details:", error);
       return res.status(500).json({ message: "Failed to add pg details." });
@@ -42,7 +48,10 @@ async function addUgDetails(req, res) {
     try {
       const { degree, university, branch, year_join, year_complete, duration, cgpa, division } = req.body;
       const newUgDetails = await Ug_Details.create({ degree, university, branch, year_join, year_complete, duration, cgpa, division });
-      return res.status(201).json(newUgDetails);
+      res.status(201).json({
+        ...newUgDetails.toJSON(),
+        ug_id: newUgDetails.ug_id, 
+      });
     } catch (error) {
       console.error("Error adding ug details:", error);
       return res.status(500).json({ message: "Failed to add ug details." });
@@ -53,7 +62,10 @@ async function addSchoolDetails(req, res) {
     try {
       const { std, school, year, cgpa, division } = req.body;
       const newSchoolDetails = await School_Details.create({ std, school, year, cgpa, division });
-      return res.status(201).json(newSchoolDetails);
+      res.status(201).json({
+        ...newSchoolDetails.toJSON(),
+        school_id: newSchoolDetails.school_id, 
+      });
     } catch (error) {
       console.error("Error adding school details:", error);
       return res.status(500).json({ message: "Failed to add school details." });
@@ -64,7 +76,10 @@ async function addAdditionalQualifications(req, res) {
     try {
       const { degree, university, branch, year_join, year_complete, duration, cgpa, division } = req.body;
       const newAdditionalQualifications = await Additional_Qualifications.create({ degree, university, branch, year_join, year_complete, duration, cgpa, division });
-      return res.status(201).json(newAdditionalQualifications);
+      res.status(201).json({
+        ...newAdditionalQualifications.toJSON(),
+        id: newAdditionalQualifications.id, 
+      });
     } catch (error) {
       console.error("Error adding Additional Qualifications:", error);
       return res.status(500).json({ message: "Failed to add Additional Qualifications." });
