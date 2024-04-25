@@ -1,0 +1,15 @@
+TODO LIST
+VAANI
+    Recheck Database and data types and foreign keys
+    Make Er Diagram
+    Check how to store and reproduce image and file inputs and how to vie the, after uploading
+    How to display final page as pdf available for download
+    For inputs with add more option, how to enter each entry in database, as it excepts only one at a time
+    Backend for upload pdfs and add image wala page
+    backend for last page for pdf available for download(i.e. return all the info given by user on basis of reg_id and app_number)
+
+VAISHIKA
+    Make all remaining pages for frontend
+    Connect to Backend
+    Check Models and website for info on tables and their attributes    
+
