@@ -1,7 +1,7 @@
 TODO LIST
 VAANI
     Recheck Database and data types and foreign keys(DONE)
-    Make Er Diagram
+    Make Er Diagram(DONE)
     Check how to store and reproduce image and file inputs and how to view them, after uploading
     How to display final page as pdf available for download
     For inputs with add more option, how to enter each entry in database, as it excepts only one at a time
