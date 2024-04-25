@@ -22,10 +22,10 @@ const Patents = sequelize.define('Patents', {
     type: DataTypes.INTEGER,
   },
   date_file: {
-    type: DataTypes.STRING,
+    type: DataTypes.DATEONLY,
   },
   date_publish: {
-    type: DataTypes.STRING,
+    type: DataTypes.DATEONLY,
   },
   status: {
     type: DataTypes.STRING,

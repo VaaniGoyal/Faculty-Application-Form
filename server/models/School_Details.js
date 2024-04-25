@@ -17,7 +17,7 @@ const School_Details = sequelize.define('School_Details', {
     allowNull: false
   },
   year: {
-    type: DataTypes.STRING,
+    type: DataTypes.INTEGER,
     allowNull: false
   },
   cgpa: {

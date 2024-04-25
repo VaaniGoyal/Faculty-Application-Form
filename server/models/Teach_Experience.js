@@ -25,10 +25,10 @@ const Teach_Experience = sequelize.define('Teach_Experience', {
     type: DataTypes.INTEGER,
   },
   date_join: {
-    type: DataTypes.STRING,
+    type: DataTypes.DATEONLY,
   },
   date_leave: {
-    type: DataTypes.STRING,
+    type: DataTypes.DATEONLY,
   },
   duration: {
     type: DataTypes.INTEGER,

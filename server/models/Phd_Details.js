@@ -21,15 +21,15 @@ const Phd_Details = sequelize.define('Phd_Details', {
     allowNull: false
   },
   year: {
-    type: DataTypes.STRING,
+    type: DataTypes.INTEGER,
     allowNull: false
   },
   date_defence: {
-    type: DataTypes.STRING,
+    type: DataTypes.DATEONLY,
     allowNull: false
   },
   date_award: {
-    type: DataTypes.STRING,
+    type: DataTypes.DATEONLY,
     allowNull: false
   },
   title: {

@@ -16,13 +16,13 @@ const Employment = sequelize.define('Employment', {
     type: DataTypes.STRING,
   },
   date_leave: {
-    type: DataTypes.STRING,
+    type: DataTypes.DATEONLY,
   },
   organisation: {
     type: DataTypes.STRING,
   },
   date_join: {
-    type: DataTypes.STRING,
+    type: DataTypes.DATEONLY,
   },
   duration: {
     type: DataTypes.INTEGER,

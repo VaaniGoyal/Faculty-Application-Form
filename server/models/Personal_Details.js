@@ -29,7 +29,7 @@ const Personal_Details = sequelize.define('Personal_Details', {
     allowNull: false
   },
   dob: {
-    type: DataTypes.STRING,
+    type: DataTypes.DATEONLY,
     allowNull: false
   },
   gender: {

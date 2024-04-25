@@ -27,7 +27,7 @@ const Application = sequelize.define('application', {
     allowNull: false
   },
   date: {
-    type: DataTypes.STRING,
+    type: DataTypes.DATEONLY,
     allowNull: false
   },
   post: {

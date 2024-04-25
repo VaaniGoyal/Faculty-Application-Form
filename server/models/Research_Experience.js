@@ -19,10 +19,10 @@ const Research_Experience = sequelize.define('Research_Experience', {
     type: DataTypes.STRING,
   },
   date_join: {
-    type: DataTypes.STRING,
+    type: DataTypes.DATEONLY,
   },
   date_leave: {
-    type: DataTypes.STRING,
+    type: DataTypes.DATEONLY,
   },
   duration: {
     type: DataTypes.INTEGER,

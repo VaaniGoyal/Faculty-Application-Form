@@ -21,11 +21,11 @@ const Pg_Details = sequelize.define('Pg_Details', {
     allowNull: false
   },
   year_join: {
-    type: DataTypes.STRING,
+    type: DataTypes.INTEGER,
     allowNull: false
   },
   year_complete: {
-    type: DataTypes.STRING,
+    type: DataTypes.INTEGER,
     allowNull: false
   },
   duration: {
