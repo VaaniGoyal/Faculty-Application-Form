@@ -7,8 +7,6 @@ import axios from "axios";
 const EducationalQualificationsForm = () => {
     const reg_id = localStorage.getItem("reg_id");
 
-    
-
     const [formData, setFormData] = useState({
         reg_id: reg_id,
         university: "",
@@ -17,8 +15,25 @@ const EducationalQualificationsForm = () => {
         yearOfJoining: "",
         defenseDate: "",
         awardDate: "",
-        thesisTitle: ""
+        thesisTitle: "",
+        degreeCertificate: "",
+        universityInstitute: "",
+        branchStream: "",
+        yearOfJoiningMTech: "",
+        yearOfCompletionMTech: "",
+        durationMTech: "",
+        percentageCGPAMTech: "",
+        divisionClassMTech: "",
+        degree1: "",
+        university1: "",
+        branch1: "",
+        yearOfJoining1: "",
+        yearOfCompletion1: "",
+        duration1: "",
+        percentageCGPA1: "",
+        divisionClass1: ""
     });
+
 
 
         // State to track the data for the new row
