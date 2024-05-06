@@ -29,6 +29,22 @@ async function createApplication(req, res) {
   }
 }
 
+async function getApplication(req, res) {
+  try {
+    const { app_number } = req.params; 
+    const application = await Application.findOne({ where: { app_number }, attributes: ['add_number', 'date', 'post', 'dept', 'app_number'] });
+    if (application) {
+      return res.status(200).json({ application });
+    } else {
+      return res.status(404).json({ message: "Application not found." });
+    }
+  } catch (error) {
+    console.error("Error fetching application:", error);
+    return res.status(500).json({ message: "Failed to fetch application." });
+  }
+}
+
+
 async function addPersonalDetails(req, res) {
   try {
       const { app_number, f_name, m_name, l_name, nationality, dob, gender, marital_status, category, father_name, mob, email, alt_mob, alt_email, landline, c_address, p_address } = req.body;
@@ -78,4 +94,4 @@ async function viewUploadedFile(req, res) {
 
 
 
-module.exports = { createApplication, addPersonalDetails, viewUploadedFile };
+module.exports = { createApplication, getApplication, addPersonalDetails, viewUploadedFile };

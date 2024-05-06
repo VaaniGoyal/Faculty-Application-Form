@@ -19,8 +19,7 @@ const upload = multer({ storage: storage });
 
 // Routes
 router.post('/createApplication', applicationController.createApplication);
-
-// Use upload.fields() to handle multiple file uploads with different field names
+router.get('/getApplicationDetails/:app_number', applicationController.getApplication);
 router.post('/addPersonalDetails', upload.fields([{ name: 'id_proof', maxCount: 1 }, { name: 'user_image', maxCount: 1 }]), applicationController.addPersonalDetails);
 
 module.exports = router;
