@@ -9,22 +9,25 @@ const PersonalDetailsForm = () => {
 
     const [formData, setFormData] = useState({
         reg_id: reg_id,
-        firstName: "",
-        middleName: "",
-        lastName: "",
+        f_name: "",
+        m_name: "",
+        l_name: "",
         gender: "", 
         nationality: "",
-        maritalStatus: "",
-        identityProof: "",
-        fatherName: "",
+        dob:"",
+        marital_status: "",
+        id_proof: "",
+        father_name: "",
         category: "",
         permanentAddress: "",
         correspondenceAddress: "",
-        mobile: "",
-        alternateMobile: "",
+        alt_mob: "",
         email: "",
-        alternateEmail: "",
+        alt_email: "",
         landline: "",
+        mob:"",
+        c_address:"",
+        p_address:"",
     /*-------------------------------------------------------------*/
     postAppliedFor: "",
     advertisementNumber: "",
@@ -102,11 +105,11 @@ const PersonalDetailsForm = () => {
                     <legend style={{ backgroundColor: '#e1f0d8', color: '#54773c', padding: '0.5rem', borderRadius: '0.5rem',width: '100%' }}>Personal Details</legend>
                     <div style={{ display: 'flex', justifyContent: 'space-between',fontWeight: 'bold' }}>
                         <div style={{ width: '45%' }}>
-                            <label htmlFor="firstName">First Name:  </label>
-                            <input type="text" id="firstName" name="firstName" onChange={handleInputChange} value={formData.firstName} required /><br /><br />
+                            <label htmlFor="f_name">First Name:  </label>
+                            <input type="text" id="f_name" name="f_name" onChange={handleInputChange} value={formData.f_name} required /><br /><br />
 
-                            <label htmlFor="middleName">Middle Name:  </label>
-                            <input type="text" id="middleName" name="middleName" onChange={handleInputChange} value={formData.middleName} /><br /><br />
+                            <label htmlFor="m_name">Middle Name:  </label>
+                            <input type="text" id="m_name" name="m_name" onChange={handleInputChange} value={formData.m_name} /><br /><br />
 
                             <label htmlFor="gender">Gender:  </label>
                             <select id="gender" name="gender" onChange={handleInputChange} value={formData.gender} required>
@@ -116,13 +119,13 @@ const PersonalDetailsForm = () => {
                                 <option value="Other">Other</option>
                             </select><br /><br />
 
-                            <label htmlFor="fatherName">Father's Name:  </label>
-                            <input type="text" id="fatherName" name="fatherName" onChange={handleInputChange} value={formData.fatherName} required /><br /><br />
+                            <label htmlFor="father_name">Father's Name:  </label>
+                            <input type="text" id="father_name" name="father_name" onChange={handleInputChange} value={formData.father_name} required /><br /><br />
                         </div>
 
                         <div style={{ width: '45%' }}>
-                            <label htmlFor="lastName">Last Name:  </label>
-                            <input type="text" id="lastName" name="lastName" onChange={handleInputChange} value={formData.lastName} required /><br /><br />
+                            <label htmlFor="l_name">Last Name:  </label>
+                            <input type="text" id="l_name" name="l_name" onChange={handleInputChange} value={formData.l_name} required /><br /><br />
 
                             <label htmlFor="nationality">Nationality:  </label>
                             <select id="nationality" name="nationality" onChange={handleInputChange} value={formData.nationality} required>
@@ -132,16 +135,16 @@ const PersonalDetailsForm = () => {
                                 <option value="Other">Other</option>
                             </select><br /><br />
 
-                            <label htmlFor="maritalStatus">Marital Status:  </label>
-                            <select id="maritalStatus" name="maritalStatus" onChange={handleInputChange} value={formData.maritalStatus} required>
+                            <label htmlFor="marital_status">Marital Status:  </label>
+                            <select id="marital_status" name="marital_status" onChange={handleInputChange} value={formData.marital_status} required>
                                 <option value="">Select</option>
                                 <option value="Married">Married</option>
                                 <option value="Unmarried">Unmarried</option>
                                 <option value="Other">Other</option>
                             </select><br /><br />
 
-                            <label htmlFor="idProof">Identity Proof:  </label>
-                            <input type="file" id="idProof" name="idProof" onChange={handleInputChange} accept=".jpg, .jpeg, .png, .pdf" required /><br /><br />
+                            <label htmlFor="id_proof">Identity Proof:  </label>
+                            <input type="file" id="id_proof" name="id_proof" onChange={handleInputChange} accept=".jpg, .jpeg, .png, .pdf" required /><br /><br />
 
                             <label htmlFor="category">Category:  </label>
                             <input type="text" id="category" name="category" onChange={handleInputChange} value={formData.category} required /><br /><br />
@@ -156,12 +159,12 @@ const PersonalDetailsForm = () => {
         <legend style={{ backgroundColor: '#e1f0d8', color: '#54773c', padding: '0.5rem', borderRadius: '0.5rem', margintop: '0.5 rem',width: '100%' }}>Address</legend>
         <div style={{ display: 'flex', justifyContent: 'space-between', fontWeight: 'bold' }}>
             <div style={{ width: '45%' }}>
-                <label htmlFor="correspondenceAddress">Correspondence Address:  </label>
-                <textarea id="correspondenceAddress" name="correspondenceAddress" onChange={handleInputChange} value={formData.correspondenceAddress} required /><br /><br />
+                <label htmlFor="c_address">Correspondence Address:  </label>
+                <textarea id="c_address" name="c_address" onChange={handleInputChange} value={formData.c_address} required /><br /><br />
             </div>
             <div style={{ width: '45%', marginLeft: '10px' }}> {/* Added marginLeft */}
-                <label htmlFor="permanentAddress">Permanent Address:  </label>
-                <textarea id="permanentAddress" name="permanentAddress" onChange={handleInputChange} value={formData.permanentAddress} required /><br /><br />
+                <label htmlFor="p_address">Permanent Address:  </label>
+                <textarea id="p_address" name="p_address" onChange={handleInputChange} value={formData.p_address} required /><br /><br />
             </div>
         </div>
     </fieldset>
@@ -173,18 +176,18 @@ const PersonalDetailsForm = () => {
     <legend style={{ backgroundColor: '#e1f0d8', color: '#54773c', padding: '0.5rem', borderRadius: '0.5rem',width: '100%' }}>Contact Information</legend>
     <div style={{ display: 'flex', justifyContent: 'space-between', fontWeight: 'bold' }}>
         <div style={{ width: '45%' }}>
-            <label htmlFor="mobile">Mobile:  </label>
-            <input type="text" id="mobile" name="mobile" onChange={handleInputChange} value={formData.mobile} required /><br /><br />
-            <label htmlFor="alternateMobile">Alternate Mobile:  </label>
-            <input type="text" id="alternateMobile" name="alternateMobile" onChange={handleInputChange} value={formData.alternateMobile} /><br /><br />
+            <label htmlFor="mob">Mobile:  </label>
+            <input type="text" id="mob" name="mob" onChange={handleInputChange} value={formData.mob} required /><br /><br />
+            <label htmlFor="alt_mob">Alternate Mobile:  </label>
+            <input type="text" id="alt_mob" name="alt_mob" onChange={handleInputChange} value={formData.alt_mob} /><br /><br />
             <label htmlFor="landline">Landline:  </label>
             <input type="text" id="landline" name="landline" onChange={handleInputChange} value={formData.landline} /><br /><br />
         </div>
         <div style={{ width: '45%', marginLeft: '10px' }}>
             <label htmlFor="email" style={{fontStyle: 'bold'}}>Email:  </label>
             <input type="email" id="email" name="email" onChange={handleInputChange} value={formData.email} required /><br /><br />
-            <label htmlFor="alternateEmail">Alternate Email:  </label>
-            <input type="email" id="alternateEmail" name="alternateEmail" onChange={handleInputChange} value={formData.alternateEmail} /><br /><br />
+            <label htmlFor="alt_email">Alternate Email:  </label>
+            <input type="email" id="alt_email" name="alt_email" onChange={handleInputChange} value={formData.alt_email} /><br /><br />
         </div>
     </div>
 </fieldset>
