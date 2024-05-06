@@ -44,10 +44,6 @@ const Personal_Details = sequelize.define('Personal_Details', {
     type: DataTypes.STRING,
     allowNull: false
   },
-  id_proof: {
-    type: DataTypes.STRING,
-    allowNull: false
-  },
   father_name: {
     type: DataTypes.STRING,
     allowNull: false
@@ -77,6 +73,14 @@ const Personal_Details = sequelize.define('Personal_Details', {
     allowNull: false
   },
   p_address: {
+    type: DataTypes.STRING,
+    allowNull: false
+  },
+  id_proof: {
+    type: DataTypes.STRING,
+    allowNull: false
+  },
+  user_image: {
     type: DataTypes.STRING,
     allowNull: false
   }

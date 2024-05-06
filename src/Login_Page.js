@@ -29,7 +29,7 @@ function Login_Page() {
       
       // Handle successful login here
       alert("Logged in Successfully");
-       navigate("/Personal_Details"); 
+      navigate("/Personal_Details"); 
     } catch (error) {
       setError("Sign-in failed. Please try again.");
     }
