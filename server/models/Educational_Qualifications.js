@@ -4,8 +4,6 @@ const application = require('./application');
 const Phd_Details = require('./Phd_Details');
 const Pg_Details = require('./Pg_Details');
 const Ug_Details = require('./Ug_Details');
-const School_Details = require('./School_Details');
-const Additional_Qualifications = require('./Additional_Qualifications');
 
 const Educational_Qualifications = sequelize.define('Educational_Qualifications', {
 
@@ -36,20 +34,6 @@ const Educational_Qualifications = sequelize.define('Educational_Qualifications'
     references: {
         model: Ug_Details,
         key: 'ug_id'
-      }
-  },
-  school_id: {
-    type: DataTypes.INTEGER,
-    references: {
-        model: School_Details,
-        key: 'school_id'
-      }
-  },
-  id: {
-    type: DataTypes.INTEGER,
-    references: {
-        model: Additional_Qualifications,
-        key: 'id'
       }
   }
 }, {

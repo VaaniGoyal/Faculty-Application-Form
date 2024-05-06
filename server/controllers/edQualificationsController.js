@@ -7,8 +7,8 @@ const Additional_Qualifications = require('../models/Additional_Qualifications')
 
 async function createEducationalQualifications(req, res) {
     try {
-      const { app_number, phd_id, pg_id, ug_id, school_id, id } = req.body;
-      const newEducationalQualifications = await Educational_Qualifications.create({ app_number, phd_id, pg_id, ug_id, school_id, id });
+      const { app_number, phd_id, pg_id, ug_id } = req.body;
+      const newEducationalQualifications = await Educational_Qualifications.create({ app_number, phd_id, pg_id, ug_id });
       return res.status(201).json(newEducationalQualifications);
     } catch (error) {
       console.error("Error creating educational qualifications:", error);
@@ -60,12 +60,9 @@ async function addUgDetails(req, res) {
 
 async function addSchoolDetails(req, res) {
     try {
-      const { std, school, year, cgpa, division } = req.body;
-      const newSchoolDetails = await School_Details.create({ std, school, year, cgpa, division });
-      res.status(201).json({
-        ...newSchoolDetails.toJSON(),
-        school_id: newSchoolDetails.school_id, 
-      });
+      const { app_number, std, school, year, cgpa, division } = req.body;
+      const newSchoolDetails = await School_Details.create({ app_number, std, school, year, cgpa, division });
+      return res.status(201).json(newSchoolDetails);
     } catch (error) {
       console.error("Error adding school details:", error);
       return res.status(500).json({ message: "Failed to add school details." });
@@ -74,12 +71,9 @@ async function addSchoolDetails(req, res) {
 
 async function addAdditionalQualifications(req, res) {
     try {
-      const { degree, university, branch, year_join, year_complete, duration, cgpa, division } = req.body;
-      const newAdditionalQualifications = await Additional_Qualifications.create({ degree, university, branch, year_join, year_complete, duration, cgpa, division });
-      res.status(201).json({
-        ...newAdditionalQualifications.toJSON(),
-        id: newAdditionalQualifications.id, 
-      });
+      const { app_number, degree, university, branch, year_join, year_complete, duration, cgpa, division } = req.body;
+      const newAdditionalQualifications = await Additional_Qualifications.create({ app_number, degree, university, branch, year_join, year_complete, duration, cgpa, division });
+      return res.status(201).json(newAdditionalQualifications);
     } catch (error) {
       console.error("Error adding Additional Qualifications:", error);
       return res.status(500).json({ message: "Failed to add Additional Qualifications." });

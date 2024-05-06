@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from 'react-router-dom';
 import axios from "axios";
 
 const PersonalDetailsForm = () => {
@@ -67,29 +68,35 @@ const PersonalDetailsForm = () => {
         const imageFile = e.target.files[0];
         setPersonalData({ ...personalData, image: imageFile });
     };
-
+    const navigate = useNavigate();
     const handlePersonalSubmit = async (e) => {
         e.preventDefault();
         try {
             const personalData = new FormData();
             for (const key in personalData) {
                 if (key === 'id_proof' || key === 'user_image') {
-                    formData.append(key, personalData[key]);
+                    personalData.append(key, personalData[key]);
                 } else {
-                    formData.append(key, personalData[key]);
+                    personalData.append(key, personalData[key]);
                 }
             }
             const response = await axios.post("http://localhost:3000/api/application/addPersonalDetails", personalData);
             console.log(response.data);
+            navigate('/Educational_Qualifications');
         } catch (error) {
             console.error("Error submitting personal details form:", error);
         }
     };
 
+    const handleLogout = async (e) => {
+        navigate('/Login_Page');
+    }
+    
+
     return (
         <div className="Personal_Details" style={{ marginTop: '12rem', marginLeft: '7rem', marginRight: '7rem', marginBottom: '4rem', backgroundColor: '#f5f5f5' }}>
             <h2 style={{ animation: 'blinker 1s linear infinite', textAlign: 'center', color: '#d15f75' }}>Application for Faculty Position</h2>
-
+            <button onClick={handleLogout}> Logout </button>
             {/* Application Form */}
             <form onSubmit={handleApplicationSubmit} id="applicationForm">
                 <fieldset style={{ padding: '1rem', marginBottom: '0.5rem' }}>
@@ -146,9 +153,10 @@ const PersonalDetailsForm = () => {
                                 <option value="Female">Female</option>
                                 <option value="Other">Other</option>
                             </select><br /><br />
-
                             <label htmlFor="father_name">Father's Name:  </label>
                             <input type="text" id="father_name" name="father_name" onChange={handlePersonalInputChange} value={personalData.father_name} required /><br /><br />
+                            <label htmlFor="user_image">Upload Image: </label>
+                            <input type="file" id="user_image" name="user_image" onChange={handleImageUpload} accept=".jpg, .jpeg, .png" /><br /><br />
                         </div>
 
                         <div style={{ width: '45%' }}>
@@ -171,10 +179,8 @@ const PersonalDetailsForm = () => {
                                 <option value="Unmarried">Unmarried</option>
                                 <option value="Other">Other</option>
                             </select><br /><br />
-                            <label htmlFor="user_image">Upload Image: </label>
-                            <input type="file" id="user_image" name="user_image" onChange={handleImageUpload} accept=".jpg, .jpeg, .png" /><br /><br />
                             <label htmlFor="id_proof">Identity Proof:  </label>
-                            <input type="file" id="id_proof" name="id_proof" onChange={handleIdProofUpload} accept=".jpg, .jpeg, .png, .pdf" required />
+                            <input type="file" id="id_proof" name="id_proof" onChange={handleIdProofUpload} accept=".jpg, .jpeg, .png, .pdf" required /><br /><br />
                             <label htmlFor="category">Category:  </label>
                             <input type="text" id="category" name="category" onChange={handlePersonalInputChange} value={personalData.category} required /><br /><br />
                         </div>

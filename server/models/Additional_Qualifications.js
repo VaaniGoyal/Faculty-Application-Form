@@ -1,8 +1,15 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../config/database');
+const application = require('./application');
 
 const Additional_Qualifications = sequelize.define('Additional_Qualifications', {
-
+  app_number: {
+    type: DataTypes.STRING,
+    references: {
+        model: application,
+        key: 'app_number'
+      }
+  },
   id: {
     type: DataTypes.INTEGER,
     primaryKey: true,
