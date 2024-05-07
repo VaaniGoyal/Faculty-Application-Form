@@ -45,9 +45,11 @@ const EmploymentForm = () => {
             }
         ]
     });
-    const handleInputChangeEmpHistory = (e) => {
+    const handleInputChangeEmpHistory = (e, index) => {
         const { name, value } = e.target;
-        setEmploymentHistory({ ...employmentHistory, [name]: value });
+        const updatedData1 = [...employmentHistory.empHistoryDetails]
+        updatedData1[index][name] = value;
+        setEmploymentHistory({ ...employmentHistory, empHistoryDetails: updatedData1 });
     };
     const handleAddMore1 = () => {
         setEmploymentHistory({
@@ -94,9 +96,11 @@ const EmploymentForm = () => {
             }
         ]
     });
-    const handleInputChangeTeachingDetails = (e) => {
+    const handleInputChangeTeachingDetails = (e, index) => {
         const { name, value } = e.target;
-        setTeachingDetails({ ...teachingDetails, [name]: value });
+        const updatedData2 = [...teachingDetails.teachingDetails]
+        updatedData2[index][name] = value;
+        setTeachingDetails({ ...teachingDetails, teachingDetails: updatedData2 });
     };
     const handleAddMore2 = () => {
         setTeachingDetails({
@@ -144,9 +148,11 @@ const EmploymentForm = () => {
                 }
             ]
         });
-        const handleInputChangeResearchExp = (e) => {
+        const handleInputChangeResearchExp = (e, index) => {
             const { name, value } = e.target;
-            setResearchExperience({ ...ResearchExperience, [name]: value });
+            const updatedData3 = [...ResearchExperience.researchDetails]
+            updatedData3[index][name] = value;
+            setResearchExperience({ ...ResearchExperience, researchDetails: updatedData3 });
         };
         const handleAddMore3 = () => {
             setResearchExperience({
@@ -191,9 +197,11 @@ const EmploymentForm = () => {
             }
         ]
     });
-    const handleInputChangeIndustryExp = (e) => {
+    const handleInputChangeIndustryExp = (e, index) => {
         const { name, value } = e.target;
-        setIndustrialExperience({ ...IndustrialExperience, [name]: value });
+        const updatedData4 = [...IndustrialExperience.industryDetails]
+        updatedData4[index][name] = value;
+        setIndustrialExperience({ ...IndustrialExperience, industryDetails: updatedData4 });
     };
     const handleAddMore4 = () => {
         setIndustrialExperience({

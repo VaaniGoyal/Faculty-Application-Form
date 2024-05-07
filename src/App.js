@@ -9,6 +9,7 @@ import Reset_Password from "./Reset_Password";
 import Educational_Qualifications from "./Educational_Qualifications";
 import Employment from "./Employment";
 import Publication from "./Publication";
+import Membership from "./Membership";
 
 import "./App.css";
 
@@ -27,6 +28,7 @@ function App() {
           <Route path="/Educational_Qualifications" element={<Educational_Qualifications/>}/>
           <Route path="/Employment" element={<Employment />} />
           <Route path="/Publication" element={<Publication />} />
+          <Route path="/Membership" element={<Membership />} />
         </Routes>
       </div>
     </Router>
