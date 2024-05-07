@@ -9,15 +9,15 @@ employment details page-----put required info in employment table(along with app
                             same for teach_experience, research_experience and industry_experience table
 publications page---add info in publications table(along with app_number) and return pub_id, store it in local_storage
                     put remaining info in best_publications, patents, books, book_chapters(along with pub_id attribute)                                                         
-next page-------add info in memberships table(Along with app_number)                    
+membership page-------add info in memberships table(Along with app_number)                    
                 add info in trainings table table(Along with app_number)
                 add info in awards table(Along with app_number)
                 add info in sponsored_projects table(Along with app_number)
                 add info in consultancy_projects table(along with app_number)
-next page-------add info in phd_supervisions(along with app_number)                
+supervision page-------add info in phd_supervisions(along with app_number)                
                 add info in master_supervisions(along with app_number) 
                 add info in bachelor_supervisions(along with app_number)                               
-next page-------add info in contributions table(contains all text paragraphs along with app_number)                
+contribution page-------add info in contributions table(contains all text paragraphs along with app_number)                
                 add info in referees table (along with app_number)
 
 next page--upload pdf and photo(yet to be done in backend)----but frontend can be made

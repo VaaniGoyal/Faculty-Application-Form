@@ -10,6 +10,7 @@ import Educational_Qualifications from "./Educational_Qualifications";
 import Employment from "./Employment";
 import Publication from "./Publication";
 import Membership from "./Membership";
+import Supervision from "./Supervision";
 
 import "./App.css";
 
@@ -20,7 +21,7 @@ function App() {
       <Footer />
       <div>
         <Routes>
-          <Route path="/" element={<Publication />} />
+          <Route path="/" element={<Membership />} />
           <Route path="/Login_Page" element={<Login_Page />} />
           <Route path="/Create_Account" element={<Create_Account />} />\
           <Route path="/Personal_Details" element={<Personal_Details />} />
@@ -29,6 +30,7 @@ function App() {
           <Route path="/Employment" element={<Employment />} />
           <Route path="/Publication" element={<Publication />} />
           <Route path="/Membership" element={<Membership />} />
+          <Route path="/Supervision" element={<Supervision />} />
         </Routes>
       </div>
     </Router>
