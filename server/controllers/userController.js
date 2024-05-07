@@ -31,11 +31,13 @@ async function createUser(req, res) {
 
 async function getUser(req, res) {
   try {
-    const { reg_id } = req.params; 
-    const user = await User.findByPk(reg_id, { attributes: ['name'] });
+    const { reg_id } = req.params; // Accessing reg_id from URL parameters
+    const user = await User.findByPk(reg_id, { attributes: ['f_name'] });
 
     if (user) {
-      return res.status(200).json({ name: user.name });
+      res.json({
+        name: user.f_name, // Include the reg_id in the response
+      });
     } else {
       return res.status(404).json({ message: "User not found." });
     }
@@ -44,6 +46,7 @@ async function getUser(req, res) {
     return res.status(500).json({ message: "Failed to fetch user." });
   }
 }
+
 
 async function login(req, res) {
   const { email, password } = req.body;

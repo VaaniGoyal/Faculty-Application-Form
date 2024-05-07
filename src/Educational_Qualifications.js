@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const EducationalQualificationsForm = () => {
+    const name = localStorage.getItem("name");
     const app_number=localStorage.getItem("app_number");
     const navigate = useNavigate();
     /*-----------------------------------------------*/
@@ -189,16 +190,16 @@ const EducationalQualificationsForm = () => {
         }
     };
     /*--------------------------------------------------------------------------------------------------*/
-    const phdId = localStorage.getItem("phd_id");
-    const pgId = localStorage.getItem("pg_id");
-    const ugId = localStorage.getItem("ug_id");
+    const phdId = parseInt(localStorage.getItem("phd_id"), 10);
+    const pgId = parseInt(localStorage.getItem("pg_id"), 10);
+    const ugId = parseInt(localStorage.getItem("ug_id"), 10);
     const [qualificationsData, setQualificationsData] = useState({
         app_number: app_number,
         phd_id: phdId,
         pg_id: pgId,
         ug_id: ugId,
     });
-    
+
     const handleQualificationsSubmit = async (e) => {
         e.preventDefault();
         try {
@@ -208,7 +209,8 @@ const EducationalQualificationsForm = () => {
         } catch (error) {
             console.error("Error submitting educational qualifications form:", error);
         }
-    };    
+    };
+
     /*---------------------------------------------------------------------------------------------------*/
     const handleLogout = async (e) => {
         navigate('/Login_Page');
@@ -216,7 +218,7 @@ const EducationalQualificationsForm = () => {
     return (
         <div className="Educational_Qualifications" style={{ marginTop: '12rem', marginLeft: '7rem', marginRight: '7rem', marginBottom: '4rem', backgroundColor: '#f5f5f5' }}>
             <h2 style={{ animation: 'blinker 1s linear infinite', textAlign: 'center', color: '#d15f75' }}>Educational Qualifications</h2>
-            <button onClick={handleLogout}> Logout </button>
+            <h7> Welcome {name}!!</h7>  <button onClick={handleLogout}> Logout </button>
             {/* PHD Details Form */}
             <form onSubmit={handlePhdSubmit} id="PhdForm">
                 <fieldset style={{ padding: '1rem', marginBottom: '0.5rem' }}>

@@ -4,6 +4,7 @@ import axios from "axios";
 
 const EmploymentForm = () => {
     const app_number=localStorage.getItem("app_number");
+    const name = localStorage.getItem("name");
     const navigate = useNavigate();
     /*-----------------------PRESENT EMPLOYEMENT-----------------------------------------------------*/
     const [presentData, setPresentData] = useState({
@@ -31,7 +32,7 @@ const EmploymentForm = () => {
         }
     };
     /*-------------------------------------EMPLOYEMENT HISTORY---------------------------------------------- */
-    const empId = localStorage.getItem("emp_id");
+    const empId = parseInt(localStorage.getItem("emp_id"), 10);
     const [employmentHistory, setEmploymentHistory] = useState({
         empHistoryDetails: [
             {
@@ -223,11 +224,16 @@ const EmploymentForm = () => {
         } catch (error) {
             console.error("Error submitting industry experience form:", error);
         }
+        
     };
+    const handleLogout = async (e) => {
+        navigate('/Login_Page');
+    }
 /*------------------------------------------------------------------------------------------------------------------- */
     return (
         <div className="Present_Employment" style={{ marginTop: '12rem', marginLeft: '7rem', marginRight: '7rem', marginBottom: '4rem', backgroundColor: '#f5f5f5' }}>
         <h2 style={{ animation: 'blinker 1s linear infinite', textAlign: 'center', color: '#d15f75' }}>Apply For Faculty Position</h2>
+        <h7> Welcome {name}!!</h7>  <button onClick={handleLogout}> Logout </button>
         {/* Present Employment Form */}
         <form onSubmit={handleSubmitPresentEmp} id="PresentEmpForm">
                 <fieldset style={{ padding: '1rem', marginBottom: '0.5rem' }}>

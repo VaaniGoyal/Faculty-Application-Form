@@ -3,8 +3,24 @@ import { useNavigate } from 'react-router-dom';
 import axios from "axios";
 
 const PersonalDetailsForm = () => {
-    const reg_id = localStorage.getItem("reg_id");
-
+    const regId = localStorage.getItem("reg_id");
+    const reg_id = parseInt(regId, 10);
+    // Modify the findUserName function to check if e is defined before calling preventDefault
+    const findUserName = async (e) => {
+        if (e) {
+            e.preventDefault();
+        }
+        try {
+            const response = await axios.get(`http://localhost:3000/api/users/getUser/${reg_id}`);
+            localStorage.setItem("name", response.data.name);
+        } catch (error) {
+            console.error("Error fetching user:", error);
+            // Handle error, such as displaying an error message to the user
+        }
+    }
+    findUserName();
+    const name = localStorage.getItem("name");
+    console.log(name);
     const [applicationData, setApplicationData] = useState({
         reg_id: reg_id,
         add_number: "",
@@ -96,7 +112,7 @@ const PersonalDetailsForm = () => {
     return (
         <div className="Personal_Details" style={{ marginTop: '12rem', marginLeft: '7rem', marginRight: '7rem', marginBottom: '4rem', backgroundColor: '#f5f5f5' }}>
             <h2 style={{ animation: 'blinker 1s linear infinite', textAlign: 'center', color: '#d15f75' }}>Application for Faculty Position</h2>
-            <button onClick={handleLogout}> Logout </button>
+            <h7> Welcome {name}!!</h7>  <button onClick={handleLogout}> Logout </button>
             {/* Application Form */}
             <form onSubmit={handleApplicationSubmit} id="applicationForm">
                 <fieldset style={{ padding: '1rem', marginBottom: '0.5rem' }}>
