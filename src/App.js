@@ -13,6 +13,7 @@ import Membership from "./Membership";
 import Supervision from "./Supervision";
 import Contribution from "./Contribution";
 import Refree from "./Refree";
+import Declaration from "./Declaration";
 
 import "./App.css";
 
@@ -23,7 +24,7 @@ function App() {
       <Footer />
       <div>
         <Routes>
-          <Route path="/" element={<Refree />} />
+          <Route path="/" element={<Declaration />} />
           <Route path="/Login_Page" element={<Login_Page />} />
           <Route path="/Create_Account" element={<Create_Account />} />\
           <Route path="/Personal_Details" element={<Personal_Details />} />
@@ -35,6 +36,7 @@ function App() {
           <Route path="/Supervision" element={<Supervision />} />
           <Route path="/Contribution" element={<Contribution />} />
           <Route path="/Refree" element={<Refree />} />
+          <Route path="/Declaration" element={<Declaration/>}/>
         </Routes>
       </div>
     </Router>
