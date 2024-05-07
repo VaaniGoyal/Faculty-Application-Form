@@ -19,9 +19,9 @@ function App() {
       <Footer />
       <div>
         <Routes>
-
-          <Route path="/" element={<Employment />} />
-          <Route path="/Create_Account" element={<Create_Account />} />
+          <Route path="/" element={<Personal_Details />} />
+          <Route path="/Login_Page" element={<Login_Page />} />
+          <Route path="/Create_Account" element={<Create_Account />} />\
           <Route path="/Personal_Details" element={<Personal_Details />} />
           <Route path="/Reset_Password" element={<Reset_Password />} />
           <Route path="/Educational_Qualifications" element={<Educational_Qualifications/>}/>

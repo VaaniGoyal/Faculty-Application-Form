@@ -16,7 +16,7 @@ function Create_Acc() {
   const navigate = useNavigate();
 
   const handleLoginClick = async () => {
-      navigate('/');
+      navigate('/Login_Page');
   }
   const handleSubmit = async (event) => {
     event.preventDefault();
