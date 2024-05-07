@@ -8,6 +8,8 @@ import Personal_Details from "./Personal_Details";
 import Reset_Password from "./Reset_Password";
 import Educational_Qualifications from "./Educational_Qualifications";
 import Employment from "./Employment";
+import Publication from "./Publication";
+
 import "./App.css";
 
 function App() {
@@ -24,6 +26,7 @@ function App() {
           <Route path="/Reset_Password" element={<Reset_Password />} />
           <Route path="/Educational_Qualifications" element={<Educational_Qualifications/>}/>
           <Route path="/Employment" element={<Employment />} />
+          <Route path="/Publication" element={<Publication />} />
         </Routes>
       </div>
     </Router>
