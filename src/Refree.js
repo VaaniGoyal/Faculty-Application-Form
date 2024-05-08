@@ -91,7 +91,7 @@ const RefereeForm = () => {
                 const response = await axios.post("http://localhost:3000/api/other/addReferees", formDataToSend);
                 console.log(response.data);
             }
-            // navigate('/New_page');
+            navigate('/Declaration');
         } catch (error) {
             console.error("Error submitting referee details:", error);
         }
@@ -104,7 +104,7 @@ const RefereeForm = () => {
     return (
         <div className="Present_Employment" style={{ marginTop: '12rem', marginLeft: '7rem', marginRight: '7rem', marginBottom: '4rem', backgroundColor: '#f5f5f5' }}>
             <h2 style={{ animation: 'blinker 1s linear infinite', textAlign: 'center', color: '#d15f75' }}>Apply For Faculty Position</h2>
-            <h7> Welcome {name}!!</h7>  <button onClick={handleLogout}> Logout </button>
+            <h4 style={{marginLeft:'48%'}}> Welcome {name}!!</h4>  <button style={{backgroundColor:'#ddedf7', marginLeft:'94%'}} onClick={handleLogout}> Logout </button>
 
             <form onSubmit={handleSubmit} id="RefereeForm">
             <fieldset>
@@ -199,7 +199,9 @@ const RefereeForm = () => {
                             </div>
                         </div>
                         
+                        
                     ))}
+                    
                 </fieldset>
                 <fieldset style={{ padding: '1rem', marginBottom: '0.5rem' }}>
                     <legend style={{ backgroundColor: '#e1f0d8', color: '#54773c', padding: '0.5rem', borderRadius: '0.5rem', width: '100%', fontWeight: 'bold' }}>Referees *</legend>
@@ -217,18 +219,18 @@ const RefereeForm = () => {
                         <tbody>
                             {formData.formDetails.map((row, index) => (
                                 <tr key={index}>
-                                    <td><input type="text" name="name" onChange={(e) => handleInputChange(e, index)} value={row.name} required /></td>
-                                    <td><input type="text" name="position" onChange={(e) => handleInputChange(e, index)} value={row.position} required /></td>
-                                    <td><input type="text" name="association" onChange={(e) => handleInputChange(e, index)} value={row.association} required /></td>
-                                    <td><input type="text" name="organisation" onChange={(e) => handleInputChange(e, index)} value={row.organisation} required /></td>
-                                    <td><input type="text" name="email" onChange={(e) => handleInputChange(e, index)} value={row.email} required /></td>
-                                    <td><input type="text" name="contact" onChange={(e) => handleInputChange(e, index)} value={row.contact} required /></td>
+                                    <td><input type="text" style={{width:'100%'}} name="name" onChange={(e) => handleInputChange(e, index)} value={row.name} required /></td>
+                                    <td><input type="text" style={{width:'100%'}} name="position" onChange={(e) => handleInputChange(e, index)} value={row.position} required /></td>
+                                    <td><input type="text" style={{width:'100%'}} name="association" onChange={(e) => handleInputChange(e, index)} value={row.association} required /></td>
+                                    <td><input type="text" style={{width:'100%'}} name="organisation" onChange={(e) => handleInputChange(e, index)} value={row.organisation} required /></td>
+                                    <td><input type="text" style={{width:'100%'}} name="email" onChange={(e) => handleInputChange(e, index)} value={row.email} required /></td>
+                                    <td><input type="text" style={{width:'100%'}} name="contact" onChange={(e) => handleInputChange(e, index)} value={row.contact} required /></td>
                                 </tr>
                             ))}
                         </tbody>
                     </table>
                     <button onClick={handleAddMore}>Add More</button>
-                    <button type="button" onClick={handleSubmit}>Save </button>
+                    <button type="submit" style={{backgroundColor:'#ddedf7' , fontWeight:'bold', marginLeft:'94%'}} onClick={handleSubmit}>Save </button>
                 </fieldset>
             </form>
         </div>
