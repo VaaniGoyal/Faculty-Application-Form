@@ -236,7 +236,7 @@ const PublicationsForm = () => {
     return (
         <div className="Personal_Details" style={{ marginTop: '12rem', marginLeft: '7rem', marginRight: '7rem', marginBottom: '4rem', backgroundColor: '#f5f5f5' }}>
         <h2 style={{ animation: 'blinker 1s linear infinite', textAlign: 'center', color: '#d15f75' }}>Application for Faculty Position</h2>
-        <h7> Welcome {name}!!</h7>  <button onClick={handleLogout}> Logout </button>
+        <h4 style={{marginLeft:'48%'}}> Welcome {name}!!</h4>  <button style={{backgroundColor:'#ddedf7', marginLeft:'94%', backgroundColor: '#6fb85b', color: 'white'}} onClick={handleLogout}> Logout </button>
         <form onSubmit={handlePublicationSubmit}>
             <fieldset style={{ padding: '1rem', marginBottom: '0.5rem' }}>
             <legend style={{ backgroundColor: '#e1f0d8', color: '#54773c', padding: '0.5rem', borderRadius: '0.5rem', width: '100%' }}> Summary Of Publications</legend>
@@ -285,13 +285,13 @@ const PublicationsForm = () => {
                     {bestData.bestDetails.map((row, index) => (
                         <tr key={index}>
                             <td>{index+1}.</td>
-                            <td><input type="text" name="author" onChange={(e) => handleBestInputChange(e, index)} value={row.author} required /></td>
-                            <td><input type="text" name="title" onChange={(e) => handleBestInputChange(e, index)} value={row.title} required /></td>
-                            <td><input type="text" name="name" onChange={(e) => handleBestInputChange(e, index)} value={row.name} required /></td>
-                            <td><input type="text" name="yearvolpage" onChange={(e) => handleBestInputChange(e, index)} value={row.yearvolpage} required /></td>
-                            <td><input type="text" name="impact" onChange={(e) => handleBestInputChange(e, index)} value={row.impact} required /></td>
-                            <td><input type="text" name="doi" onChange={(e) => handleBestInputChange(e, index)} value={row.doi} required /></td>
-                            <td><input type="text" name="status" onChange={(e) => handleBestInputChange(e, index)} value={row.status} required /></td>
+                            <td><input type="text" style={{width:'100%'}} name="author" onChange={(e) => handleBestInputChange(e, index)} value={row.author} required /></td>
+                            <td><input type="text" style={{width:'100%'}} name="title" onChange={(e) => handleBestInputChange(e, index)} value={row.title} required /></td>
+                            <td><input type="text" style={{width:'100%'}} name="name" onChange={(e) => handleBestInputChange(e, index)} value={row.name} required /></td>
+                            <td><input type="text" style={{width:'100%'}} name="yearvolpage" onChange={(e) => handleBestInputChange(e, index)} value={row.yearvolpage} required /></td>
+                            <td><input type="text" style={{width:'100%'}} name="impact" onChange={(e) => handleBestInputChange(e, index)} value={row.impact} required /></td>
+                            <td><input type="text" style={{width:'100%'}} name="doi" onChange={(e) => handleBestInputChange(e, index)} value={row.doi} required /></td>
+                            <td><input type="text" style={{width:'100%'}} name="status" onChange={(e) => handleBestInputChange(e, index)} value={row.status} required /></td>
                         </tr>
                     ))}
                     </tbody>
@@ -321,13 +321,13 @@ const PublicationsForm = () => {
                     {patentData.patentDetails.map((row, index) => (
                         <tr key={index}>
                             <td>{index+1}.</td>
-                            <td><input type="text" name="inventor" onChange={(e) => handlePatentInputChange(e, index)} value={row.inventor} required /></td>
-                            <td><input type="text" name="title" onChange={(e) => handlePatentInputChange(e, index)} value={row.title} required /></td>
-                            <td><input type="text" name="country" onChange={(e) => handlePatentInputChange(e, index)} value={row.country} required /></td>
-                            <td><input type="text" name="number" onChange={(e) => handlePatentInputChange(e, index)} value={row.number} required /></td>
-                            <td><input type="text" name="date_file" onChange={(e) => handlePatentInputChange(e, index)} value={row.date_file} required /></td>
-                            <td><input type="text" name="date_publish" onChange={(e) => handlePatentInputChange(e, index)} value={row.date_publish} required /></td>
-                            <td><input type="text" name="status" onChange={(e) => handlePatentInputChange(e, index)} value={row.status} required /></td>
+                            <td><input type="text" style={{width:'100%'}} name="inventor" onChange={(e) => handlePatentInputChange(e, index)} value={row.inventor} required /></td>
+                            <td><input type="text" style={{width:'100%'}} name="title" onChange={(e) => handlePatentInputChange(e, index)} value={row.title} required /></td>
+                            <td><input type="text" style={{width:'100%'}} name="country" onChange={(e) => handlePatentInputChange(e, index)} value={row.country} required /></td>
+                            <td><input type="text" style={{width:'100%'}} name="number" onChange={(e) => handlePatentInputChange(e, index)} value={row.number} required /></td>
+                            <td><input type="text" style={{width:'100%'}} name="date_file" onChange={(e) => handlePatentInputChange(e, index)} value={row.date_file} required /></td>
+                            <td><input type="text" style={{width:'100%'}} name="date_publish" onChange={(e) => handlePatentInputChange(e, index)} value={row.date_publish} required /></td>
+                            <td><input type="text" style={{width:'100%'}} name="status" onChange={(e) => handlePatentInputChange(e, index)} value={row.status} required /></td>
                         </tr>
                     ))}
                     </tbody>

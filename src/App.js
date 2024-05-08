@@ -13,6 +13,7 @@ import Membership from "./Membership";
 import Supervision from "./Supervision";
 import Contribution from "./Contribution";
 import Refree from "./Refree";
+import Declaration from "./Declaration";
 
 import "./App.css";
 
@@ -35,6 +36,7 @@ function App() {
           <Route path="/Supervision" element={<Supervision />} />
           <Route path="/Contribution" element={<Contribution />} />
           <Route path="/Refree" element={<Refree />} />
+          <Route path="/Declaration" element={<Declaration/>}/>
         </Routes>
       </div>
     </Router>

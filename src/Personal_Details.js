@@ -112,7 +112,7 @@ const PersonalDetailsForm = () => {
     return (
         <div className="Personal_Details" style={{ marginTop: '12rem', marginLeft: '7rem', marginRight: '7rem', marginBottom: '4rem', backgroundColor: '#f5f5f5' }}>
             <h2 style={{ animation: 'blinker 1s linear infinite', textAlign: 'center', color: '#d15f75' }}>Application for Faculty Position</h2>
-            <h7> Welcome {name}!!</h7>  <button onClick={handleLogout}> Logout </button>
+            <h4 style={{marginLeft:'48%'}}> Welcome {name}!!</h4>  <button style={{backgroundColor:'#ddedf7', marginLeft:'94%', backgroundColor: '#6fb85b', color: 'white'}} onClick={handleLogout}> Logout </button>
             {/* Application Form */}
             <form onSubmit={handleApplicationSubmit} id="applicationForm">
                 <fieldset style={{ padding: '1rem', marginBottom: '0.5rem' }}>
