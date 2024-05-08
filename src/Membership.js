@@ -246,7 +246,7 @@ const MembershipForm = () => {
     return (
         <div className="Personal_Details" style={{ marginTop: '12rem', marginLeft: '7rem', marginRight: '7rem', marginBottom: '4rem', backgroundColor: '#f5f5f5' }}>
         <h2 style={{ animation: 'blinker 1s linear infinite', textAlign: 'center', color: '#d15f75' }}>Application for Faculty Position</h2>
-        <h7> Welcome {name}!!</h7>  <button onClick={handleLogout}> Logout </button>
+        <h4 style={{marginLeft:'48%'}}> Welcome {name}!!</h4>  <button style={{backgroundColor:'#ddedf7', marginLeft:'94%', backgroundColor: '#6fb85b', color: 'white'}} onClick={handleLogout}> Logout </button>
         {/* Membership Details */}
         <form onSubmit={handleMembershipSubmit} id="MembershipForm">
             <fieldset style={{ padding: '1rem', marginBottom: '0.5rem' }}>
@@ -263,8 +263,8 @@ const MembershipForm = () => {
                     {membershipData.membershipDetails.map((row, index) => (
                         <tr key={index}>
                             <td>{index+1}.</td>
-                            <td><input type="text" name="name_society" onChange={(e) => handleMembershipInputChange(e, index)} value={row.name_society} required /></td>
-                            <td><input type="text" name="status" onChange={(e) => handleMembershipInputChange(e, index)} value={row.status} required /></td>
+                            <td><input type="text" style={{width:'100%'}} name="name_society" onChange={(e) => handleMembershipInputChange(e, index)} value={row.name_society} required /></td>
+                            <td><input type="text" style={{width:'100%'}} name="status" onChange={(e) => handleMembershipInputChange(e, index)} value={row.status} required /></td>
                         </tr>
                     ))}
                     </tbody>
@@ -291,10 +291,10 @@ const MembershipForm = () => {
                     {trainingData.trainingDetails.map((row, index) => (
                         <tr key={index}>
                             <td>{index+1}.</td>
-                            <td><input type="text" name="type" onChange={(e) => handleTrainingInputChange(e, index)} value={row.type} required /></td>
-                            <td><input type="text" name="organisation" onChange={(e) => handleTrainingInputChange(e, index)} value={row.organisation} required /></td>
-                            <td><input type="text" name="year" onChange={(e) => handleTrainingInputChange(e, index)} value={row.year} required /></td>
-                            <td><input type="text" name="duration" onChange={(e) => handleTrainingInputChange(e, index)} value={row.duration} required /></td>
+                            <td><input type="text" style={{width:'100%'}} name="type" onChange={(e) => handleTrainingInputChange(e, index)} value={row.type} required /></td>
+                            <td><input type="text" style={{width:'100%'}} name="organisation" onChange={(e) => handleTrainingInputChange(e, index)} value={row.organisation} required /></td>
+                            <td><input type="text" style={{width:'100%'}} name="year" onChange={(e) => handleTrainingInputChange(e, index)} value={row.year} required /></td>
+                            <td><input type="text" style={{width:'100%'}} name="duration" onChange={(e) => handleTrainingInputChange(e, index)} value={row.duration} required /></td>
                         </tr>
                     ))}
                     </tbody>
@@ -320,9 +320,9 @@ const MembershipForm = () => {
                     {awardData.awardDetails.map((row, index) => (
                         <tr key={index}>
                             <td>{index+1}.</td>
-                            <td><input type="text" name="name" onChange={(e) => handleAwardInputChange(e, index)} value={row.name} required /></td>
-                            <td><input type="text" name="awarded_by" onChange={(e) => handleAwardInputChange(e, index)} value={row.awarded_by} required /></td>
-                            <td><input type="text" name="year" onChange={(e) => handleAwardInputChange(e, index)} value={row.year} required /></td>
+                            <td><input type="text" style={{width:'100%'}} name="name" onChange={(e) => handleAwardInputChange(e, index)} value={row.name} required /></td>
+                            <td><input type="text" style={{width:'100%'}} name="awarded_by" onChange={(e) => handleAwardInputChange(e, index)} value={row.awarded_by} required /></td>
+                            <td><input type="text" style={{width:'100%'}} name="year" onChange={(e) => handleAwardInputChange(e, index)} value={row.year} required /></td>
                         </tr>
                     ))}
                     </tbody>
@@ -351,12 +351,12 @@ const MembershipForm = () => {
                     {sponsData.sponsDetails.map((row, index) => (
                         <tr key={index}>
                             <td>{index+1}.</td>
-                            <td><input type="text" name="agency" onChange={(e) => handleSponsInputChange(e, index)} value={row.agency} required /></td>
-                            <td><input type="text" name="title" onChange={(e) => handleSponsInputChange(e, index)} value={row.title} required /></td>
-                            <td><input type="text" name="amount" onChange={(e) => handleSponsInputChange(e, index)} value={row.amount} required /></td>
-                            <td><input type="text" name="period" onChange={(e) => handleSponsInputChange(e, index)} value={row.period} required /></td>
-                            <td><input type="text" name="role" onChange={(e) => handleSponsInputChange(e, index)} value={row.role} required /></td>
-                            <td><input type="text" name="status" onChange={(e) => handleSponsInputChange(e, index)} value={row.status} required /></td>
+                            <td><input type="text" style={{width:'100%'}} name="agency" onChange={(e) => handleSponsInputChange(e, index)} value={row.agency} required /></td>
+                            <td><input type="text" style={{width:'100%'}} name="title" onChange={(e) => handleSponsInputChange(e, index)} value={row.title} required /></td>
+                            <td><input type="text" style={{width:'100%'}} name="amount" onChange={(e) => handleSponsInputChange(e, index)} value={row.amount} required /></td>
+                            <td><input type="text" style={{width:'100%'}} name="period" onChange={(e) => handleSponsInputChange(e, index)} value={row.period} required /></td>
+                            <td><input type="text" style={{width:'100%'}} name="role" onChange={(e) => handleSponsInputChange(e, index)} value={row.role} required /></td>
+                            <td><input type="text" style={{width:'100%'}} name="status" onChange={(e) => handleSponsInputChange(e, index)} value={row.status} required /></td>
                         </tr>
                     ))}
                     </tbody>
@@ -385,12 +385,12 @@ const MembershipForm = () => {
                     {consultData.consultDetails.map((row, index) => (
                         <tr key={index}>
                             <td>{index+1}.</td>
-                            <td><input type="text" name="organisation" onChange={(e) => handleConsultInputChange(e, index)} value={row.organisation} required /></td>
-                            <td><input type="text" name="title" onChange={(e) => handleConsultInputChange(e, index)} value={row.title} required /></td>
-                            <td><input type="text" name="amount" onChange={(e) => handleConsultInputChange(e, index)} value={row.amount} required /></td>
-                            <td><input type="text" name="period" onChange={(e) => handleConsultInputChange(e, index)} value={row.period} required /></td>
-                            <td><input type="text" name="role" onChange={(e) => handleConsultInputChange(e, index)} value={row.role} required /></td>
-                            <td><input type="text" name="status" onChange={(e) => handleConsultInputChange(e, index)} value={row.status} required /></td>
+                            <td><input type="text" style={{width:'100%'}} name="organisation" onChange={(e) => handleConsultInputChange(e, index)} value={row.organisation} required /></td>
+                            <td><input type="text" style={{width:'100%'}} name="title" onChange={(e) => handleConsultInputChange(e, index)} value={row.title} required /></td>
+                            <td><input type="text" style={{width:'100%'}} name="amount" onChange={(e) => handleConsultInputChange(e, index)} value={row.amount} required /></td>
+                            <td><input type="text" style={{width:'100%'}} name="period" onChange={(e) => handleConsultInputChange(e, index)} value={row.period} required /></td>
+                            <td><input type="text" style={{width:'100%'}} name="role" onChange={(e) => handleConsultInputChange(e, index)} value={row.role} required /></td>
+                            <td><input type="text" style={{width:'100%'}} name="status" onChange={(e) => handleConsultInputChange(e, index)} value={row.status} required /></td>
                         </tr>
                     ))}
                     </tbody>

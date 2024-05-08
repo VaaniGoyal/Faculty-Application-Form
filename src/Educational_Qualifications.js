@@ -218,7 +218,7 @@ const EducationalQualificationsForm = () => {
     return (
         <div className="Educational_Qualifications" style={{ marginTop: '12rem', marginLeft: '7rem', marginRight: '7rem', marginBottom: '4rem', backgroundColor: '#f5f5f5' }}>
             <h2 style={{ animation: 'blinker 1s linear infinite', textAlign: 'center', color: '#d15f75' }}>Educational Qualifications</h2>
-            <h7> Welcome {name}!!</h7>  <button onClick={handleLogout}> Logout </button>
+            <h4 style={{marginLeft:'48%'}}> Welcome {name}!!</h4>  <button style={{backgroundColor:'#ddedf7', marginLeft:'94%', backgroundColor: '#6fb85b', color: 'white'}} onClick={handleLogout}> Logout </button>
             {/* PHD Details Form */}
             <form onSubmit={handlePhdSubmit} id="PhdForm">
                 <fieldset style={{ padding: '1rem', marginBottom: '0.5rem' }}>
@@ -373,14 +373,14 @@ const EducationalQualificationsForm = () => {
                     <tbody>
                     {additionalData.additionalDetails.map((row, index) => (
                         <tr key={index}>
-                            <td><input type="text" name="degree" onChange={(e) => handleAdditionalInputChange(e, index)} value={row.degree} required /></td>
-                            <td><input type="text" name="university" onChange={(e) => handleAdditionalInputChange(e, index)} value={row.university} required /></td>
-                            <td><input type="text" name="branch" onChange={(e) => handleAdditionalInputChange(e, index)} value={row.branch} required /></td>
-                            <td><input type="text" name="year_join" onChange={(e) => handleAdditionalInputChange(e, index)} value={row.year_join} required /></td>
-                            <td><input type="text" name="year_complete" onChange={(e) => handleAdditionalInputChange(e, index)} value={row.year_complete} required /></td>
-                            <td><input type="text" name="duration" onChange={(e) => handleAdditionalInputChange(e, index)} value={row.duration} required /></td>
-                            <td><input type="text" name="cgpa" onChange={(e) => handleAdditionalInputChange(e, index)} value={row.cgpa} required /></td>
-                            <td><input type="text" name="division" onChange={(e) => handleAdditionalInputChange(e, index)} value={row.division} required /></td>
+                            <td><input type="text" style={{width:'100%'}} name="degree" onChange={(e) => handleAdditionalInputChange(e, index)} value={row.degree} required /></td>
+                            <td><input type="text" style={{width:'100%'}} name="university" onChange={(e) => handleAdditionalInputChange(e, index)} value={row.university} required /></td>
+                            <td><input type="text" style={{width:'100%'}} name="branch" onChange={(e) => handleAdditionalInputChange(e, index)} value={row.branch} required /></td>
+                            <td><input type="text" style={{width:'100%'}} name="year_join" onChange={(e) => handleAdditionalInputChange(e, index)} value={row.year_join} required /></td>
+                            <td><input type="text" style={{width:'100%'}} name="year_complete" onChange={(e) => handleAdditionalInputChange(e, index)} value={row.year_complete} required /></td>
+                            <td><input type="text" style={{width:'100%'}} name="duration" onChange={(e) => handleAdditionalInputChange(e, index)} value={row.duration} required /></td>
+                            <td><input type="text" style={{width:'100%'}} name="cgpa" onChange={(e) => handleAdditionalInputChange(e, index)} value={row.cgpa} required /></td>
+                            <td><input type="text" style={{width:'100%'}} name="division" onChange={(e) => handleAdditionalInputChange(e, index)} value={row.division} required /></td>
                         </tr>
                     ))}
                     </tbody>
