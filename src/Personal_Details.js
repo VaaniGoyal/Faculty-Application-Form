@@ -131,16 +131,29 @@ const PersonalDetailsForm = () => {
             reader.readAsDataURL(file);
         }
     };
-
     const viewIdProof = () => {
-        if (idProofUrl) {
-            // Open the PDF in a new tab using an <iframe>
-            const newWindow = window.open();
-            newWindow.document.body.innerHTML = `<iframe src="${idProofUrl}" width="100%" height="100%"></iframe>`;
-        } else {
-            alert("Please upload an ID proof first.");
-        }
-    };
+        if(idProofUrl) {
+            // Decode the Base64 data to a Uint8Array
+            const binaryData = atob(idProofUrl.split(',')[1]);
+            // Create a Blob from the binary data
+            const array = [];
+            for(let i=0;i<binaryData.length;i++){
+                array.push(binaryData.charCodeAt(i));
+            }
+            const blob = new Blob([new Uint8Array(array)], {type: 'application/pdf'});
+            // Generate a URL for the Blob
+            const url = URL.createObjectURL(blob);
+            // Open the PDF in a new tab using the generated URL
+            const newWindow = window.open(url, '_blank');
+            if(!newWindow){
+                // If pop-up blocking is enabled, provide a message to the user
+                alert("Please allow pop-ups for this site to view the PDF.");
+            }else{
+                alert("Please upload an ID proof first.");
+
+            }
+        };
+    }
 
 
 
@@ -209,6 +222,14 @@ const PersonalDetailsForm = () => {
                             <label htmlFor="category">Category:  </label>
                             <input type="text" id="category" name="category" onChange={handlePersonalInputChange} value={personalData.category} required /><br /><br />
                         </div>
+                        <div style={{ width: '45%' }}>
+                            {/* Other input fields */}
+                            <label htmlFor="user_image">Upload Image: </label>
+                            <input type="file" id="user_image" name="user_image" onChange={handleImageUpload} accept=".jpg, .jpeg, .png" /><br /><br />
+                            {personalData.image && (
+                                <img src={personalData.image} alt="Uploaded" style={{ maxWidth: '100px', maxHeight: '100px' }} />
+                            )}
+                        </div>
 
                         <div style={{ width: '45%' }}>
                             <label htmlFor="l_name">Last Name:  </label>
@@ -231,11 +252,11 @@ const PersonalDetailsForm = () => {
                                 <option value="Other">Other</option>
                             </select><br /><br />
                             <label htmlFor="id_proof">Identity Proof:  </label>
-                            <label htmlFor="id_proof_file">Upload ID Proof:</label>
-            <input type="file" id="id_proof_file" name="id_proof_file" onChange={handleIdProofUpload} accept=".pdf" /><br /><br />
-            <button onClick={viewIdProof}>View ID Proof</button>
-                            
-                     </div>
+                                <input type="text" id="id_proof" name="id_proof" onChange={handlePersonalInputChange} value={personalData.id_proof} required /><br /><br />
+                                <label htmlFor="id_proof_file">Upload ID Proof:</label>
+                                <input type="file" id="id_proof_file" name="id_proof_file" onChange={handleIdProofUpload} accept=".pdf" /><br /><br />
+                                <button onClick={viewIdProof}>View ID Proof</button>
+                        </div>
                     </div>
                 </fieldset>
                 <fieldset style={{ padding: '1rem', marginTop: '0.5rem' }}> {/* Added marginTop */}
