@@ -143,7 +143,7 @@ const PersonalDetailsForm = () => {
                             </select><br /><br />
                         </div>
                     </div>
-                    <button type="submit" style={{ marginLeft: 'auto', marginRight: 'auto', display: 'block', marginTop: '1rem', backgroundColor: '#6fb85b', color: 'white' }}>Save</button>
+                    <button onClick={handleApplicationSubmit}type="submit" style={{ marginLeft: 'auto', marginRight: 'auto', display: 'block', marginTop: '1rem', backgroundColor: '#6fb85b', color: 'white' }}>Save</button>
                 </fieldset>
             </form>
 
@@ -216,9 +216,15 @@ const PersonalDetailsForm = () => {
                         <label htmlFor="alt_email">Alternate Email:  </label>
                         <input type="email" id="alt_email" name="alt_email" onChange={handlePersonalInputChange} value={personalData.alt_email} /><br /><br />
                     </div>
+                    <div style={{ width: '45%', marginLeft: '10px' }}>
+                        <label htmlFor="c_address" style={{fontStyle: 'bold'}}>Current Address:  </label>
+                        <input type="text" id="c_address" name="c_address" onChange={handlePersonalInputChange} value={personalData.c_address} required /><br /><br />
+                        <label htmlFor="p_address">Permanent Address:  </label>
+                        <input type="text" id="p_address" name="p_address" onChange={handlePersonalInputChange} value={personalData.p_address} /><br /><br />
+                    </div>
                     </div>
                 </fieldset>
-                <button type="submit" style={{ marginLeft: 'auto', marginRight: 'auto', display: 'block', marginTop: '1rem', backgroundColor: '#6fb85b', color: 'white' }}>Save & Next</button>
+                <button onClick={handlePersonalSubmit} type="submit" style={{ marginLeft: 'auto', marginRight: 'auto', display: 'block', marginTop: '1rem', backgroundColor: '#6fb85b', color: 'white' }}>Save & Next</button>
             </form>
         </div>   
     );

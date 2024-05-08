@@ -18,7 +18,8 @@ supervision page-------add info in phd_supervisions(along with app_number)
                 add info in master_supervisions(along with app_number) 
                 add info in bachelor_supervisions(along with app_number)                               
 contribution page-------add info in contributions table(contains all text paragraphs along with app_number)                
-                add info in referees table (along with app_number)
+                
 
 next page--upload pdf and photo(yet to be done in backend)----but frontend can be made
+                add info in referees table (along with app_number)
 next page--shows pdf having all info given bu user available for download(yet to be done in backend) (but frontend can be made)
