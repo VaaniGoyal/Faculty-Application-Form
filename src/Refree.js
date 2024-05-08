@@ -25,7 +25,8 @@ const RefereeForm = () => {
                 payslipDoc: null,
                 nocDoc: null,
                 postPhdExpDoc: null,
-                signature: null
+                signature: null, 
+                otherDoc: null
             }
         ]
     });
@@ -65,30 +66,37 @@ const RefereeForm = () => {
                     payslipDoc: null,
                     nocDoc: null,
                     postPhdExpDoc: null,
-                    signature: null
+                    signature: null,
+                    otherDoc: null
                 }
             ]
         });
     };
-
     const handleSubmit = async () => {
         try {
             for (let i = 0; i < formData.formDetails.length; i++) {
                 const row = formData.formDetails[i];
                 const formDataToSend = new FormData();
+    
+                // Append referee information only, excluding file fields
                 Object.entries(row).forEach(([key, value]) => {
+                    if (value instanceof FileList) {
+                        // If the value is a file field, skip it
+                        return;
+                    }
                     formDataToSend.append(key, value);
                 });
+    
+                // Send the formDataToSend object to the backend API
                 const response = await axios.post("http://localhost:3000/api/other/addReferees", formDataToSend);
                 console.log(response.data);
             }
-            // Uncomment and implement navigation logic here
             // navigate('/New_page');
         } catch (error) {
             console.error("Error submitting referee details:", error);
         }
     };
-
+    
     const handleLogout = async () => {
         navigate('/Login_Page');
     }
@@ -99,36 +107,7 @@ const RefereeForm = () => {
             <h7> Welcome {name}!!</h7>  <button onClick={handleLogout}> Logout </button>
 
             <form onSubmit={handleSubmit} id="RefereeForm">
-                <fieldset style={{ padding: '1rem', marginBottom: '0.5rem' }}>
-                    <legend style={{ backgroundColor: '#e1f0d8', color: '#54773c', padding: '0.5rem', borderRadius: '0.5rem', width: '100%', fontWeight: 'bold' }}>Referees *</legend>
-                    <table style={{ width: '100%', borderCollapse: 'collapse' }}>
-                        <thead>
-                            <tr>
-                                <th>Name</th>
-                                <th>Position</th>
-                                <th>Association with Referee</th>
-                                <th>Organization/Institution</th>
-                                <th>e-mail</th>
-                                <th>Contact No.</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {formData.formDetails.map((row, index) => (
-                                <tr key={index}>
-                                    <td><input type="text" name="name" onChange={(e) => handleInputChange(e, index)} value={row.name} required /></td>
-                                    <td><input type="text" name="position" onChange={(e) => handleInputChange(e, index)} value={row.position} required /></td>
-                                    <td><input type="text" name="association" onChange={(e) => handleInputChange(e, index)} value={row.association} required /></td>
-                                    <td><input type="text" name="organisation" onChange={(e) => handleInputChange(e, index)} value={row.organisation} required /></td>
-                                    <td><input type="text" name="email" onChange={(e) => handleInputChange(e, index)} value={row.email} required /></td>
-                                    <td><input type="text" name="contact" onChange={(e) => handleInputChange(e, index)} value={row.contact} required /></td>
-                                </tr>
-                            ))}
-                        </tbody>
-                    </table>
-                    <button onClick={handleAddMore}>Add More</button>
-                    <button type="button" onClick={handleSubmit}>Save </button>
-                </fieldset>
-                <fieldset>
+            <fieldset>
                     <legend style={{ backgroundColor: '#e1f0d8', color: '#54773c', padding: '0.5rem', borderRadius: '0.5rem', width: '100%', fontWeight: 'bold' }}>Upload The Following Documents*</legend>
                     {formData.formDetails.map((row, index) => (
                         <div key={index} style={{ marginBottom: '1rem' }}>
@@ -214,13 +193,42 @@ const RefereeForm = () => {
                             <h3 style={{color: '#42708f', backgroundColor:'#ddedf7'}}> UPLOAD ANY OTHER DOCUMENT</h3>
                                 <p style={{color:'#43862a'}}>Upload any other relevant document in a single PDF (For example award certificate, experience certificate etc) . If there are multiple documents, combine all the documents in a single PDF less than 1MB.</p>
                                 <div>
-                                    <input type="file" accept=".jpg" name="signature" onChange={(e) => handleFileChange(e, index, 'signature')} required />
-                                    {row.signature && <a href={URL.createObjectURL(row.signature)} target="_blank" rel="noreferrer">View Uploaded File</a>}
+                                    <input type="file" accept=".pdf" name="otherDoc" onChange={(e) => handleFileChange(e, index, 'otherDoc')} required />
+                                    {row.otherDoc && <a href={URL.createObjectURL(row.otherDoc)} target="_blank" rel="noreferrer">View Uploaded File</a>}
                                 </div>
                             </div>
                         </div>
                         
                     ))}
+                </fieldset>
+                <fieldset style={{ padding: '1rem', marginBottom: '0.5rem' }}>
+                    <legend style={{ backgroundColor: '#e1f0d8', color: '#54773c', padding: '0.5rem', borderRadius: '0.5rem', width: '100%', fontWeight: 'bold' }}>Referees *</legend>
+                    <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Position</th>
+                                <th>Association with Referee</th>
+                                <th>Organization/Institution</th>
+                                <th>e-mail</th>
+                                <th>Contact No.</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {formData.formDetails.map((row, index) => (
+                                <tr key={index}>
+                                    <td><input type="text" name="name" onChange={(e) => handleInputChange(e, index)} value={row.name} required /></td>
+                                    <td><input type="text" name="position" onChange={(e) => handleInputChange(e, index)} value={row.position} required /></td>
+                                    <td><input type="text" name="association" onChange={(e) => handleInputChange(e, index)} value={row.association} required /></td>
+                                    <td><input type="text" name="organisation" onChange={(e) => handleInputChange(e, index)} value={row.organisation} required /></td>
+                                    <td><input type="text" name="email" onChange={(e) => handleInputChange(e, index)} value={row.email} required /></td>
+                                    <td><input type="text" name="contact" onChange={(e) => handleInputChange(e, index)} value={row.contact} required /></td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                    <button onClick={handleAddMore}>Add More</button>
+                    <button type="button" onClick={handleSubmit}>Save </button>
                 </fieldset>
             </form>
         </div>
