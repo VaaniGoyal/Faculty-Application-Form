@@ -72,24 +72,15 @@ const RefereeForm = () => {
             ]
         });
     };
+    
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
             for (let i = 0; i < formData.formDetails.length; i++) {
                 const row = formData.formDetails[i];
-                const formDataToSend = new FormData();
-    
-                // Append referee information only, excluding file fields
-                Object.entries(row).forEach(([key, value]) => {
-                    if (value instanceof FileList) {
-                        // If the value is a file field, skip it
-                        return;
-                    }
-                    formDataToSend.append(key, value);
-                });
     
                 // Send the formDataToSend object to the backend API
-                const response = await axios.post("http://localhost:3000/api/other/addReferees", formDataToSend);
+                const response = await axios.post("http://localhost:3000/api/other/addReferees", row);
                 console.log(response.data);
             }
             alert("Information Entered Successfully");
