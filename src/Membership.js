@@ -35,7 +35,8 @@ const MembershipForm = () => {
             ]
         });
     };
-    const handleMembershipSubmit = async () => {
+    const handleMembershipSubmit = async (e) => {
+        e.preventDefault();
         try {
             // Iterate over each row in schoolDetails array
             for (let i = 0; i < membershipData.membershipDetails.length; i++) {
@@ -64,9 +65,22 @@ const MembershipForm = () => {
     const handleTrainingInputChange = (e, index) => {
         const { name, value } = e.target;
         const updatedTrainingData = [...trainingData.trainingDetails];
-        updatedTrainingData[index][name] = value;
+        // Check which attributes should be integers
+        switch (name) {
+            // Add any attributes that should be integers to this list
+            // For example, if 'duration' should be an integer:
+            case "duration":
+            case "year":
+                // Parse the value to an integer using parseInt
+                updatedTrainingData[index][name] = parseInt(value, 10);
+                break;
+            default:
+                // For attributes that should not be integers, use the value as is
+                updatedTrainingData[index][name] = value;
+        }
         setTrainingData({ ...trainingData, trainingDetails: updatedTrainingData });
     };
+    
     const handleAddMore2 = () => {
         setTrainingData({
             ...trainingData,
@@ -82,7 +96,8 @@ const MembershipForm = () => {
             ]
         });
     };
-    const handleTrainingSubmit = async () => {
+    const handleTrainingSubmit = async (e) => {
+        e.preventDefault();
         try {
             // Iterate over each row in schoolDetails array
             for (let i = 0; i < trainingData.trainingDetails.length; i++) {
@@ -110,9 +125,21 @@ const MembershipForm = () => {
     const handleAwardInputChange = (e, index) => {
         const { name, value } = e.target;
         const updatedAwardData = [...awardData.awardDetails];
-        updatedAwardData[index][name] = value;
+        // Check which attributes should be integers
+        switch (name) {
+            // Add any attributes that should be integers to this list
+            // For example, if 'year' should be an integer:
+            case "year":
+                // Parse the value to an integer using parseInt
+                updatedAwardData[index][name] = parseInt(value, 10);
+                break;
+            default:
+                // For attributes that should not be integers, use the value as is
+                updatedAwardData[index][name] = value;
+        }
         setAwardData({ ...awardData, awardDetails: updatedAwardData });
     };
+    
     const handleAddMore3 = () => {
         setAwardData({
             ...awardData,
@@ -127,7 +154,8 @@ const MembershipForm = () => {
             ]
         });
     };
-    const handleAwardSubmit = async () => {
+    const handleAwardSubmit = async (e) => {
+        e.preventDefault();
         try {
             // Iterate over each row in schoolDetails array
             for (let i = 0; i < awardData.awardDetails.length; i++) {
@@ -158,9 +186,22 @@ const MembershipForm = () => {
     const handleSponsInputChange = (e, index) => {
         const { name, value } = e.target;
         const updatedSponsData = [...sponsData.sponsDetails];
-        updatedSponsData[index][name] = value;
+        // Check which attributes should be integers
+        switch (name) {
+            // Add any attributes that should be integers to this list
+            // For example, if 'amount' should be an integer:
+            case "amount":
+            case "period":
+                // Parse the value to an integer using parseInt
+                updatedSponsData[index][name] = parseInt(value, 10);
+                break;
+            default:
+                // For attributes that should not be integers, use the value as is
+                updatedSponsData[index][name] = value;
+        }
         setSponsData({ ...sponsData, sponsDetails: updatedSponsData });
     };
+    
     const handleAddMore4 = () => {
         setSponsData({
             ...sponsData,
@@ -178,7 +219,8 @@ const MembershipForm = () => {
             ]
         });
     };
-    const handleSponsSubmit = async () => {
+    const handleSponsSubmit = async (e) => {
+        e.preventDefault();
         try {
             // Iterate over each row in schoolDetails array
             for (let i = 0; i < sponsData.sponsDetails.length; i++) {
@@ -209,9 +251,22 @@ const MembershipForm = () => {
     const handleConsultInputChange = (e, index) => {
         const { name, value } = e.target;
         const updatedConsultData = [...consultData.consultDetails];
-        updatedConsultData[index][name] = value;
+        // Check which attributes should be integers
+        switch (name) {
+            // Add any attributes that should be integers to this list
+            // For example, if 'duration' should be an integer:
+            case "amount":
+            case "period":
+                // Parse the value to an integer using parseInt
+                updatedConsultData[index][name] = parseInt(value, 10);
+                break;
+            default:
+                // For attributes that should not be integers, use the value as is
+                updatedConsultData[index][name] = value;
+        }
         setConsultData({ ...consultData, consultDetails: updatedConsultData });
     };
+    
     const handleAddMore5 = () => {
         setConsultData({
             ...consultData,
@@ -229,7 +284,8 @@ const MembershipForm = () => {
             ]
         });
     };
-    const handleConsultSubmit = async () => {
+    const handleConsultSubmit = async (e) => {
+        e.preventDefault();
         try {
             // Iterate over each row in schoolDetails array
             for (let i = 0; i < consultData.consultDetails.length; i++) {

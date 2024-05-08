@@ -235,7 +235,7 @@ const PersonalDetailsForm = () => {
             <input type="file" id="id_proof_file" name="id_proof_file" onChange={handleIdProofUpload} accept=".pdf" /><br /><br />
             <button onClick={viewIdProof}>View ID Proof</button>
                             
-                        </div>
+                     </div>
                     </div>
                 </fieldset>
                 <fieldset style={{ padding: '1rem', marginTop: '0.5rem' }}> {/* Added marginTop */}

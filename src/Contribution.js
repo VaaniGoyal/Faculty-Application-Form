@@ -32,6 +32,9 @@ const Contribution = () => {
             console.error("Error submitting contributions form:", error);
         }
     };
+    const handleNext = async (e) => {
+        navigate('/Refree');
+    }
     const handleLogout = async (e) => {
         localStorage.clear();
         navigate('/Login_Page');
@@ -41,7 +44,7 @@ const Contribution = () => {
 
             <h2 style={{ animation: 'blinker 1s linear infinite', textAlign: 'center', color: '#d15f75' }}>Apply For Faculty Position</h2>
             <h7> Welcome {name}!!</h7> <button onClick={handleLogout}> Logout </button>
-
+            <button onClick={handleNext}>Next</button>
         </div>
     );
 };

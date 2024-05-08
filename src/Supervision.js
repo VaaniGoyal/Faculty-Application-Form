@@ -22,9 +22,20 @@ const SupervisionForm = () => {
     const handlePHDInputChange = (e, index) => {
         const { name, value } = e.target;
         const updatedPHDData = [...phdData.phdDetails];
-        updatedPHDData[index][name] = value;
+        // Check which attributes should be integers
+        switch (name) {
+            // Add any attributes that should be integers to this list
+            // For example, if 'year' should be an integer:
+            case "year":
+                // Parse the value to an integer using parseInt
+                updatedPHDData[index][name] = parseInt(value, 10);
+                break;
+            default:
+                // For attributes that should not be integers, use the value as is
+                updatedPHDData[index][name] = value;
+        }
         setPHDData({ ...phdData, phdDetails: updatedPHDData });
-    };
+    };    
     const handleAddMore1 = () => {
         setPHDData({
             ...phdData,
@@ -41,7 +52,8 @@ const SupervisionForm = () => {
             ]
         });
     };
-    const handlePHDSubmit = async () => {
+    const handlePHDSubmit = async (e) => {
+        e.preventDefault();
         try {
             // Iterate over each row in schoolDetails array
             for (let i = 0; i < phdData.phdDetails.length; i++) {
@@ -71,9 +83,21 @@ const SupervisionForm = () => {
     const handleMasterInputChange = (e, index) => {
         const { name, value } = e.target;
         const updatedMasterData = [...masterData.masterDetails];
-        updatedMasterData[index][name] = value;
+        // Check which attributes should be integers
+        switch (name) {
+            // Add any attributes that should be integers to this list
+            // For example, if 'year' should be an integer:
+            case "year":
+                // Parse the value to an integer using parseInt
+                updatedMasterData[index][name] = parseInt(value, 10);
+                break;
+            default:
+                // For attributes that should not be integers, use the value as is
+                updatedMasterData[index][name] = value;
+        }
         setMasterData({ ...masterData, masterDetails: updatedMasterData });
     };
+    
     const handleAddMore2 = () => {
         setMasterData({
             ...masterData,
@@ -90,7 +114,8 @@ const SupervisionForm = () => {
             ]
         });
     };
-    const handleMasterSubmit = async () => {
+    const handleMasterSubmit = async (e) => {
+        e.preventDefault();
         try {
             // Iterate over each row in schoolDetails array
             for (let i = 0; i < masterData.masterDetails.length; i++) {
@@ -120,9 +145,21 @@ const SupervisionForm = () => {
     const handleBachInputChange = (e, index) => {
         const { name, value } = e.target;
         const updatedBachData = [...bachData.bachDetails];
-        updatedBachData[index][name] = value;
+        // Check which attributes should be integers
+        switch (name) {
+            // Add any attributes that should be integers to this list
+            // For example, if 'year' should be an integer:
+            case "year":
+                // Parse the value to an integer using parseInt
+                updatedBachData[index][name] = parseInt(value, 10);
+                break;
+            default:
+                // For attributes that should not be integers, use the value as is
+                updatedBachData[index][name] = value;
+        }
         setBachData({ ...bachData, bachDetails: updatedBachData });
     };
+    
     const handleAddMore3 = () => {
         setBachData({
             ...bachData,
@@ -139,7 +176,8 @@ const SupervisionForm = () => {
             ]
         });
     };
-    const handleBachSubmit = async () => {
+    const handleBachSubmit = async (e) => {
+        e.preventDefault();
         try {
             // Iterate over each row in schoolDetails array
             for (let i = 0; i < bachData.bachDetails.length; i++) {

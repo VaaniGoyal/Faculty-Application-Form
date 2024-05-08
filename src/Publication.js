@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
+
 const PublicationsForm = () => {
     const app_number = localStorage.getItem("app_number");
     const name = localStorage.getItem("name");
@@ -20,7 +21,24 @@ const PublicationsForm = () => {
     });
     const handlePublicationInputChange = (e) => {
         const { name, value } = e.target;
-        setPublicationData({ ...publicationData, [name]: value });
+        let parsedValue;
+        // Check which attributes should be integers
+        switch (name) {
+            case "intj_paper":
+            case "natj_paper":
+            case "intc_paper":
+            case "natc_paper":
+            case "no_patent":
+            case "no_book":
+            case "no_bookch":
+                // Parse the value to an integer using parseInt
+                parsedValue = parseInt(value, 10);
+                break;
+            default:
+                // For attributes that should not be integers, use the value as is
+                parsedValue = value;
+        }
+        setPublicationData({ ...publicationData, [name]: parsedValue });
     };
     const handlePublicationSubmit = async (e) => {
         e.preventDefault();
@@ -34,6 +52,7 @@ const PublicationsForm = () => {
     };
     /*----------------------BEST PUBLICATIONS DATA--------------------------------------------------*/
     const pubId = parseInt(localStorage.getItem("pub_id"), 10);
+    console.log(pubId);
     const [bestData, setBestData] = useState({
         bestDetails: [
             {
@@ -51,9 +70,20 @@ const PublicationsForm = () => {
     const handleBestInputChange = (e, index) => {
         const { name, value } = e.target;
         const updatedBestData = [...bestData.bestDetails];
-        updatedBestData[index][name] = value;
+        // Check which attributes should be integers
+        switch (name) {
+            // Add any attributes that should be integers to this list
+            case "doi":
+                // Parse the value to an integer using parseInt
+                updatedBestData[index][name] = parseInt(value, 10);
+                break;
+            default:
+                // For attributes that should not be integers, use the value as is
+                updatedBestData[index][name] = value;
+        }
         setBestData({ ...bestData, bestDetails: updatedBestData });
     };
+    
     const handleAddMore1 = () => {
         setBestData({
             ...bestData,
@@ -72,7 +102,8 @@ const PublicationsForm = () => {
             ]
         });
     };
-    const handleBestSubmit = async () => {
+    const handleBestSubmit = async (e) => {
+        e.preventDefault();
         try {
             // Iterate over each row in schoolDetails array
             for (let i = 0; i < bestData.bestDetails.length; i++) {
@@ -104,9 +135,21 @@ const PublicationsForm = () => {
     const handlePatentInputChange = (e, index) => {
         const { name, value } = e.target;
         const updatedPatentData = [...patentData.patentDetails];
-        updatedPatentData[index][name] = value;
+        // Check which attributes should be integers
+        switch (name) {
+            // Add any attributes that should be integers to this list
+            // For example, if 'year' should be an integer:
+            case "number":
+                // Parse the value to an integer using parseInt
+                updatedPatentData[index][name] = parseInt(value, 10);
+                break;
+            default:
+                // For attributes that should not be integers, use the value as is
+                updatedPatentData[index][name] = value;
+        }
         setPatentData({ ...patentData, patentDetails: updatedPatentData });
     };
+    
     const handleAddMore2 = () => {
         setPatentData({
             ...patentData,
@@ -125,7 +168,8 @@ const PublicationsForm = () => {
             ]
         });
     };
-    const handlePatentSubmit = async () => {
+    const handlePatentSubmit = async (e) => {
+        e.preventDefault();
         try {
             // Iterate over each row in schoolDetails array
             for (let i = 0; i < patentData.patentDetails.length; i++) {
@@ -154,9 +198,21 @@ const PublicationsForm = () => {
     const handleBookInputChange = (e, index) => {
         const { name, value } = e.target;
         const updatedBookData = [...bookData.bookDetails];
-        updatedBookData[index][name] = value;
+        // Check which attributes should be integers
+        switch (name) {
+            // Add any attributes that should be integers to this list
+            // For example, if 'year' should be an integer:
+            case "year":
+                // Parse the value to an integer using parseInt
+                updatedBookData[index][name] = parseInt(value, 10);
+                break;
+            default:
+                // For attributes that should not be integers, use the value as is
+                updatedBookData[index][name] = value;
+        }
         setBookData({ ...bookData, bookDetails: updatedBookData });
     };
+    
     const handleAddMore3 = () => {
         setBookData({
             ...bookData,
@@ -172,7 +228,8 @@ const PublicationsForm = () => {
             ]
         });
     };
-    const handleBookSubmit = async () => {
+    const handleBookSubmit = async (e) => {
+        e.preventDefault();
         try {
             // Iterate over each row in schoolDetails array
             for (let i = 0; i < bookData.bookDetails.length; i++) {
@@ -201,9 +258,21 @@ const PublicationsForm = () => {
     const handleBookChapterInputChange = (e, index) => {
         const { name, value } = e.target;
         const updatedBookChapterData = [...bookChapterData.bookChapterDetails];
-        updatedBookChapterData[index][name] = value;
+        // Check which attributes should be integers
+        switch (name) {
+            // Add any attributes that should be integers to this list
+            // For example, if 'page_number' should be an integer:
+            case "year":
+                // Parse the value to an integer using parseInt
+                updatedBookChapterData[index][name] = parseInt(value, 10);
+                break;
+            default:
+                // For attributes that should not be integers, use the value as is
+                updatedBookChapterData[index][name] = value;
+        }
         setBookChapterData({ ...bookChapterData, bookChapterDetails: updatedBookChapterData });
     };
+    
     const handleAddMore4 = () => {
         setBookChapterData({
             ...bookChapterData,
@@ -219,7 +288,8 @@ const PublicationsForm = () => {
             ]
         });
     };
-    const handleBookChapterSubmit = async () => {
+    const handleBookChapterSubmit = async (e) => {
+        e.preventDefault();
         try {
             // Iterate over each row in schoolDetails array
             for (let i = 0; i < bookChapterData.bookChapterDetails.length; i++) {
@@ -268,6 +338,7 @@ const PublicationsForm = () => {
                         <input type="text" id="google_link" name="google_link" onChange={handlePublicationInputChange} value={publicationData.google_link} /><br /><br />
                     </div>
                 </div>
+                <button type="button" onClick={handlePublicationSubmit}> Save </button>
             </fieldset>
         </form>
         {/* Best Publications Details */}
@@ -303,7 +374,7 @@ const PublicationsForm = () => {
                     </tbody>
                     </table>
                     <button type="button" onClick={handleAddMore1}>Add More</button>
-                    <button type="submit" onClick={handleBestSubmit}> Save </button>
+                    <button type="button" onClick={handleBestSubmit}> Save </button>
             </fieldset>
         </form>
         {/* Patents Details */}
@@ -331,15 +402,15 @@ const PublicationsForm = () => {
                             <td><input type="text" style={{width:'100%'}} name="title" onChange={(e) => handlePatentInputChange(e, index)} value={row.title} required /></td>
                             <td><input type="text" style={{width:'100%'}} name="country" onChange={(e) => handlePatentInputChange(e, index)} value={row.country} required /></td>
                             <td><input type="text" style={{width:'100%'}} name="number" onChange={(e) => handlePatentInputChange(e, index)} value={row.number} required /></td>
-                            <td><input type="text" style={{width:'100%'}} name="date_file" onChange={(e) => handlePatentInputChange(e, index)} value={row.date_file} required /></td>
-                            <td><input type="text" style={{width:'100%'}} name="date_publish" onChange={(e) => handlePatentInputChange(e, index)} value={row.date_publish} required /></td>
+                            <td><input type="date" style={{width:'100%'}} name="date_file" onChange={(e) => handlePatentInputChange(e, index)} value={row.date_file} required /></td>
+                            <td><input type="date" style={{width:'100%'}} name="date_publish" onChange={(e) => handlePatentInputChange(e, index)} value={row.date_publish} required /></td>
                             <td><input type="text" style={{width:'100%'}} name="status" onChange={(e) => handlePatentInputChange(e, index)} value={row.status} required /></td>
                         </tr>
                     ))}
                     </tbody>
                     </table>
                     <button type="button" onClick={handleAddMore2}>Add More</button>
-                    <button type="submit" onClick={handlePatentSubmit}> Save </button>
+                    <button type="button" onClick={handlePatentSubmit}> Save </button>
             </fieldset>
         </form>
         {/* Books Details */}
@@ -369,7 +440,7 @@ const PublicationsForm = () => {
                     </tbody>
                     </table>
                     <button type="button" onClick={handleAddMore3}>Add More</button>
-                    <button type="submit" onClick={handleBookSubmit}> Save </button>
+                    <button type="button" onClick={handleBookSubmit}> Save </button>
             </fieldset>
         </form>
         {/* Books Chapters Details */}
@@ -399,7 +470,7 @@ const PublicationsForm = () => {
                     </tbody>
                     </table>
                     <button type="button" onClick={handleAddMore4}>Add More</button>
-                    <button type="submit" onClick={handleBookChapterSubmit}> Save </button>
+                    <button type="button" onClick={handleBookChapterSubmit}> Save </button>
             </fieldset>
         </form>
     </div>

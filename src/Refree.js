@@ -72,7 +72,8 @@ const RefereeForm = () => {
             ]
         });
     };
-    const handleSubmit = async () => {
+    const handleSubmit = async (e) => {
+        e.preventDefault();
         try {
             for (let i = 0; i < formData.formDetails.length; i++) {
                 const row = formData.formDetails[i];
@@ -232,7 +233,7 @@ const RefereeForm = () => {
                         </tbody>
                     </table>
                     <button onClick={handleAddMore}>Add More</button>
-                    <button type="submit" style={{backgroundColor:'#ddedf7' , fontWeight:'bold', marginLeft:'94%'}} onClick={handleSubmit}>Save </button>
+                    <button type="button" style={{backgroundColor:'#ddedf7' , fontWeight:'bold', marginLeft:'94%'}} onClick={handleSubmit}>Save </button>
                 </fieldset>
             </form>
         </div>

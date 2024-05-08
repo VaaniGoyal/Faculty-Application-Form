@@ -20,7 +20,8 @@ const EmploymentForm = () => {
     });
     const handleInputChangePresentEmp = (e) => {
         const { name, value } = e.target;
-        setPresentData({ ...presentData, [name]: value });
+        const parsedValue = name === "duration" ? parseInt(value, 10) || "" : value;
+        setPresentData({ ...presentData, [name]: parsedValue });
     };
     const handleSubmitPresentEmp = async (e) => {
         e.preventDefault();
@@ -34,6 +35,7 @@ const EmploymentForm = () => {
     };
     /*-------------------------------------EMPLOYEMENT HISTORY---------------------------------------------- */
     const empId = parseInt(localStorage.getItem("emp_id"), 10);
+    console.log(empId);
     const [employmentHistory, setEmploymentHistory] = useState({
         empHistoryDetails: [
             {
@@ -49,7 +51,12 @@ const EmploymentForm = () => {
     const handleInputChangeEmpHistory = (e, index) => {
         const { name, value } = e.target;
         const updatedData1 = [...employmentHistory.empHistoryDetails]
-        updatedData1[index][name] = value;
+        if (name === 'duration') {
+            updatedData1[index][name] = parseInt(value);
+        } else {
+            updatedData1[index][name] = value;
+        }
+        
         setEmploymentHistory({ ...employmentHistory, empHistoryDetails: updatedData1 });
     };
     const handleAddMore1 = () => {
@@ -68,7 +75,8 @@ const EmploymentForm = () => {
             ]
         });
     };
-    const handleSubmitEmpHistory = async () => {
+    const handleSubmitEmpHistory = async (e) => {
+        e.preventDefault();
         try {
             // Iterate over each row in additionalDetails array
             for (let i = 0; i < employmentHistory.empHistoryDetails.length; i++) {
@@ -100,9 +108,17 @@ const EmploymentForm = () => {
     });
     const handleInputChangeTeachingDetails = (e, index) => {
         const { name, value } = e.target;
-        const updatedData2 = [...teachingDetails.teachingDetails]
-        updatedData2[index][name] = value;
-        setTeachingDetails({ ...teachingDetails, teachingDetails: updatedData2 });
+        const updatedTeachingDetails = [...teachingDetails.teachingDetails];
+        // List of attributes that should be integers
+        const integerAttributes = ['stud_number', 'duration'];
+    
+        if (integerAttributes.includes(name)) {
+            // Parse value to integer if it's in the integerAttributes list
+            updatedTeachingDetails[index][name] = parseInt(value);
+        } else {
+            updatedTeachingDetails[index][name] = value;
+        }
+        setTeachingDetails({ ...teachingDetails, teachingDetails: updatedTeachingDetails });
     };
     const handleAddMore2 = () => {
         setTeachingDetails({
@@ -154,7 +170,11 @@ const EmploymentForm = () => {
         const handleInputChangeResearchExp = (e, index) => {
             const { name, value } = e.target;
             const updatedData3 = [...ResearchExperience.researchDetails]
-            updatedData3[index][name] = value;
+            if (name === 'duration') {
+                updatedData3[index][name] = parseInt(value);
+            } else {
+                updatedData3[index][name] = value;
+            }
             setResearchExperience({ ...ResearchExperience, researchDetails: updatedData3 });
         };
         const handleAddMore3 = () => {
@@ -180,7 +200,7 @@ const EmploymentForm = () => {
                 for (let i = 0; i < ResearchExperience.researchDetails.length; i++) {
                     const row = ResearchExperience.researchDetails[i];
                     // Send a POST request for each row
-                    const response = await axios.post("http://localhost:3000/api/employement/addResearchExp", row);
+                    const response = await axios.post("http://localhost:3000/api/employment/addResearchExp", row);
                     console.log(response.data);
                 }
                 alert("research details Entered Successfully");
@@ -229,7 +249,7 @@ const EmploymentForm = () => {
             for (let i = 0; i < IndustrialExperience.industryDetails.length; i++) {
                 const row = IndustrialExperience.industryDetails[i];
                 // Send a POST request for each row
-                const response = await axios.post("http://localhost:3000/api/employement/addIndustryExp", row);
+                const response = await axios.post("http://localhost:3000/api/employment/addIndustryExp", row);
                 console.log(response.data);
                 navigate('/Publication');
             }
@@ -265,9 +285,9 @@ const EmploymentForm = () => {
                     </div>
                     <div style={{ width: '45%', fontWeight: 'bold' }}>
                     <label htmlFor="date_join">Date of Joining: </label>
-                    <input type="text" id="date_join" name="date_join" onChange={handleInputChangePresentEmp} value={presentData.date_join} required /><br /><br />
+                    <input type="date" id="date_join" name="date_join" onChange={handleInputChangePresentEmp} value={presentData.date_join} required /><br /><br />
                     <label htmlFor="date_leave">Date of Leaving: </label>
-                    <input type="text" id="date_leave" name="date_leave" onChange={handleInputChangePresentEmp} value={presentData.date_leave} required /><br /><br />
+                    <input type="date" id="date_leave" name="date_leave" onChange={handleInputChangePresentEmp} value={presentData.date_leave} required /><br /><br />
                     <label htmlFor="duration">Duration (in years & months): </label>
                     <input type="text" id="duration" name="duration" onChange={handleInputChangePresentEmp} value={presentData.duration} required /><br /><br />
                     </div>
@@ -300,8 +320,8 @@ const EmploymentForm = () => {
                         <td>{index+1}.</td>
                         <td><input type="text" name="Position" onChange={(e) => handleInputChangeEmpHistory(e, index)} value={row.present_position} required /></td>
                         <td><input type="text" name="organization" onChange={(e) => handleInputChangeEmpHistory(e, index)} value={row.organization} required /></td>
-                        <td><input type="text" name="date_join" onChange={(e) => handleInputChangeEmpHistory(e, index)} value={row.date_join} required /></td>
-                        <td><input type="text" name="date_leave" onChange={(e) => handleInputChangeEmpHistory(e, index)} value={row.date_leave} required /></td>
+                        <td><input type="date" name="date_join" onChange={(e) => handleInputChangeEmpHistory(e, index)} value={row.date_join} required /></td>
+                        <td><input type="date" name="date_leave" onChange={(e) => handleInputChangeEmpHistory(e, index)} value={row.date_leave} required /></td>
                         <td><input type="text" name="duration" onChange={(e) => handleInputChangeEmpHistory(e, index)} value={row.duration} required /></td>
                     </tr>
                 ))}
@@ -335,11 +355,11 @@ const EmploymentForm = () => {
                         <td>{index+1}.</td>
                         <td><input type="text" style={{ width: '100%' }} name="Position" onChange={(e) =>handleInputChangeTeachingDetails(e, index)} value={row.present_position} required /></td>
                         <td><input type="text" style={{ width: '100%' }} name="employer" onChange={(e) =>handleInputChangeTeachingDetails(e, index)} value={row.employer} required /></td>
-                        <td><input type="text" style={{ width: '100%' }} name="course Taught" onChange={(e) =>handleInputChangeTeachingDetails(e, index)} value={row.course_taught} required /></td>
-                        <td><input type="text" style={{ width: '100%' }} name="UgPg" onChange={(e) =>handleInputChangeTeachingDetails(e, index)} value={row.ug_pg} required /></td>
-                        <td><input type="text" style={{ width: '100%' }} name="NoOfStud" onChange={(e) =>handleInputChangeTeachingDetails(e, index)} value={row.stud_number} required /></td>
-                        <td><input type="text" style={{ width: '100%' }} name="date_join" onChange={(e) =>handleInputChangeTeachingDetails(e, index)} value={row.date_join} required /></td>
-                        <td><input type="text" style={{ width: '100%' }}name="date_leave" onChange={(e) =>handleInputChangeTeachingDetails(e, index)} value={row.date_leave} required /></td>
+                        <td><input type="text" style={{ width: '100%' }} name="course_taught" onChange={(e) =>handleInputChangeTeachingDetails(e, index)} value={row.course_taught} required /></td>
+                        <td><input type="text" style={{ width: '100%' }} name="ug_pg" onChange={(e) =>handleInputChangeTeachingDetails(e, index)} value={row.ug_pg} required /></td>
+                        <td><input type="text" style={{ width: '100%' }} name="stud_number" onChange={(e) =>handleInputChangeTeachingDetails(e, index)} value={row.stud_number} required /></td>
+                        <td><input type="date" style={{ width: '100%' }} name="date_join" onChange={(e) =>handleInputChangeTeachingDetails(e, index)} value={row.date_join} required /></td>
+                        <td><input type="date" style={{ width: '100%' }}name="date_leave" onChange={(e) =>handleInputChangeTeachingDetails(e, index)} value={row.date_leave} required /></td>
                         <td><input type="text" style={{ width: '100%' }} name="duration" onChange={(e) =>handleInputChangeTeachingDetails(e, index)} value={row.duration} required /></td>
                     </tr>
                 ))}
@@ -369,11 +389,11 @@ const EmploymentForm = () => {
             {ResearchExperience.researchDetails.map((row, index) => (
                     <tr key = {index}>
                         <td>{index+1}.</td>
-                        <td><input type="text" style={{ width: '100%' }} name="Position" onChange={(e) =>handleInputChangeResearchExp(e, index)} value={row.position} required /></td>
-                        <td><input type="text" style={{ width: '100%' }} name="organization" onChange={(e) =>handleInputChangeResearchExp(e, index)} value={row.institute} required /></td>
+                        <td><input type="text" style={{ width: '100%' }} name="position" onChange={(e) =>handleInputChangeResearchExp(e, index)} value={row.position} required /></td>
+                        <td><input type="text" style={{ width: '100%' }} name="institute" onChange={(e) =>handleInputChangeResearchExp(e, index)} value={row.institute} required /></td>
                         <td><input type="text" style={{ width: '100%' }} name="supervisor" onChange={(e) =>handleInputChangeResearchExp(e, index)} value={row.supervisor} required /></td>
-                        <td><input type="text" style={{ width: '100%' }} name="date_join" onChange={(e) =>handleInputChangeResearchExp(e, index)} value={row.date_join} required /></td>
-                        <td><input type="text" style={{ width: '100%' }} name="date_leave" onChange={(e) =>handleInputChangeResearchExp(e, index)} value={row.date_leave} required /></td>
+                        <td><input type="date" style={{ width: '100%' }} name="date_join" onChange={(e) =>handleInputChangeResearchExp(e, index)} value={row.date_join} required /></td>
+                        <td><input type="date" style={{ width: '100%' }} name="date_leave" onChange={(e) =>handleInputChangeResearchExp(e, index)} value={row.date_leave} required /></td>
                         <td><input type="text" style={{ width: '100%' }} name="duration" onChange={(e) =>handleInputChangeResearchExp(e, index)} value={row.duration} required /></td>            
                     </tr>
                 ))}
@@ -402,10 +422,10 @@ const EmploymentForm = () => {
             {IndustrialExperience.industryDetails.map((row, index) => (
                     <tr key = {index}>
                         <td>{index+1}.</td>
-                        <td><input type="text" style={{ width: '100%' }} name="organization" onChange={(e) =>handleInputChangeIndustryExp(e, index)} value={row.organization} required /></td>
-                        <td><input type="text" style={{ width: '100%' }} name="supervisor" onChange={(e) =>handleInputChangeIndustryExp(e, index)} value={row.work_profile} required /></td>
-                        <td><input type="text" style={{ width: '100%' }} name="date_join" onChange={(e) =>handleInputChangeIndustryExp(e, index)} value={row.date_join} required /></td>
-                        <td><input type="text" style={{ width: '100%' }} name="date_leave" onChange={(e) =>handleInputChangeIndustryExp(e, index)} value={row.date_leave} required /></td>
+                        <td><input type="text" style={{ width: '100%' }} name="organisation" onChange={(e) =>handleInputChangeIndustryExp(e, index)} value={row.organisation} required /></td>
+                        <td><input type="text" style={{ width: '100%' }} name="work_profile" onChange={(e) =>handleInputChangeIndustryExp(e, index)} value={row.work_profile} required /></td>
+                        <td><input type="date" style={{ width: '100%' }} name="date_join" onChange={(e) =>handleInputChangeIndustryExp(e, index)} value={row.date_join} required /></td>
+                        <td><input type="date" style={{ width: '100%' }} name="date_leave" onChange={(e) =>handleInputChangeIndustryExp(e, index)} value={row.date_leave} required /></td>
                         <td><input type="text" style={{ width: '100%' }} name="duration" onChange={(e) =>handleInputChangeIndustryExp(e, index)} value={row.duration} required /></td>
                     </tr>
                 ))}
