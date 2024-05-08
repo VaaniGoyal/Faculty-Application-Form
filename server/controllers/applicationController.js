@@ -47,17 +47,16 @@ async function getApplication(req, res) {
 
 async function addPersonalDetails(req, res) {
   try {
-      const { app_number, f_name, m_name, l_name, nationality, dob, gender, marital_status, category, father_name, mob, email, alt_mob, alt_email, landline, c_address, p_address } = req.body;
+      const { app_number, f_name, m_name, l_name, nationality, gender, marital_status, category, father_name, c_address, p_address, mob, alt_mob, email, alt_email, landline, dob, id_proof } = req.body;
 
       // Ensure both id_proof and user_image files are included
-      if (!req.files || !req.files.id_proof || !req.files.user_image) {
-          return res.status(400).json({ message: 'Both ID proof and user image files are required.' });
+      if (!req.files || !req.files.user_image) {
+          return res.status(400).json({ message: 'Both user image files are required.' });
       }
 
-      const id_proof = req.files.id_proof[0].path; // Assuming id_proof is uploaded as a single file
       const user_image = req.files.user_image[0].path; // Assuming user_image is uploaded as a single file
 
-      const newDetails = await Personal_Details.create({ app_number, f_name, m_name, l_name, nationality, dob, gender, marital_status, category, father_name, mob, email, alt_mob, alt_email, landline, c_address, p_address, id_proof, user_image });
+      const newDetails = await Personal_Details.create({ app_number, f_name, m_name, l_name, nationality, gender, marital_status, category, father_name, c_address, p_address, mob, alt_mob, email, alt_email, landline, dob, id_proof, user_image });
 
       return res.status(201).json(newDetails);
   } catch (error) {

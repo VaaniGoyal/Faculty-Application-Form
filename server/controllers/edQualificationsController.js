@@ -36,7 +36,7 @@ async function addPgDetails(req, res) {
       const newPgDetails = await Pg_Details.create({ degree, university, branch, year_join, year_complete, duration, cgpa, division });
       res.status(201).json({
         ...newPgDetails.toJSON(),
-        pg_id: newPgDetails.phg_id, 
+        pg_id: newPgDetails.pg_id, 
       });
     } catch (error) {
       console.error("Error adding pg details:", error);
