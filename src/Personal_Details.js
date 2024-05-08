@@ -66,7 +66,7 @@ const PersonalDetailsForm = () => {
         alt_email: "",
         landline: "",
         dob: "",
-        id_proof: null,
+        id_proof: "",
         user_image: null
     });
 
@@ -74,12 +74,6 @@ const PersonalDetailsForm = () => {
         const { name, value } = e.target;
         setPersonalData({ ...personalData, [name]: value });
     };
-    
-    const handleIdProofUpload = (e) => {
-        const idProofFile = e.target.files[0];
-        setPersonalData({ ...personalData, id_proof: idProofFile });
-    };
-    
     const handleImageUpload = (e) => {
         const imageFile = e.target.files[0];
         setPersonalData({ ...personalData, image: imageFile });
@@ -90,7 +84,7 @@ const PersonalDetailsForm = () => {
         try {
             const personalData = new FormData();
             for (const key in personalData) {
-                if (key === 'id_proof' || key === 'user_image') {
+                if (key === 'user_image') {
                     personalData.append(key, personalData[key]);
                 } else {
                     personalData.append(key, personalData[key]);
@@ -196,7 +190,7 @@ const PersonalDetailsForm = () => {
                                 <option value="Other">Other</option>
                             </select><br /><br />
                             <label htmlFor="id_proof">Identity Proof:  </label>
-                            <input type="file" id="id_proof" name="id_proof" onChange={handleIdProofUpload} accept=".jpg, .jpeg, .png, .pdf" required /><br /><br />
+                            <input type="text" id="id_proof" name="id_proof" onChange={handlePersonalInputChange} value={personalData.id_proof} required /><br /><br />
                             <label htmlFor="category">Category:  </label>
                             <input type="text" id="category" name="category" onChange={handlePersonalInputChange} value={personalData.category} required /><br /><br />
                         </div>
