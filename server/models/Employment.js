@@ -27,9 +27,6 @@ const Employment = sequelize.define('Employment', {
   duration: {
     type: DataTypes.INTEGER,
   },
-  isExperience: {
-    type: DataTypes.BOOLEAN,
-  },
   area_special: {
     type: DataTypes.TEXT,
   },
