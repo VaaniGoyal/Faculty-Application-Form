@@ -5,6 +5,7 @@ import axios from "axios";
 const PersonalDetailsForm = () => {
     const regId = localStorage.getItem("reg_id");
     const reg_id = parseInt(regId, 10);
+    // console.log(reg_id);
     // Modify the findUserName function to check if e is defined before calling preventDefault
     const findUserName = async (e) => {
         if (e) {
@@ -40,12 +41,12 @@ const PersonalDetailsForm = () => {
         try {
             const response = await axios.post("http://localhost:3000/api/application/createApplication", applicationData);
             console.log(response.data);
+            alert("Application Data Entered Successfully");
             localStorage.setItem("app_number", response.data.app_number);
         } catch (error) {
             console.error("Error submitting application form:", error);
         }
     };
-
     const app_number=localStorage.getItem("app_number");
 
     const [personalData, setPersonalData] = useState({
@@ -92,6 +93,7 @@ const PersonalDetailsForm = () => {
             }
             const response = await axios.post("http://localhost:3000/api/application/addPersonalDetails", personalData);
             console.log(response.data);
+            alert("Personal Data Entered Successfully");
             navigate('/Educational_Qualifications');
         } catch (error) {
             console.error("Error submitting personal details form:", error);
@@ -99,6 +101,7 @@ const PersonalDetailsForm = () => {
     };
 
     const handleLogout = async (e) => {
+        localStorage.clear(); // Clear all items from local storage
         navigate('/Login_Page');
     }
     

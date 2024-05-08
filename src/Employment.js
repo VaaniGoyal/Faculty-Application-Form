@@ -27,6 +27,7 @@ const EmploymentForm = () => {
         try {
             const response = await axios.post("http://localhost:3000/api/employment/createEmployment", presentData);
             localStorage.setItem("emp_id", response.data.emp_id); // Store emp_id in local storage
+            alert("Employment Data Entered Successfully");
         } catch (error) {
             console.error("Error submitting present employement form:", error);
         }
@@ -76,6 +77,7 @@ const EmploymentForm = () => {
                 const response = await axios.post("http://localhost:3000/api/employment/addEmpHistory", row);
                 console.log(response.data);
             }
+            alert("Employment History Entered Successfully");
         } catch (error) {
             console.error("Error submitting employment history details details:", error);
         }
@@ -130,6 +132,7 @@ const EmploymentForm = () => {
                 const response = await axios.post("http://localhost:3000/api/employment/addTeachExp", row);
                 console.log(response.data);
             }
+            alert("Teaching Details Entered Successfully");
         } catch (error) {
             console.error("Error submitting teaching experience form:", error);
         }
@@ -180,6 +183,7 @@ const EmploymentForm = () => {
                     const response = await axios.post("http://localhost:3000/api/employement/addResearchExp", row);
                     console.log(response.data);
                 }
+                alert("research details Entered Successfully");
             } catch (error) {
                 console.error("Error submitting research experience form:", error);
             }
@@ -229,12 +233,14 @@ const EmploymentForm = () => {
                 console.log(response.data);
                 navigate('/Publication');
             }
+            alert("industry Data Entered Successfully");
         } catch (error) {
             console.error("Error submitting industry experience form:", error);
         }
         
     };
     const handleLogout = async (e) => {
+        localStorage.clear();
         navigate('/Login_Page');
     }
 /*------------------------------------------------------------------------------------------------------------------- */

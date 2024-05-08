@@ -91,6 +91,7 @@ const RefereeForm = () => {
                 const response = await axios.post("http://localhost:3000/api/other/addReferees", formDataToSend);
                 console.log(response.data);
             }
+            alert("Information Entered Successfully");
             navigate('/Declaration');
         } catch (error) {
             console.error("Error submitting referee details:", error);
@@ -98,6 +99,7 @@ const RefereeForm = () => {
     };
     
     const handleLogout = async () => {
+        localStorage.clear();
         navigate('/Login_Page');
     }
 

@@ -27,6 +27,7 @@ const PublicationsForm = () => {
         try {
             const response = await axios.post("http://localhost:3000/api/publications/createPublications", publicationData);
             localStorage.setItem("pub_id", response.data.id);
+            alert("Publication Data Entered Successfully");
         } catch (error) {
             console.error("Error submitting publications form:", error);
         }
@@ -80,6 +81,7 @@ const PublicationsForm = () => {
                 const response = await axios.post("http://localhost:3000/api/publications/addBestPublications", row);
                 console.log(response.data);
             }
+            alert("Best publications Data Entered Successfully");
         } catch (error) {
             console.error("Error submitting best publication details:", error);
         }
@@ -132,6 +134,7 @@ const PublicationsForm = () => {
                 const response = await axios.post("http://localhost:3000/api/publications/addPatents", row);
                 console.log(response.data);
             }
+            alert("Patents Data Entered Successfully");
         } catch (error) {
             console.error("Error submitting patent details:", error);
         }
@@ -178,6 +181,7 @@ const PublicationsForm = () => {
                 const response = await axios.post("http://localhost:3000/api/publications/addBooks", row);
                 console.log(response.data);
             }
+            alert("Books Data Entered Successfully");
         } catch (error) {
             console.error("Error submitting Book details:", error);
         }
@@ -224,6 +228,7 @@ const PublicationsForm = () => {
                 const response = await axios.post("http://localhost:3000/api/publications/addBookChapters", row);
                 console.log(response.data);
             }
+            alert("Books Chapters Data Entered Successfully");
             navigate('/Membership');
         } catch (error) {
             console.error("Error submitting Book Chapter details:", error);
@@ -231,6 +236,7 @@ const PublicationsForm = () => {
     };
     /*----------------------------------------------------------------------------------------------*/
     const handleLogout = async (e) => {
+        localStorage.clear();
         navigate('/Login_Page');
     }
     return (

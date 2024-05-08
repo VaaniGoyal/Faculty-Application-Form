@@ -27,6 +27,7 @@ const EducationalQualificationsForm = () => {
         try {
             const response = await axios.post("http://localhost:3000/api/edqualifications/addPhdDetails", phdData);
             localStorage.setItem("phd_id", response.data.phd_id);
+            alert("PHD Data Entered Successfully");
         } catch (error) {
             console.error("Error submitting PhD form:", error);
         }
@@ -53,6 +54,7 @@ const EducationalQualificationsForm = () => {
         try {
             const response = await axios.post("http://localhost:3000/api/edqualifications/addPgDetails", pgData);
             localStorage.setItem("pg_id", response.data.pg_id);
+            alert("PG Data Entered Successfully");
         } catch (error) {
             console.error("Error submitting PG form:", error);
         }
@@ -79,6 +81,7 @@ const EducationalQualificationsForm = () => {
         try {
             const response = await axios.post("http://localhost:3000/api/edqualifications/addUgDetails", ugData);
             localStorage.setItem("ug_id", response.data.ug_id);
+            alert("UG Data Entered Successfully");
         } catch (error) {
             console.error("Error submitting UG form:", error);
         }
@@ -128,6 +131,7 @@ const EducationalQualificationsForm = () => {
                 const response = await axios.post("http://localhost:3000/api/edqualifications/addSchoolDetails", row);
                 console.log(response.data);
             }
+            alert("School Data Entered Successfully");
         } catch (error) {
             console.error("Error submitting school details:", error);
         }
@@ -185,6 +189,7 @@ const EducationalQualificationsForm = () => {
                 const response = await axios.post("http://localhost:3000/api/edqualifications/addAdditionalQualifications", row);
                 console.log(response.data);
             }
+            alert("Additional Data Entered Successfully");
         } catch (error) {
             console.error("Error submitting additional qualifications details:", error);
         }
@@ -205,6 +210,7 @@ const EducationalQualificationsForm = () => {
         try {
             const response = await axios.post("http://localhost:3000/api/edqualifications/createEducationalQualifications", qualificationsData );
             console.log(response)
+            alert("Final Data Entered Successfully");
             navigate('/Employment');
         } catch (error) {
             console.error("Error submitting educational qualifications form:", error);
@@ -213,6 +219,7 @@ const EducationalQualificationsForm = () => {
 
     /*---------------------------------------------------------------------------------------------------*/
     const handleLogout = async (e) => {
+        localStorage.clear();
         navigate('/Login_Page');
     }
     return (

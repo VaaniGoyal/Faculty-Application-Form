@@ -44,6 +44,7 @@ const MembershipForm = () => {
                 const response = await axios.post("http://localhost:3000/api/other/addMemberships", row);
                 console.log(response.data);
             }
+            alert("Memberships Entered Successfully");
         } catch (error) {
             console.error("Error submitting membership details:", error);
         }
@@ -90,6 +91,7 @@ const MembershipForm = () => {
                 const response = await axios.post("http://localhost:3000/api/other/addTrainings", row);
                 console.log(response.data);
             }
+            alert("trainings Entered Successfully");
         } catch (error) {
             console.error("Error submitting trainings details:", error);
         }
@@ -134,6 +136,7 @@ const MembershipForm = () => {
                 const response = await axios.post("http://localhost:3000/api/other/addAwards", row);
                 console.log(response.data);
             }
+            alert("Awards Entered Successfully");
         } catch (error) {
             console.error("Error submitting Award details:", error);
         }
@@ -184,6 +187,7 @@ const MembershipForm = () => {
                 const response = await axios.post("http://localhost:3000/api/other/addSponsoredProjects", row);
                 console.log(response.data);
             }
+            alert("Sponsored Projects Entered Successfully");
         } catch (error) {
             console.error("Error submitting Sponsored Project details:", error);
         }
@@ -234,6 +238,7 @@ const MembershipForm = () => {
                 const response = await axios.post("http://localhost:3000/api/other/addConsultancyProjects", row);
                 console.log(response.data);
             }
+            alert("Consultancy Projects Entered Successfully");
             navigate('/Supervision');
         } catch (error) {
             console.error("Error submitting Consultancy Project details:", error);
@@ -241,6 +246,7 @@ const MembershipForm = () => {
     };
     /*----------------------------------------------------------------------------------------------*/
     const handleLogout = async (e) => {
+        localStorage.clear();
         navigate('/Login_Page');
     }
     return (

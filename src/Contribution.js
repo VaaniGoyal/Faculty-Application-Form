@@ -27,11 +27,13 @@ const Contribution = () => {
         e.preventDefault();
         try {
             const response = await axios.post("http://localhost:3000/api/other/addContributions", contriData);
+            alert("Contributions Entered Successfully");
         } catch (error) {
             console.error("Error submitting contributions form:", error);
         }
     };
     const handleLogout = async (e) => {
+        localStorage.clear();
         navigate('/Login_Page');
     }
     return (

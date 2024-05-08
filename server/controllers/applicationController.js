@@ -8,7 +8,7 @@ const upload = multer({ dest: 'uploads/' });
 
 async function createApplication(req, res) {
   try {
-    const { app_number, add_number, dept, date, post } = req.body;
+    const { reg_id, app_number, add_number, dept, date, post } = req.body;
     if (typeof app_number !== 'string') {
       throw new Error(' Application number must be strings');
     }
@@ -21,7 +21,7 @@ async function createApplication(req, res) {
     if (typeof post !== 'string') {
       throw new Error('Post must be a string');
     }
-    const newApplication = await Application.create({ app_number, add_number, dept, date, post });
+    const newApplication = await Application.create({ reg_id, app_number, add_number, dept, date, post });
     return res.status(201).json({ app_number: newApplication.app_number });
   } catch (error) {
     console.error("Error creating application:", error);

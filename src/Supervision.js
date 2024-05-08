@@ -50,6 +50,7 @@ const SupervisionForm = () => {
                 const response = await axios.post("http://localhost:3000/api/other/addPhdSupervsions", row);
                 console.log(response.data);
             }
+            alert("PHD Supervisions Entered Successfully");
         } catch (error) {
             console.error("Error submitting Phd Supervision details:", error);
         }
@@ -98,6 +99,7 @@ const SupervisionForm = () => {
                 const response = await axios.post("http://localhost:3000/api/other/addMasterSupervisions", row);
                 console.log(response.data);
             }
+            alert("Master Supervisions Entered Successfully");
         } catch (error) {
             console.error("Error submitting master supervisions details:", error);
         }
@@ -146,6 +148,7 @@ const SupervisionForm = () => {
                 const response = await axios.post("http://localhost:3000/api/other/addBachelorSupervisions", row);
                 console.log(response.data);
             }
+            alert("Bachelor Supervisions Entered Successfully");
             navigate('/Contribution');
         } catch (error) {
             console.error("Error submitting Bachelor supervisions details:", error);
@@ -153,6 +156,7 @@ const SupervisionForm = () => {
     };
     /*----------------------------------------------------------------------------------------------*/
     const handleLogout = async (e) => {
+        localStorage.clear();
         navigate('/Login_Page');
     }
     return (
