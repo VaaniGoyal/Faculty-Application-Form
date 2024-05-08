@@ -5,7 +5,7 @@ import axios from "axios";
 const PersonalDetailsForm = () => {
     const regId = localStorage.getItem("reg_id");
     const reg_id = parseInt(regId, 10);
-    // console.log(reg_id);
+    
     // Modify the findUserName function to check if e is defined before calling preventDefault
     const findUserName = async (e) => {
         if (e) {
@@ -48,7 +48,7 @@ const PersonalDetailsForm = () => {
         }
     };
     const app_number=localStorage.getItem("app_number");
-
+    console.log(app_number);
     const [personalData, setPersonalData] = useState({
         app_number: app_number,
         f_name: "",
@@ -57,10 +57,10 @@ const PersonalDetailsForm = () => {
         nationality: "",
         gender: "", 
         marital_status: "",
-        father_name: "",
         category: "",
-        p_address: "",
+        father_name: "",
         c_address: "",
+        p_address: "",
         mob: "",
         alt_mob: "",
         email: "",
@@ -70,28 +70,28 @@ const PersonalDetailsForm = () => {
         id_proof: "",
         user_image: null
     });
-
+    
     const handlePersonalInputChange = (e) => {
         const { name, value } = e.target;
         setPersonalData({ ...personalData, [name]: value });
     };
+    
     const handleImageUpload = (e) => {
         const imageFile = e.target.files[0];
-        setPersonalData({ ...personalData, image: imageFile });
+        setPersonalData({ ...personalData, user_image: imageFile });
     };
+    
     const navigate = useNavigate();
+    
     const handlePersonalSubmit = async (e) => {
         e.preventDefault();
         try {
-            const personalData = new FormData();
+            const formData = new FormData();
             for (const key in personalData) {
-                if (key === 'user_image') {
-                    personalData.append(key, personalData[key]);
-                } else {
-                    personalData.append(key, personalData[key]);
-                }
+                formData.append(key, personalData[key]);
             }
-            const response = await axios.post("http://localhost:3000/api/application/addPersonalDetails", personalData);
+            console.log("Personal Data:", personalData);
+            const response = await axios.post("http://localhost:3000/api/application/addPersonalDetails", formData);
             console.log(response.data);
             alert("Personal Data Entered Successfully");
             navigate('/Educational_Qualifications');
@@ -99,6 +99,7 @@ const PersonalDetailsForm = () => {
             console.error("Error submitting personal details form:", error);
         }
     };
+    
 
     const handleLogout = async (e) => {
         localStorage.clear(); // Clear all items from local storage
@@ -223,8 +224,8 @@ const PersonalDetailsForm = () => {
                         <input type="text" id="p_address" name="p_address" onChange={handlePersonalInputChange} value={personalData.p_address} /><br /><br />
                     </div>
                     </div>
+                    <button onClick={handlePersonalSubmit} type="submit" style={{ marginLeft: 'auto', marginRight: 'auto', display: 'block', marginTop: '1rem', backgroundColor: '#6fb85b', color: 'white' }}>Save & Next</button>
                 </fieldset>
-                <button onClick={handlePersonalSubmit} type="submit" style={{ marginLeft: 'auto', marginRight: 'auto', display: 'block', marginTop: '1rem', backgroundColor: '#6fb85b', color: 'white' }}>Save & Next</button>
             </form>
         </div>   
     );

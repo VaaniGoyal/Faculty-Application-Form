@@ -5,6 +5,8 @@ import axios from "axios";
 const EducationalQualificationsForm = () => {
     const name = localStorage.getItem("name");
     const app_number=localStorage.getItem("app_number");
+    console.log(app_number);
+    
     const navigate = useNavigate();
     /*-----------------------------------------------*/
     const [phdData, setPhdData] = useState({
@@ -19,7 +21,8 @@ const EducationalQualificationsForm = () => {
 
     const handlePhdInputChange = (e) => {
         const { name, value } = e.target;
-        setPhdData({ ...phdData, [name]: value });
+        const parsedValue = name === "year" ? parseInt(value, 10) || "" : value;
+        setPhdData({ ...phdData, [name]: parsedValue });
     };
 
     const handlePhdSubmit = async (e) => {
@@ -46,7 +49,8 @@ const EducationalQualificationsForm = () => {
 
     const handlePgInputChange = (e) => {
         const { name, value } = e.target;
-        setPgData({ ...pgData, [name]: value });
+        const parsedValue = ["year_join", "year_complete", "duration", "cgpa", "division"].includes(name) ? parseInt(value, 10) || "" : value;
+        setPgData({ ...pgData, [name]: parsedValue });
     };
 
     const handlePgSubmit = async (e) => {
@@ -73,7 +77,8 @@ const EducationalQualificationsForm = () => {
 
     const handleUgInputChange = (e) => {
         const { name, value } = e.target;
-        setUgData({ ...ugData, [name]: value });
+        const parsedValue = ["year_join", "year_complete", "duration", "cgpa", "division"].includes(name) ? parseInt(value, 10) || "" : value;
+        setUgData({ ...ugData, [name]: parsedValue });
     };
 
     const handleUgSubmit = async (e) => {
@@ -121,8 +126,8 @@ const EducationalQualificationsForm = () => {
             ]
         });
     };
-
-    const handleSchoolSubmit = async () => {
+    const handleSchoolSubmit = async (e) => {
+        e.preventDefault();
         try {
             // Iterate over each row in schoolDetails array
             for (let i = 0; i < schoolData.schoolDetails.length; i++) {
@@ -136,6 +141,7 @@ const EducationalQualificationsForm = () => {
             console.error("Error submitting school details:", error);
         }
     };
+    
     /*--------------------------------------------------------------------------------------------*/
     const [additionalData, setAdditionalData] = useState({
         additionalDetails: [
@@ -180,7 +186,8 @@ const EducationalQualificationsForm = () => {
         });
     };
 
-    const handleAdditionalSubmit = async () => {
+    const handleAdditionalSubmit = async (e) => {
+        e.preventDefault();
         try {
             // Iterate over each row in additionalDetails array
             for (let i = 0; i < additionalData.additionalDetails.length; i++) {
@@ -198,6 +205,9 @@ const EducationalQualificationsForm = () => {
     const phdId = parseInt(localStorage.getItem("phd_id"), 10);
     const pgId = parseInt(localStorage.getItem("pg_id"), 10);
     const ugId = parseInt(localStorage.getItem("ug_id"), 10);
+    console.log(phdId);
+    console.log(pgId);
+    console.log(ugId);
     const [qualificationsData, setQualificationsData] = useState({
         app_number: app_number,
         phd_id: phdId,
@@ -246,16 +256,16 @@ const EducationalQualificationsForm = () => {
                         </div>
                         <div style={{ width: '45%' }}>
                             <label htmlFor="date_defence">Date of Successful Thesis Defence: </label>
-                            <input type="text" id="date_defence" name="date_defence" onChange={handlePhdInputChange} value={phdData.date_defence} required /><br /><br />
+                            <input type="date" id="date_defence" name="date_defence" onChange={handlePhdInputChange} value={phdData.date_defence} required /><br /><br />
 
                             <label htmlFor="date_award">Date of Award: </label>
-                            <input type="text" id="date_award" name="date_award" onChange={handlePhdInputChange} value={phdData.date_award} required /><br /><br />
+                            <input type="date" id="date_award" name="date_award" onChange={handlePhdInputChange} value={phdData.date_award} required /><br /><br />
 
                             <label htmlFor="title">Title of PhD Thesis: </label>
                             <input type="text" id="title" name="title" onChange={handlePhdInputChange} value={phdData.title} required /><br /><br />
                         </div>
                     </div>
-                    <button type="submit" onClick={handlePhdSubmit}>Save PhD Data</button>
+                    <button type="button" onClick={handlePhdSubmit}>Save PhD Data</button>
                 </fieldset>
             </form>
             {/* PG details form */}
@@ -291,7 +301,7 @@ const EducationalQualificationsForm = () => {
                         <input type="text" id="division" name="division" onChange={handlePgInputChange} value={pgData.division} required /><br /><br />
                         </div>
                     </div>
-                    <button type="submit" onClick={handlePgSubmit}>Save </button>
+                    <button type="button" onClick={handlePgSubmit}>Save </button>
                 </fieldset>
             </form>
             {/* UG details form */}
@@ -327,7 +337,7 @@ const EducationalQualificationsForm = () => {
                         <input type="text" id="division" name="division" onChange={handleUgInputChange} value={ugData.division} required /><br /><br />
                         </div>
                     </div>
-                    <button type="submit" onClick={handleUgSubmit}>Save </button>
+                    <button type="button" onClick={handleUgSubmit}>Save </button>
                 </fieldset>
             </form>
             {/* School Details */}
@@ -357,7 +367,7 @@ const EducationalQualificationsForm = () => {
                     </tbody>
                     </table>
                     <button type="button" onClick={handleAddMore1}>Add More</button>
-                <button type="submit" onClick={handleSchoolSubmit}> Save </button>
+                    <button type="button" onClick={handleSchoolSubmit}> Save </button>
                 </fieldset>
             </form>
             {/* Additional Qualifications Details */}
@@ -393,10 +403,10 @@ const EducationalQualificationsForm = () => {
                     </tbody>
                     </table>
                     <button type="button" onClick={handleAddMore2}>Add More</button>
-                <button type="submit" onClick={handleAdditionalSubmit}> Save </button>
+                <button type="button" onClick={handleAdditionalSubmit}> Save </button>
                 </fieldset>
             </form>
-            <button type="submit" onClick={handleQualificationsSubmit}> Next </button>
+            <button type="button" onClick={handleQualificationsSubmit}> Next </button>
         </div>
     );
 }
