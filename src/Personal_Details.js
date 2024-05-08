@@ -75,10 +75,22 @@ const PersonalDetailsForm = () => {
         const { name, value } = e.target;
         setPersonalData({ ...personalData, [name]: value });
     };
-    const handleImageUpload = (e) => {
-        const imageFile = e.target.files[0];
-        setPersonalData({ ...personalData, image: imageFile });
+    const handleImageUpload = (event) => {
+        const file = event.target.files[0];
+        const reader = new FileReader();
+    
+        reader.onloadend = () => {
+            setPersonalData({
+                ...personalData,
+                image: reader.result
+            });
+        };
+    
+        if (file) {
+            reader.readAsDataURL(file);
+        }
     };
+    
     const navigate = useNavigate();
     const handlePersonalSubmit = async (e) => {
         e.preventDefault();
@@ -105,6 +117,33 @@ const PersonalDetailsForm = () => {
         navigate('/Login_Page');
     }
     
+
+    const [idProofUrl, setIdProofUrl] = useState(null);
+    const handleIdProofUpload = (event) => {
+        const file = event.target.files[0];
+        const reader = new FileReader();
+
+        reader.onloadend = () => {
+            setIdProofUrl(reader.result);
+            console.log(reader.result);
+        };
+
+        if (file) {
+            reader.readAsDataURL(file);
+        }
+    };
+
+    const viewIdProof = () => {
+        if (idProofUrl) {
+            // Open the PDF in a new tab using an <iframe>
+            const newWindow = window.open();
+            newWindow.document.body.innerHTML = `<iframe src="${idProofUrl}" width="100%" height="100%"></iframe>`;
+        } else {
+            alert("Please upload an ID proof first.");
+        }
+    };
+
+
 
     return (
         <div className="Personal_Details" style={{ marginTop: '12rem', marginLeft: '7rem', marginRight: '7rem', marginBottom: '4rem', backgroundColor: '#f5f5f5' }}>
@@ -168,8 +207,8 @@ const PersonalDetailsForm = () => {
                             </select><br /><br />
                             <label htmlFor="father_name">Father's Name:  </label>
                             <input type="text" id="father_name" name="father_name" onChange={handlePersonalInputChange} value={personalData.father_name} required /><br /><br />
-                            <label htmlFor="user_image">Upload Image: </label>
-                            <input type="file" id="user_image" name="user_image" onChange={handleImageUpload} accept=".jpg, .jpeg, .png" /><br /><br />
+                            <label htmlFor="category">Category:  </label>
+                            <input type="text" id="category" name="category" onChange={handlePersonalInputChange} value={personalData.category} required /><br /><br />
                         </div>
 
                         <div style={{ width: '45%' }}>
@@ -193,9 +232,10 @@ const PersonalDetailsForm = () => {
                                 <option value="Other">Other</option>
                             </select><br /><br />
                             <label htmlFor="id_proof">Identity Proof:  </label>
-                            <input type="text" id="id_proof" name="id_proof" onChange={handlePersonalInputChange} value={personalData.id_proof} required /><br /><br />
-                            <label htmlFor="category">Category:  </label>
-                            <input type="text" id="category" name="category" onChange={handlePersonalInputChange} value={personalData.category} required /><br /><br />
+                            <label htmlFor="id_proof_file">Upload ID Proof:</label>
+            <input type="file" id="id_proof_file" name="id_proof_file" onChange={handleIdProofUpload} accept=".pdf" /><br /><br />
+            <button onClick={viewIdProof}>View ID Proof</button>
+                            
                         </div>
                     </div>
                 </fieldset>
