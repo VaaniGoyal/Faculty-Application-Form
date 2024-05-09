@@ -1,70 +1,71 @@
-# Getting Started with Create React App
+# IIT Patna Faculty Application Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a faculty application website for IIT Patna. It takes all the required information of the applicant and stores the information in different tables in MySQL database. All the tables in database are interconnected by foreign keys.
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+- [Tech Stack](#tech-stack)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
 
-### `npm start`
+## Tech Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+This faculty application website is built using the following technology stack:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Frontend**:
+  - JavaScript (React.js)
+- **Backend**:
+  - Node.js
+  - Express.js
+- **Database**:
+  - MySQL (Relational Database Management System)
+  - Sequelise (as an ORM for database)
+- **Development Tools**:
+  - Git
+  - npm (Node Package Manager)
+- **Testing Tools**:
+  - Postman (api testing)
 
-### `npm test`
+## Installation
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+To install IIT Patna Faculty Application Website locally, follow these steps:
 
-### `npm run build`
+1. Clone the repository: `git clone https://github.com/cs260_project.git`
+2. Install dependencies for backend and frontend: `npm install` 
+3. Run the server for backend: `cd server | node server.js`
+4. Run the server for frontend: `npm start`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Usage
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Once the application is installed and running, users can access this website through a web browser. Here are some key actions users can perform:
 
-### `npm run eject`
+1. **User Authentication**: Log in or sign up securely using username and password.
+2. **Change Password**: Change your password securely.
+3. **Additional Information**: Add additional information by clciking on Add More buttons.
+4. **Uploads and View**: Easily view the uploaded documents by simply clicking on a button.
+5. **Final Print Out**: Get a pdf of all you responses saved to your local PC.
+   
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Contributing
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Contributions to IIT Patna Faculty Application Website are welcome! If you'd like to contribute to the project, please follow these steps:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+1. Fork the repository on GitHub.
+2. Make your changes and commit them to your fork.
+3. Submit a pull request with a detailed description of your changes.
 
-## Learn More
+## License
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+This project is maintained by the following geeks:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- [Vaani Goyal 2201AI41](https://github.com/VaaniGoyal)
+- [Vaishika Agrawal 2201AI42](https://github.com/Vaishika05)
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+IIT Patna Faculty Application Website is licensed under the [MIT License](LICENSE).
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
