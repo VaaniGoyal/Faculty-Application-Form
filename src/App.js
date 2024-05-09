@@ -15,7 +15,6 @@ import Contribution from "./Contribution";
 import Refree from "./Refree";
 import Declaration from "./Declaration";
 import FinalPdf from "./FinalPdf";
-import Download_Pdf from "./Download_Pdf";
 import "./App.css";
 
 function App() {
@@ -39,7 +38,6 @@ function App() {
           <Route path="/Refree" element={<Refree />} />
           <Route path="/Declaration" element={<Declaration/>}/>
           <Route path="/FinalPdf" element={<FinalPdf/>}/>
-          <Route path="/Download_Pdf" element={<Download_Pdf/>}/>
         </Routes>
       </div>
     </Router>

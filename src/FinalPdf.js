@@ -1,156 +1,6 @@
-
-//             {/*------------------------------PUBLICATIONS------------------------------------- */}
-            
-//             {/*-----------------------MEMBERSHIP-------------------------------- */}
-            
-//             {/**----------------------supervision---------------------------------- */}
-//             <span className="label">
-//                 <h2 style={{ backgroundColor: "#e1f0d8", fontWeight: "bolder", color: "#54773c" }}>7. Supervision</h2>
-//             </span>
-
-//             <table className="tab" style={{ borderCollapse: "collapse", border: "1px solid black", width: "100%" }}>
-//                 <h3> (A) PHD Thesis Supervision</h3>
-//                 <tbody>
-//                     <tr style={{ backgroundColor: "#f1f1f1" }}>
-//                         <td>
-//                             <strong className="tr_title">S.No.</strong>
-//                         </td>
-//                         <td>
-//                             <strong className="tr_title">Name of research scholar</strong>
-//                         </td>
-//                         <td>
-//                             <strong className="tr_title">Title of Thesis</strong>
-//                         </td>
-//                         <td>
-//                             <strong className="tr_title">Role</strong>
-//                         </td>
-//                         <td>
-//                             <strong className="tr_title">Status</strong>
-//                         </td>
-//                         <td>
-//                             <strong className="tr_title">Ongoing since/ Year of Completion</strong>
-//                         </td>
-//                     </tr>
-//                     <tr>
-//                         <td>Gennedy</td>
-//                         <td>Tourist</td>
-//                         <td>Krotokevich</td>
-//                     </tr>
-//                 </tbody>
-//             </table>
-
-//             <table className="tab" style={{ borderCollapse: "collapse", border: "1px solid black", width: "100%" }}>
-//                 <h3> (B) M.Tech/ M.E./ Master's Degree</h3>
-//                 <tbody>
-//                     <tr style={{ backgroundColor: "#f1f1f1" }}>
-//                         <td>
-//                             <strong className="tr_title">S.No.</strong>
-//                         </td>
-//                         <td>
-//                             <strong className="tr_title">Name of research scholar</strong>
-//                         </td>
-//                         <td>
-//                             <strong className="tr_title">Title of Thesis</strong>
-//                         </td>
-//                         <td>
-//                             <strong className="tr_title">Role</strong>
-//                         </td>
-//                         <td>
-//                             <strong className="tr_title">Status</strong>
-//                         </td>
-//                         <td>
-//                             <strong className="tr_title">Ongoing since/ Year of Completion</strong>
-//                         </td>
-//                     </tr>
-//                     <tr>
-//                         <td>Gennedy</td>
-//                         <td>Tourist</td>
-//                         <td>Krotokevich</td>
-//                     </tr>
-//                 </tbody>
-//             </table>
-
-//             <table className="tab" style={{ borderCollapse: "collapse", border: "1px solid black", width: "100%" }}>
-//                 <h3> (C) B.Tech/ B.E./ Bachelor's Degree</h3>
-//                 <tbody>
-//                     <tr style={{ backgroundColor: "#f1f1f1" }}>
-//                         <td>
-//                             <strong className="tr_title">S.No.</strong>
-//                         </td>
-//                         <td>
-//                             <strong className="tr_title">Name of research scholar</strong>
-//                         </td>
-//                         <td>
-//                             <strong className="tr_title">Title of Thesis</strong>
-//                         </td>
-//                         <td>
-//                             <strong className="tr_title">Role</strong>
-//                         </td>
-//                         <td>
-//                             <strong className="tr_title">Status</strong>
-//                         </td>
-//                         <td>
-//                             <strong className="tr_title">Ongoing since/ Year of Completion</strong>
-//                         </td>
-//                     </tr>
-//                     <tr>
-//                         <td>Gennedy</td>
-//                         <td>Tourist</td>
-//                         <td>Krotokevich</td>
-//                     </tr>
-//                 </tbody>
-//             </table>
-
-//             {/**-----------------------------refree-------------------------------- */}
-//             <span className="label">
-//                 <h2 style={{ backgroundColor: "#e1f0d8", fontWeight: "bolder", color: "#54773c" }}>8. Referees</h2>
-//             </span>
-
-//             <table className="tab" style={{ borderCollapse: "collapse", border: "1px solid black", width: "100%" }}>
-//                 <h3> (A) PHD Thesis Supervision</h3>
-//                 <tbody>
-//                     <tr style={{ backgroundColor: "#f1f1f1" }}>
-//                         <td>
-//                             <strong className="tr_title">Name</strong>
-//                         </td>
-//                         <td>
-//                             <strong className="tr_title">Position</strong>
-//                         </td>
-//                         <td>
-//                             <strong className="tr_title">Association with Referee</strong>
-//                         </td>
-//                         <td>
-//                             <strong className="tr_title"> Organization/Institution </strong>
-//                         </td>
-//                         <td>
-//                             <strong className="tr_title">e-mail</strong>
-//                         </td>
-//                         <td>
-//                             <strong className="tr_title">Contact No.</strong>
-//                         </td>
-//                     </tr>
-//                     <tr>
-//                         <td>Gennedy</td>
-//                         <td>Tourist</td>
-//                         <td>Krotokevich</td>
-//                     </tr>
-//                 </tbody>
-//             </table>
-//             <button type="download">Print Application</button>
-//         </div>
-//     );
-// }
-
-// export default FinalPdf;
-
-
-
-
-
-
-
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import html2pdf from 'html2pdf.js';
 
 
 function FinalPdf() {
@@ -172,6 +22,29 @@ function FinalPdf() {
     const [patentData, setPatentData] = useState(null);
     const [booksData, setBooksData] = useState(null);
     const [bookChaptersData, setBookChaptersData] = useState(null);
+    const [membershipData, setMembershipData] = useState(null);
+    const [trainingData, setTrainingData] = useState(null);
+    const [awardData, setAwardData] = useState(null);
+    const [sponsData, setSponsData] = useState(null);
+    const [consultData, setConsultData] = useState(null);
+    const [phdSupData, setPhdSupData] = useState(null);
+    const [masterSupData, setMasterSupData] = useState(null);
+    const [bachSupData, setBachSupData] = useState(null);
+    const [contriData, setContriData] = useState(null);
+    const [refereeData, setRefereeData] = useState(null);
+    // ------------------------------------------------------------------------------------------
+    const [agreement, setAgreement] = useState(true); 
+    const handleAgreementChange = (event) => {
+        setAgreement(event.target.checked);
+    };
+    // ----------------------------------------------------------------------------------------------
+    const handlePrint = () => {
+        const element = document.getElementById('page-content'); // Change 'page-content' to the ID of the element containing the content you want to print
+
+        html2pdf()
+            .from(element)
+            .save('page.pdf');
+    };
     // --------------------------------------------------------------------------------------------
     useEffect(() => {
         axios.get(`http://localhost:3000/api/application/getApplicationDetails/${app_number}`)
@@ -387,8 +260,119 @@ function FinalPdf() {
             });
     }, []);
     // ---------------------------------------------------------------------------------------------------
+    useEffect(() => {
+        axios.get(`http://localhost:3000/api/other/getMemberships/${app_number}`)
+            .then(response => {
+                setMembershipData(response.data.memberships); 
+            })
+            .catch(error => {
+                console.error('Error fetching memberships data:', error);
+                setMembershipData([]); 
+            });
+    }, []);
+    // ---------------------------------------------------------------------------------------------------
+    useEffect(() => {
+        axios.get(`http://localhost:3000/api/other/getTrainings/${app_number}`)
+            .then(response => {
+                setTrainingData(response.data.trainings); 
+            })
+            .catch(error => {
+                console.error('Error fetching trainings data:', error);
+                setTrainingData([]); 
+            });
+    }, []);
+    // ---------------------------------------------------------------------------------------------------
+    useEffect(() => {
+        axios.get(`http://localhost:3000/api/other/getAwards/${app_number}`)
+            .then(response => {
+                setAwardData(response.data.awards); 
+            })
+            .catch(error => {
+                console.error('Error fetching awards data:', error);
+                setAwardData([]); 
+            });
+    }, []);
+    // ---------------------------------------------------------------------------------------------------
+    useEffect(() => {
+        axios.get(`http://localhost:3000/api/other/getSponsoredProjects/${app_number}`)
+            .then(response => {
+                setSponsData(response.data.sponsoredProjects); 
+            })
+            .catch(error => {
+                console.error('Error fetching sponsored projects data:', error);
+                setSponsData([]); 
+            });
+    }, []);
+    // ---------------------------------------------------------------------------------------------------
+    useEffect(() => {
+        axios.get(`http://localhost:3000/api/other/getConsultancyProjects/${app_number}`)
+            .then(response => {
+                setConsultData(response.data.consultancyProjects); 
+            })
+            .catch(error => {
+                console.error('Error fetching consultancy projects data:', error);
+                setConsultData([]); 
+            });
+    }, []);
+    // ---------------------------------------------------------------------------------------------------
+    useEffect(() => {
+        axios.get(`http://localhost:3000/api/other/getPhdSupervisions/${app_number}`)
+            .then(response => {
+                setPhdSupData(response.data.phdSupervisions); 
+            })
+            .catch(error => {
+                console.error('Error fetching phd supervisions data:', error);
+                setPhdSupData([]); 
+            });
+    }, []);
+    // ---------------------------------------------------------------------------------------------------
+    useEffect(() => {
+        axios.get(`http://localhost:3000/api/other/getMasterSupervisions/${app_number}`)
+            .then(response => {
+                setMasterSupData(response.data.masterSupervisions); 
+            })
+            .catch(error => {
+                console.error('Error fetching master supervisions data:', error);
+                setMasterSupData([]); 
+            });
+    }, []);
+    // ---------------------------------------------------------------------------------------------------
+    useEffect(() => {
+        axios.get(`http://localhost:3000/api/other/getBachelorSupervisions/${app_number}`)
+            .then(response => {
+                setBachSupData(response.data.bachelorSupervisions); 
+            })
+            .catch(error => {
+                console.error('Error fetching bachelor supervisions data:', error);
+                setBachSupData([]); 
+            });
+    }, []);
+    // ---------------------------------------------------------------------------------------------------
+    useEffect(() => {
+        axios.get(`http://localhost:3000/api/other/getContributions/${app_number}`)
+            .then(response => {
+                setContriData(response.data.contributions); 
+            })
+            .catch(error => {
+                console.error('Error fetching contributions data:', error);
+                setContriData([]); 
+            });
+    }, []);
+    // ---------------------------------------------------------------------------------------------------
+    useEffect(() => {
+        axios.get(`http://localhost:3000/api/other/getReferees/${app_number}`)
+            .then(response => {
+                setRefereeData(response.data.referees); 
+            })
+            .catch(error => {
+                console.error('Error fetching referees data:', error);
+                setRefereeData([]); 
+            });
+    }, []);
+    // ---------------------------------------------------------------------------------------------------
     return (
         <div style={{ marginTop: "20%", marginLeft: "5%", marginBottom: "2%", marginRight: "2%", width: "100%" }}>
+            <div id="page-content">
             <span className="label">
                 <h2 style={{ backgroundColor: "#e1f0d8", fontWeight: "bolder", color: "#54773c" }}>
                     1. Application Details
@@ -1236,11 +1220,13 @@ function FinalPdf() {
                             <strong className="tr_title">Membership Status</strong>
                         </td>
                     </tr>
-                    <tr>
-                        <td>Gennedy</td>
-                        <td>Tourist</td>
-                        <td>Krotokevich</td>
-                    </tr>
+                    {membershipData && membershipData.map((membership, index) => (
+                            <tr key={membership.id}>
+                            <td>{index+1}</td>
+                            <td>{membership.name_society}</td>
+                            <td>{membership.status}</td>
+                        </tr>
+                    ))}
                 </tbody>
             </table>
 
@@ -1264,11 +1250,15 @@ function FinalPdf() {
                             <strong className="tr_title"> Duration</strong>
                         </td>
                     </tr>
-                    <tr>
-                        <td>Gennedy</td>
-                        <td>Tourist</td>
-                        <td>Krotokevich</td>
-                    </tr>
+                    {trainingData && trainingData.map((training, index) => (
+                            <tr key={training.id}>
+                            <td>{index+1}</td>
+                            <td>{training.type}</td>
+                            <td>{training.organisation}</td>
+                            <td>{training.year}</td>
+                            <td>{training.duration}</td>
+                        </tr>
+                    ))}
                 </tbody>
             </table>
             <br />
@@ -1290,11 +1280,14 @@ function FinalPdf() {
                             <strong className="tr_title"> Year</strong>
                         </td>
                     </tr>
-                    <tr>
-                        <td>Gennedy</td>
-                        <td>Tourist</td>
-                        <td>Krotokevich</td>
-                    </tr>
+                    {awardData && awardData.map((award, index) => (
+                            <tr key={award.id}>
+                            <td>{index+1}</td>
+                            <td>{award.name}</td>
+                            <td>{award.awarded_by}</td>
+                            <td>{award.year}</td>
+                        </tr>
+                    ))}
                 </tbody>
             </table>
 
@@ -1324,11 +1317,17 @@ function FinalPdf() {
                             <strong className="tr_title"> Status</strong>
                         </td>
                     </tr>
-                    <tr>
-                        <td>Gennedy</td>
-                        <td>Tourist</td>
-                        <td>Krotokevich</td>
-                    </tr>
+                    {sponsData && sponsData.map((spons, index) => (
+                            <tr key={spons.id}>
+                            <td>{index+1}</td>
+                            <td>{spons.agency}</td>
+                            <td>{spons.title}</td>
+                            <td>{spons.amount}</td>
+                            <td>{spons.period}</td>
+                            <td>{spons.role}</td>
+                            <td>{spons.status}</td>
+                        </tr>
+                    ))}
                 </tbody>
             </table>
             <br />
@@ -1358,15 +1357,229 @@ function FinalPdf() {
                             <strong className="tr_title"> Status</strong>
                         </td>
                     </tr>
-                    <tr>
-                        <td>Gennedy</td>
-                        <td>Tourist</td>
-                        <td>Krotokevich</td>
-                    </tr>
+                    {consultData && consultData.map((consult, index) => (
+                            <tr key={consult.id}>
+                            <td>{index+1}</td>
+                            <td>{consult.organisation}</td>
+                            <td>{consult.title}</td>
+                            <td>{consult.amount}</td>
+                            <td>{consult.period}</td>
+                            <td>{consult.role}</td>
+                            <td>{consult.status}</td>
+                        </tr>
+                    ))}
                 </tbody>
             </table>
             <br />
             {/* -------------------------------------------------------------------------------------------- */}
+            <span className="label">
+                <h2 style={{ backgroundColor: "#e1f0d8", fontWeight: "bolder", color: "#54773c" }}>7. Supervision</h2>
+            </span>
+
+            <table className="tab" style={{ borderCollapse: "collapse", border: "1px solid black", width: "100%" }}>
+                <h3> (A) PHD Thesis Supervision</h3>
+                <tbody>
+                    <tr style={{ backgroundColor: "#f1f1f1" }}>
+                        <td>
+                            <strong className="tr_title">S.No.</strong>
+                        </td>
+                        <td>
+                            <strong className="tr_title">Name of research scholar</strong>
+                        </td>
+                        <td>
+                            <strong className="tr_title">Title of Thesis</strong>
+                        </td>
+                        <td>
+                            <strong className="tr_title">Role</strong>
+                        </td>
+                        <td>
+                            <strong className="tr_title">Status</strong>
+                        </td>
+                        <td>
+                            <strong className="tr_title">Ongoing since/ Year of Completion</strong>
+                        </td>
+                    </tr>
+                    {phdSupData && phdSupData.map((phdSup, index) => (
+                            <tr key={phdSup.id}>
+                            <td>{index+1}</td>
+                            <td>{phdSup.name}</td>
+                            <td>{phdSup.title}</td>
+                            <td>{phdSup.role}</td>
+                            <td>{phdSup.status}</td>
+                            <td>{phdSup.year}</td>
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
+
+            <table className="tab" style={{ borderCollapse: "collapse", border: "1px solid black", width: "100%" }}>
+                <h3> (B) M.Tech/ M.E./ Master's Degree</h3>
+                <tbody>
+                    <tr style={{ backgroundColor: "#f1f1f1" }}>
+                        <td>
+                            <strong className="tr_title">S.No.</strong>
+                        </td>
+                        <td>
+                            <strong className="tr_title">Name of research scholar</strong>
+                        </td>
+                        <td>
+                            <strong className="tr_title">Title of Thesis</strong>
+                        </td>
+                        <td>
+                            <strong className="tr_title">Role</strong>
+                        </td>
+                        <td>
+                            <strong className="tr_title">Status</strong>
+                        </td>
+                        <td>
+                            <strong className="tr_title">Ongoing since/ Year of Completion</strong>
+                        </td>
+                    </tr>
+                    {masterSupData && masterSupData.map((masterSup, index) => (
+                            <tr key={masterSup.id}>
+                            <td>{index+1}</td>
+                            <td>{masterSup.name}</td>
+                            <td>{masterSup.title}</td>
+                            <td>{masterSup.role}</td>
+                            <td>{masterSup.status}</td>
+                            <td>{masterSup.year}</td>
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
+
+            <table className="tab" style={{ borderCollapse: "collapse", border: "1px solid black", width: "100%" }}>
+                <h3> (C) B.Tech/ B.E./ Bachelor's Degree</h3>
+                <tbody>
+                    <tr style={{ backgroundColor: "#f1f1f1" }}>
+                        <td>
+                            <strong className="tr_title">S.No.</strong>
+                        </td>
+                        <td>
+                            <strong className="tr_title">Name of research scholar</strong>
+                        </td>
+                        <td>
+                            <strong className="tr_title">Title of Thesis</strong>
+                        </td>
+                        <td>
+                            <strong className="tr_title">Role</strong>
+                        </td>
+                        <td>
+                            <strong className="tr_title">Status</strong>
+                        </td>
+                        <td>
+                            <strong className="tr_title">Ongoing since/ Year of Completion</strong>
+                        </td>
+                    </tr>
+                    {bachSupData && bachSupData.map((bachSup, index) => (
+                            <tr key={bachSup.id}>
+                            <td>{index+1}</td>
+                            <td>{bachSup.name}</td>
+                            <td>{bachSup.title}</td>
+                            <td>{bachSup.role}</td>
+                            <td>{bachSup.status}</td>
+                            <td>{bachSup.year}</td>
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
+            {/* ----------------------------------------------------------------------------------------------- */}
+            <span className="label">
+                <h2 style={{ backgroundColor: "#e1f0d8", fontWeight: "bolder", color: "#54773c" }}>8. Contributions</h2>
+            </span>
+            <table className="tab" style={{ borderCollapse: "collapse", border: "1px solid black", width: "100%" }}>
+                <h3> (A) Contributions </h3>
+                <tbody>
+                    <tr style={{ backgroundColor: "#f1f1f1" }}>
+                        <td>
+                            <strong className="tr_title">S.No.</strong>
+                        </td>
+                        <td>
+                            <strong className="tr_title">Name of research scholar</strong>
+                        </td>
+                        <td>
+                            <strong className="tr_title">Title of Thesis</strong>
+                        </td>
+                        <td>
+                            <strong className="tr_title">Role</strong>
+                        </td>
+                        <td>
+                            <strong className="tr_title">Status</strong>
+                        </td>
+                        <td>
+                            <strong className="tr_title">Ongoing since/ Year of Completion</strong>
+                        </td>
+                    </tr>
+                    {contriData && contriData.map((contri, index) => (
+                            <tr key={contri.id}>
+                            <td>{index+1}</td>
+                            <td>{contri.research_contri}</td>
+                            <td>{contri.teaching_contri}</td>
+                            <td>{contri.other_info}</td>
+                            <td>{contri.professional_service}</td>
+                            <td>{contri.list_journalpub}</td>
+                            <td>{contri.list_conferencepub}</td>
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
+            {/* -------------------------------------------------------------------------------------------- */}
+            <span className="label">
+                <h2 style={{ backgroundColor: "#e1f0d8", fontWeight: "bolder", color: "#54773c" }}>9. Referees</h2>
+            </span>
+            <table className="tab" style={{ borderCollapse: "collapse", border: "1px solid black", width: "100%" }}>
+                <h3> (A) Referees </h3>
+                <tbody>
+                    <tr style={{ backgroundColor: "#f1f1f1" }}>
+                        <td>
+                            <strong className="tr_title">S.No.</strong>
+                        </td>
+                        <td>
+                            <strong className="tr_title">Name</strong>
+                        </td>
+                        <td>
+                            <strong className="tr_title">Position</strong>
+                        </td>
+                        <td>
+                            <strong className="tr_title">Association with Referee</strong>
+                        </td>
+                        <td>
+                            <strong className="tr_title">Organization/Institution</strong>
+                        </td>
+                        <td>
+                            <strong className="tr_title">e-mail</strong>
+                        </td>
+                        <td>
+                            <strong className="tr_title">Contact No.</strong>
+                        </td>
+                    </tr>
+                    {refereeData && refereeData.map((referee, index) => (
+                            <tr key={referee.id}>
+                            <td>{index+1}</td>
+                            <td>{referee.name}</td>
+                            <td>{referee.position}</td>
+                            <td>{referee.association}</td>
+                            <td>{referee.organisation}</td>
+                            <td>{referee.email}</td>
+                            <td>{referee.contact}</td>
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
+            {/* ------------------------------------------------------------------------------------------- */}
+            <h2 style={{ backgroundColor: "#e1f0d8", color: "#308000" }}>Final Declaration</h2>
+            <p style={{ color: "red" }}>
+                I hereby declare that I have carefully read and understood the instructions and particulars mentioned in the
+                advertisement and this application form. I further declare that all the entries along with the attachments uploaded
+                in this form are true to the best of my knowledge and belief.
+            </p>
+            <label>
+                <input type="checkbox" checked={agreement} onChange={handleAgreementChange}/>
+                    I agree to the declaration
+            </label>
+            <br />
+            </div>
+            <button onClick={handlePrint}>Print</button>
         </div>
     );
 }
