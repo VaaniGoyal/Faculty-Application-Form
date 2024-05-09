@@ -95,7 +95,6 @@ const PersonalDetailsForm = () => {
     const navigate = useNavigate();
     
     const handlePersonalSubmit = async (e) => {
-        navigate('/Educational_Qualifications');
         e.preventDefault();
         try {
             const formData = new FormData();
