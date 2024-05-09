@@ -494,9 +494,8 @@
 
 
 import React, { useState, useEffect } from "react";
-import { useNavigate } from 'react-router-dom';
 import axios from "axios";
-import { promises } from "nodemailer/lib/xoauth2";
+
 
 function FinalPdf() {
     const app_number = localStorage.getItem("app_number");
