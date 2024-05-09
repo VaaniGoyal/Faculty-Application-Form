@@ -50,96 +50,157 @@ const Contribution = () => {
     const [conferencePubEditorState, setConferencePubEditorState] = useState(EditorState.createEmpty());
 
     return (
-        <div className="Present_Employment">
+        <div className="Present_Employment"
+        style={{
+            marginTop: "12rem",
+            marginLeft: "7rem",
+            marginRight: "7rem",
+            marginBottom: "4rem",
+            backgroundColor: "#f5f5f5",
+        }}
+        >
             <h2>Apply For Faculty Position</h2>
-            <h7>Welcome {name}!!</h7> <button onClick={handleLogout}>Logout</button>
+            <h4 style={{ marginLeft: "48%" }}> Welcome {name}!!</h4>{" "} 
+            <button
+                style={{ backgroundColor: "#ddedf7", marginLeft: "94%", backgroundColor: "#6fb85b", color: "white" }}
+                onClick={handleLogout}
+            >
+                {" "}
+                Logout{" "}
+            </button>
             <form onSubmit={handleSubmitContri}>
-                <legend>Significant research contribution and future plans</legend>
+            <legend style={{ backgroundColor: "#e1f0d8", width: "99.6%", color: "#54773c" }}>
+                    <b>14. Significant research contribution and future plans (not more than 500 words)</b> <br />
+                    (Please provide a Research Statement describing your research plans and one or two specific research
+                    projects to be conducted at IIT Indore in 2-3 years time frame)
+                </legend>
                 <Editor
                     editorState={researchEditorState}
+                    toolbarClassName="toolbarClassName"
+                    wrapperClassName="wrapperClassName"
+                    editorClassName="editorClassName"
                     onEditorStateChange={setResearchEditorState}
                 />
                 <textarea
                     name="research_contri"
-                    placeholder="Enter your research statement here..."
+                    
                     rows="10"
                     cols="50"
                     maxLength="500"
+                    style={{ marginTop: "-5%", marginBottom: "4%", width: "99.6%" }}
                     value={contriData.research_contri}
                     onChange={handleInputChangeContri}
                 />
 
-                <legend>Significant teaching contribution and future plans</legend>
+                    <legend style={{ backgroundColor: "#e1f0d8", width: "99.6%", color: "#54773c" }}>
+                    <b>
+                        15. Significant teaching contribution and future plans *<br />
+                    </b>
+                    (Please list UG/PG courses that you would like to develop and/or teach at IIT Indore)
+                </legend>
                 <Editor
                     editorState={teachingEditorState}
+                    toolbarClassName="toolbarClassName"
+                    wrapperClassName="wrapperClassName"
+                    editorClassName="editorClassName"
                     onEditorStateChange={setTeachingEditorState}
                 />
                 <textarea
                     name="teaching_contri"
-                    placeholder="Enter your teaching contribution here..."
+                    
                     rows="10"
                     cols="50"
                     maxLength="500"
+                    style={{ marginTop: "-5%", marginBottom: "4%", width: "99.6%" }}
                     value={contriData.teaching_contri}
                     onChange={handleInputChangeContri}
                 />
 
-                <legend>Any other relevant information</legend>
+                <legend style={{ backgroundColor: "#e1f0d8", width: "99.6%", color: "#54773c" }}>
+                <b>16. Any other relevant information.</b>
+                </legend>
                 <Editor
                     editorState={otherInfoEditorState}
+                    toolbarClassName="toolbarClassName"
+                    wrapperClassName="wrapperClassName"
+                    editorClassName="editorClassName"
                     onEditorStateChange={setOtherInfoEditorState}
                 />
                 <textarea
                     name="other_info"
-                    placeholder="Enter any other relevant information here..."
+                    
                     rows="10"
                     cols="50"
                     maxLength="500"
+                    style={{ marginTop: "-5%", marginBottom: "4%", width: "99.6%" }}
                     value={contriData.other_info}
                     onChange={handleInputChangeContri}
                 />
 
-                <legend>Professional Service : Editorship/Reviewership</legend>
+                <legend style={{ backgroundColor: "#e1f0d8", width: "99.6%", color: "#54773c" }}>
+                <b>17. Professional Service : Editorship/Reviewership</b>
+                </legend>
                 <Editor
                     editorState={professionalServiceEditorState}
+                    toolbarClassName="toolbarClassName"
+                    wrapperClassName="wrapperClassName"
+                    editorClassName="editorClassName"
                     onEditorStateChange={setProfessionalServiceEditorState}
                 />
                 <textarea
                     name="professional_service"
-                    placeholder="Enter your professional service information here..."
+                    
                     rows="10"
                     cols="50"
                     maxLength="500"
+                    style={{ marginTop: "-5%", marginBottom: "4%", width: "99.6%" }}
                     value={contriData.professional_service}
                     onChange={handleInputChangeContri}
                 />
 
-                <legend>Detailed List of Journal Publications</legend>
+                <legend style={{ backgroundColor: "#e1f0d8", width: "99.6%", color: "#54773c" }}>
+                <b>18. Detailed List of Journal Publications</b>
+                <br />
+                (Including Sr. No., Author's Names, Paper Title, Volume, Issue, Year, Page Nos., Impact Factor (if any),
+                DOI, Status[Published/Accepted] )
+                </legend>
                 <Editor
                     editorState={journalPubEditorState}
+                    toolbarClassName="toolbarClassName"
+                    wrapperClassName="wrapperClassName"
+                    editorClassName="editorClassName"
                     onEditorStateChange={setJournalPubEditorState}
                 />
                 <textarea
                     name="list_journalpub"
-                    placeholder="Enter your list of journal publications here..."
+                    
                     rows="10"
                     cols="50"
                     maxLength="500"
+                    style={{ marginTop: "-5%", marginBottom: "4%", width: "99.6%" }}
                     value={contriData.list_journalpub}
                     onChange={handleInputChangeContri}
                 />
 
-                <legend>Detailed List of Conference Publications</legend>
+                <legend style={{ backgroundColor: "#e1f0d8", width: "99.6%", color: "#54773c" }}>
+                <b>19. Detailed List of Conference Publications</b>
+                <br />
+                (Including Sr. No., Author's Names, Paper Title, Name of the conference, Year, Page Nos., DOI [If any] )
+                </legend>
                 <Editor
                     editorState={conferencePubEditorState}
+                    toolbarClassName="toolbarClassName"
+                    wrapperClassName="wrapperClassName"
+                    editorClassName="editorClassName"
                     onEditorStateChange={setConferencePubEditorState}
                 />
                 <textarea
                     name="list_conferencepub"
-                    placeholder="Enter your list of conference publications here..."
+                    
                     rows="10"
                     cols="50"
                     maxLength="500"
+                    style={{ marginTop: "-5%", marginBottom: "4%", width: "99.5%" }}
                     value={contriData.list_conferencepub}
                     onChange={handleInputChangeContri}
                 />

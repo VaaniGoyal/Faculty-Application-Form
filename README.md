@@ -7,7 +7,7 @@ This project is a faculty application website for IIT Patna. It takes all the re
 - [Tech Stack](#tech-stack)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Contributing](#contributing)
+- [Contributions](#contributions)
 - [License](#license)
 
 ## Tech Stack
@@ -50,7 +50,7 @@ Once the application is installed and running, users can access this website thr
    
 
 
-## Contributing
+## Contributions
 
 Contributions to IIT Patna Faculty Application Website are welcome! If you'd like to contribute to the project, please follow these steps:
 
