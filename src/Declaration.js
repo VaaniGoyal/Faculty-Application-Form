@@ -14,7 +14,7 @@ const Declaration = () => {
       alert("Please agree to the declaration to navigate to the next page.");
       return;
     }
-    navigate('/Download_Pdf');
+    navigate('/FinalPdf');
   };
 
   return (

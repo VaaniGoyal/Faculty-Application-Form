@@ -1,7 +1,6 @@
 //userController.js
 const { hashSync } = require("bcryptjs");
-// const nodemailer = require('nodemailer');
-const User = require('../models/user'); // Import Sequelize model
+const User = require('../models/user'); 
 
 async function createUser(req, res) {
   try {
@@ -95,53 +94,53 @@ async function changePassword(req, res) {
   }
 }
 
-async function resetPassword(req, res) {
-  try {
-    const { email } = req.body;
+// async function resetPassword(req, res) {
+//   try {
+//     const { email } = req.body;
 
-    // Check if the user with the provided email exists
-    const user = await User.findOne({ where: { email } });
-    if (!user) {
-      return res.status(404).json({ message: "User not found." });
-    }
+//     // Check if the user with the provided email exists
+//     const user = await User.findOne({ where: { email } });
+//     if (!user) {
+//       return res.status(404).json({ message: "User not found." });
+//     }
 
-    // Generate a temporary password
-    const tempPassword = Math.random().toString(36).slice(-8); // Generate an 8-character alphanumeric password
+//     // Generate a temporary password
+//     const tempPassword = Math.random().toString(36).slice(-8); // Generate an 8-character alphanumeric password
 
-    // Update the user's password in the database
-    await user.update({ password: tempPassword });
+//     // Update the user's password in the database
+//     await user.update({ password: tempPassword });
 
-    // Create a nodemailer transporter
-    const transporter = nodemailer.createTransport({
-      service: 'Gmail',
-      auth: {
-        user: 'madlover619619@gmail.com',
-        pass: 'Mad@lover69',
-      },
-    });
+//     // Create a nodemailer transporter
+//     const transporter = nodemailer.createTransport({
+//       service: 'Gmail',
+//       auth: {
+//         user: 'madlover619619@gmail.com',
+//         pass: 'Mad@lover69',
+//       },
+//     });
 
-    // Create email message
-    const mailOptions = {
-      from: 'madlover619619@gmail.com',
-      to: email,
-      subject: 'Password Reset',
-      text: `You are receiving this email because you (or someone else) has requested to reset the password for your account.\n\n`
-            + `Your temporary password is: ${tempPassword}\n\n`
-            + `Please log in with this password and update your password.\n`,
-    };
+//     // Create email message
+//     const mailOptions = {
+//       from: 'madlover619619@gmail.com',
+//       to: email,
+//       subject: 'Password Reset',
+//       text: `You are receiving this email because you (or someone else) has requested to reset the password for your account.\n\n`
+//             + `Your temporary password is: ${tempPassword}\n\n`
+//             + `Please log in with this password and update your password.\n`,
+//     };
 
-    // Send the email
-    await transporter.sendMail(mailOptions);
+//     // Send the email
+//     await transporter.sendMail(mailOptions);
     
-    console.log("Temporary password sent to email:", email);
+//     console.log("Temporary password sent to email:", email);
 
-    return res.status(200).json({ message: "Temporary password sent to your email." });
-  } catch (error) {
-    console.error("Error resetting password:", error);
-    return res.status(500).json({ message: "Failed to reset password." });
-  }
-}
+//     return res.status(200).json({ message: "Temporary password sent to your email." });
+//   } catch (error) {
+//     console.error("Error resetting password:", error);
+//     return res.status(500).json({ message: "Failed to reset password." });
+//   }
+// }
 
 
 
-module.exports = { getUser, createUser, login, changePassword, resetPassword };
+module.exports = { getUser, createUser, login, changePassword };

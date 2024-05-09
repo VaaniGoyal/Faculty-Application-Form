@@ -8,7 +8,7 @@ router.get('/getUser/:reg_id', userController.getUser);
 router.post('/createUser', userController.createUser);
 router.post('/login', userController.login);
 router.post('/changePass', userController.changePassword);
-router.post('/resetPass', userController.resetPassword);
+// router.post('/resetPass', userController.resetPassword);
 module.exports = router;
 
 

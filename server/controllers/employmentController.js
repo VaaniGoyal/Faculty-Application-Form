@@ -20,7 +20,7 @@ async function createEmployment(req, res) {
 async function getEmployment(req, res) {
   try {
     const { app_number } = req.params; 
-    const employment = await Employment.findOne({ where: { app_number }, attributes: ['id', 'present_position','status','date_leave', 'organisation', 'date_join','duration','area_special','app_number'] });
+    const employment = await Employment.findOne({ where: { app_number }, attributes: ['id', 'present_position','status','date_leave', 'organisation', 'date_join','duration','current_area', 'area_special','app_number'] });
     if (employment) {
       return res.status(200).json({ employment });
     } else {
