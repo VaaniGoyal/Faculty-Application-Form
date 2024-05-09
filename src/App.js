@@ -14,6 +14,7 @@ import Supervision from "./Supervision";
 import Contribution from "./Contribution";
 import Refree from "./Refree";
 import Declaration from "./Declaration";
+import Download_Pdf from "./Download_Pdf";
 
 import "./App.css";
 
@@ -37,6 +38,7 @@ function App() {
           <Route path="/Contribution" element={<Contribution />} />
           <Route path="/Refree" element={<Refree />} />
           <Route path="/Declaration" element={<Declaration/>}/>
+          <Route path="/Download_Pdf" element={<Download_Pdf/>}/>
         </Routes>
       </div>
     </Router>

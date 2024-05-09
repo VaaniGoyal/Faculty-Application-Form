@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { useHistory, useNavigate } from "react-router-dom";
-
+import { useNavigate } from "react-router-dom";
 
 const Declaration = () => {
   const navigate = useNavigate();
@@ -15,9 +14,7 @@ const Declaration = () => {
       alert("Please agree to the declaration to navigate to the next page.");
       return;
     }
-
-    // Navigate to the next page
-    // navigate("/next-page");
+    navigate('/Download_Pdf');
   };
 
   return (
