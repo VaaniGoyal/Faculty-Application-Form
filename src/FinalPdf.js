@@ -1,352 +1,8 @@
 
 //             {/*------------------------------PUBLICATIONS------------------------------------- */}
-//             <span className="label">
-//                 <h2 style={{ backgroundColor: "#e1f0d8", fontWeight: "bolder", color: "#54773c" }}>5. Publications</h2>
-//             </span>
-
-//             {/* (A) summary of pub */}
-
-//             <table className="tab" style={{ borderCollapse: "collapse", border: "1px solid black", width: "100%" }}>
-//                 <h3> (A) Summary of Publications</h3>
-//                 <tbody>
-//                     <tr style={{ backgroundColor: "#f1f1f1" }}>
-//                         <td>
-//                             <strong className="tr_title">Number of International Journal Papers</strong>
-//                         </td>
-//                         <td>
-//                             <strong className="tr_title">Number of National Journal Papers</strong>
-//                         </td>
-//                         <td>
-//                             <strong className="tr_title">Number of Books</strong>
-//                         </td>
-//                         <td>
-//                             <strong className="tr_title">Number of Book Chapters</strong>
-//                         </td>
-//                         <td>
-//                             <strong className="tr_title">Number of International Conference Papers</strong>
-//                         </td>
-//                         <td>
-//                             <strong className="tr_title">Number of National Conference Papers</strong>
-//                         </td>
-//                         <td>
-//                             <strong className="tr_title">Number of Patents:</strong>
-//                         </td>
-//                         <td>
-//                             <strong className="tr_title">Google Scholar Link</strong>
-//                         </td>
-//                     </tr>
-//                     <tr>
-//                         <td>Gennedy</td>
-//                         <td>Tourist</td>
-//                         <td>Krotokevich</td>
-//                         <td>Krotokevich</td>
-//                         <td>Krotokevich</td>
-//                         <td>Krotokevich</td>
-//                         <td>Krotokevich</td>
-//                     </tr>
-//                 </tbody>
-//             </table>
-//             <br />
-
-//             {/*List of pub*/}
-//             <table className="tab" style={{ borderCollapse: "collapse", border: "1px solid black", width: "100%" }}>
-//                 <h3>(B) List of Publications</h3>
-//                 <tbody>
-//                     <tr style={{ backgroundColor: "#f1f1f1" }}>
-//                         <td>
-//                             <strong className="tr_title">S.No.</strong>
-//                         </td>
-//                         <td>
-//                             <strong className="tr_title">Author(s)</strong>
-//                         </td>
-//                         <td>
-//                             <strong className="tr_title">Title</strong>
-//                         </td>
-//                         <td>
-//                             <strong className="tr_title">Name of Journal </strong>
-//                         </td>
-//                         <td>
-//                             <strong className="tr_title">Year, Vol, Page</strong>
-//                         </td>
-//                         <td>
-//                             <strong className="tr_title">impact Factor</strong>
-//                         </td>
-//                         <td>
-//                             <strong className="tr_title">DOI</strong>
-//                         </td>
-//                         <td>
-//                             <strong className="tr_title">Status</strong>
-//                         </td>
-//                     </tr>
-//                     <tr>
-//                         <td>Gennedy</td>
-//                         <td>Tourist</td>
-//                         <td>Krotokevich</td>
-//                         <td>Krotokevich</td>
-//                         <td>Krotokevich</td>
-//                         <td>Krotokevich</td>
-//                         <td>Krotokevich</td>
-//                     </tr>
-//                 </tbody>
-//             </table>
-
-//             {/*List of patents*/}
-//             <table className="tab" style={{ borderCollapse: "collapse", border: "1px solid black", width: "100%" }}>
-//                 <h3>(C) List of Patents</h3>
-//                 <tbody>
-//                     <tr style={{ backgroundColor: "#f1f1f1" }}>
-//                         <td>
-//                             <strong className="tr_title">S.No.</strong>
-//                         </td>
-//                         <td>
-//                             <strong className="tr_title">Inventor(s)</strong>
-//                         </td>
-//                         <td>
-//                             <strong className="tr_title">Title</strong>
-//                         </td>
-//                         <td>
-//                             <strong className="tr_title">Country of Patent </strong>
-//                         </td>
-//                         <td>
-//                             <strong className="tr_title">Patent Number</strong>
-//                         </td>
-//                         <td>
-//                             <strong className="tr_title">Date of Filing</strong>
-//                         </td>
-//                         <td>
-//                             <strong className="tr_title">Date of Publish</strong>
-//                         </td>
-//                         <td>
-//                             <strong className="tr_title">Status</strong>
-//                         </td>
-//                     </tr>
-//                     <tr>
-//                         <td>Gennedy</td>
-//                         <td>Tourist</td>
-//                         <td>Krotokevich</td>
-//                         <td>Krotokevich</td>
-//                         <td>Krotokevich</td>
-//                         <td>Krotokevich</td>
-//                         <td>Krotokevich</td>
-//                     </tr>
-//                 </tbody>
-//             </table>
-
-//             {/*List of Books*/}
-//             <table className="tab" style={{ borderCollapse: "collapse", border: "1px solid black", width: "100%" }}>
-//                 <h3>(D) List of Books</h3>
-//                 <tbody>
-//                     <tr style={{ backgroundColor: "#f1f1f1" }}>
-//                         <td>
-//                             <strong className="tr_title">S.No.</strong>
-//                         </td>
-//                         <td>
-//                             <strong className="tr_title">Author(s)</strong>
-//                         </td>
-//                         <td>
-//                             <strong className="tr_title">Title</strong>
-//                         </td>
-//                         <td>
-//                             <strong className="tr_title">Year of Publication </strong>
-//                         </td>
-//                         <td>
-//                             <strong className="tr_title">ISBN</strong>
-//                         </td>
-//                     </tr>
-//                     <tr>
-//                         <td>Gennedy</td>
-//                         <td>Tourist</td>
-//                         <td>Krotokevich</td>
-//                         <td>Krotokevich</td>
-//                         <td>Krotokevich</td>
-//                         <td>Krotokevich</td>
-//                         <td>Krotokevich</td>
-//                     </tr>
-//                 </tbody>
-//             </table>
-
-//             {/*List of Books Ch*/}
-//             <table className="tab" style={{ borderCollapse: "collapse", border: "1px solid black", width: "100%" }}>
-//                 <h3>(E) List of Books Chapters</h3>
-//                 <tbody>
-//                     <tr style={{ backgroundColor: "#f1f1f1" }}>
-//                         <td>
-//                             <strong className="tr_title">S.No.</strong>
-//                         </td>
-//                         <td>
-//                             <strong className="tr_title">Author(s)</strong>
-//                         </td>
-//                         <td>
-//                             <strong className="tr_title">Title</strong>
-//                         </td>
-//                         <td>
-//                             <strong className="tr_title">Year of Publication </strong>
-//                         </td>
-//                         <td>
-//                             <strong className="tr_title">ISBN</strong>
-//                         </td>
-//                     </tr>
-//                     <tr>
-//                         <td>Gennedy</td>
-//                         <td>Tourist</td>
-//                         <td>Krotokevich</td>
-//                         <td>Krotokevich</td>
-//                         <td>Krotokevich</td>
-//                         <td>Krotokevich</td>
-//                         <td>Krotokevich</td>
-//                     </tr>
-//                 </tbody>
-//             </table>
+            
 //             {/*-----------------------MEMBERSHIP-------------------------------- */}
-//             <span className="label">
-//                 <h2 style={{ backgroundColor: "#e1f0d8", fontWeight: "bolder", color: "#54773c" }}>6. Membership</h2>
-//             </span>
-
-//             <table className="tab" style={{ borderCollapse: "collapse", border: "1px solid black", width: "100%" }}>
-//                 <h3> (A) Membership of Professional Societies</h3>
-//                 <tbody>
-//                     <tr style={{ backgroundColor: "#f1f1f1" }}>
-//                         <td>
-//                             <strong className="tr_title">S.No.</strong>
-//                         </td>
-//                         <td>
-//                             <strong className="tr_title">Name of professional society</strong>
-//                         </td>
-//                         <td>
-//                             <strong className="tr_title">Membership Status</strong>
-//                         </td>
-//                     </tr>
-//                     <tr>
-//                         <td>Gennedy</td>
-//                         <td>Tourist</td>
-//                         <td>Krotokevich</td>
-//                     </tr>
-//                 </tbody>
-//             </table>
-
-//             <table className="tab" style={{ borderCollapse: "collapse", border: "1px solid black", width: "100%" }}>
-//                 <h3> (B) Professional Trainings</h3>
-//                 <tbody>
-//                     <tr style={{ backgroundColor: "#f1f1f1" }}>
-//                         <td>
-//                             <strong className="tr_title">S.No.</strong>
-//                         </td>
-//                         <td>
-//                             <strong className="tr_title">Type of Training</strong>
-//                         </td>
-//                         <td>
-//                             <strong className="tr_title">Organisation</strong>
-//                         </td>
-//                         <td>
-//                             <strong className="tr_title"> Year</strong>
-//                         </td>
-//                         <td>
-//                             <strong className="tr_title"> Duration</strong>
-//                         </td>
-//                     </tr>
-//                     <tr>
-//                         <td>Gennedy</td>
-//                         <td>Tourist</td>
-//                         <td>Krotokevich</td>
-//                     </tr>
-//                 </tbody>
-//             </table>
-//             <br />
-
-//             <table className="tab" style={{ borderCollapse: "collapse", border: "1px solid black", width: "100%" }}>
-//                 <h3> (C) Award(s) and Recognition(s)</h3>
-//                 <tbody>
-//                     <tr style={{ backgroundColor: "#f1f1f1" }}>
-//                         <td>
-//                             <strong className="tr_title">S.No.</strong>
-//                         </td>
-//                         <td>
-//                             <strong className="tr_title">Name of Award</strong>
-//                         </td>
-//                         <td>
-//                             <strong className="tr_title">Awarded By</strong>
-//                         </td>
-//                         <td>
-//                             <strong className="tr_title"> Year</strong>
-//                         </td>
-//                     </tr>
-//                     <tr>
-//                         <td>Gennedy</td>
-//                         <td>Tourist</td>
-//                         <td>Krotokevich</td>
-//                     </tr>
-//                 </tbody>
-//             </table>
-
-//             <table className="tab" style={{ borderCollapse: "collapse", border: "1px solid black", width: "100%" }}>
-//                 <h3> (D) Sponsored Projects</h3>
-//                 <tbody>
-//                     <tr style={{ backgroundColor: "#f1f1f1" }}>
-//                         <td>
-//                             <strong className="tr_title">S.No.</strong>
-//                         </td>
-//                         <td>
-//                             <strong className="tr_title">Sponsoring Agency </strong>
-//                         </td>
-//                         <td>
-//                             <strong className="tr_title">Title of project</strong>
-//                         </td>
-//                         <td>
-//                             <strong className="tr_title"> Sanctioned Amount</strong>
-//                         </td>
-//                         <td>
-//                             <strong className="tr_title"> Period</strong>
-//                         </td>
-//                         <td>
-//                             <strong className="tr_title"> Role</strong>
-//                         </td>
-//                         <td>
-//                             <strong className="tr_title"> Status</strong>
-//                         </td>
-//                     </tr>
-//                     <tr>
-//                         <td>Gennedy</td>
-//                         <td>Tourist</td>
-//                         <td>Krotokevich</td>
-//                     </tr>
-//                 </tbody>
-//             </table>
-//             <br />
-//             <table className="tab" style={{ borderCollapse: "collapse", border: "1px solid black", width: "100%" }}>
-//                 <h3> (D) Consultancy Projects</h3>
-//                 <tbody>
-//                     <tr style={{ backgroundColor: "#f1f1f1" }}>
-//                         <td>
-//                             <strong className="tr_title">S.No.</strong>
-//                         </td>
-//                         <td>
-//                             <strong className="tr_title">Organisation </strong>
-//                         </td>
-//                         <td>
-//                             <strong className="tr_title">Title of project</strong>
-//                         </td>
-//                         <td>
-//                             <strong className="tr_title"> Amount of Grant </strong>
-//                         </td>
-//                         <td>
-//                             <strong className="tr_title"> Period</strong>
-//                         </td>
-//                         <td>
-//                             <strong className="tr_title"> Role</strong>
-//                         </td>
-//                         <td>
-//                             <strong className="tr_title"> Status</strong>
-//                         </td>
-//                     </tr>
-//                     <tr>
-//                         <td>Gennedy</td>
-//                         <td>Tourist</td>
-//                         <td>Krotokevich</td>
-//                     </tr>
-//                 </tbody>
-//             </table>
-
-//             <br />
+            
 //             {/**----------------------supervision---------------------------------- */}
 //             <span className="label">
 //                 <h2 style={{ backgroundColor: "#e1f0d8", fontWeight: "bolder", color: "#54773c" }}>7. Supervision</h2>
@@ -511,6 +167,11 @@ function FinalPdf() {
     const [teachingData, setTeachingData] = useState(null);
     const [researchData, setResearchData] = useState(null);
     const [industryData, setIndustryData] = useState(null);
+    const [pubData, setPubData] = useState(null);
+    const [bestPubData, setBestPubData] = useState(null);
+    const [patentData, setPatentData] = useState(null);
+    const [booksData, setBooksData] = useState(null);
+    const [bookChaptersData, setBookChaptersData] = useState(null);
     // --------------------------------------------------------------------------------------------
     useEffect(() => {
         axios.get(`http://localhost:3000/api/application/getApplicationDetails/${app_number}`)
@@ -663,6 +324,66 @@ function FinalPdf() {
             .catch(error => {
                 console.error('Error fetching teaching data:', error);
                 setIndustryData([]); 
+            });
+    }, []);
+    // -----------------------------------------------------------------------------------------------------
+    useEffect(() => {
+        axios.get(`http://localhost:3000/api/publications/getPublications/${app_number}`)
+            .then(response => {
+                const pubData = response.data.publications;
+                const pub_id = pubData && pubData.id;
+                localStorage.setItem("pub_id", pub_id);
+                setPubData(pubData); 
+            })
+            .catch(error => {
+                console.error('Error fetching publications data:', error);
+                setPubData(null); 
+            });
+    }, []); 
+    const pub_id = localStorage.getItem("pub_id");
+    const pubId = parseInt(pub_id, 10);
+    // ---------------------------------------------------------------------------------------------------
+    useEffect(() => {
+        axios.get(`http://localhost:3000/api/publications/getBestPublications/${pubId}`)
+            .then(response => {
+                setBestPubData(response.data.bestPublications); 
+            })
+            .catch(error => {
+                console.error('Error fetching best publications data:', error);
+                setBestPubData([]); 
+            });
+    }, []);
+    // ---------------------------------------------------------------------------------------------------
+    useEffect(() => {
+        axios.get(`http://localhost:3000/api/publications/getPatents/${pubId}`)
+            .then(response => {
+                setPatentData(response.data.patents); 
+            })
+            .catch(error => {
+                console.error('Error fetching patents data:', error);
+                setPatentData([]); 
+            });
+    }, []);
+    // ---------------------------------------------------------------------------------------------------
+    useEffect(() => {
+        axios.get(`http://localhost:3000/api/publications/getBooks/${pubId}`)
+            .then(response => {
+                setBooksData(response.data.books); 
+            })
+            .catch(error => {
+                console.error('Error fetching books data:', error);
+                setBooksData([]); 
+            });
+    }, []);
+    // ---------------------------------------------------------------------------------------------------
+    useEffect(() => {
+        axios.get(`http://localhost:3000/api/publications/getBookChapters/${pubId}`)
+            .then(response => {
+                setBookChaptersData(response.data.bookChapters); 
+            })
+            .catch(error => {
+                console.error('Error fetching book chapters data:', error);
+                setBookChaptersData([]); 
             });
     }, []);
     // ---------------------------------------------------------------------------------------------------
@@ -1143,7 +864,7 @@ function FinalPdf() {
                         </td>
                     </tr>
                     {empHistoryData && empHistoryData.map((empHistory, index) => (
-                        <tr key={empHistory.emp_id}>
+                        <tr key={empHistory.id}>
                             <td>{index+1}</td>
                             <td>{empHistory.position}</td>
                             <td>{empHistory.organisation}</td>
@@ -1193,7 +914,7 @@ function FinalPdf() {
                         </td>
                     </tr>
                     {teachingData && teachingData.map((teach, index) => (
-                        <tr key={teach.emp_id}>
+                        <tr key={teach.id}>
                             <td>{index+1}</td>
                             <td>{teach.position}</td>
                             <td>{teach.employer}</td>
@@ -1238,7 +959,7 @@ function FinalPdf() {
                         </td>
                     </tr>
                     {researchData && researchData.map((research, index) => (
-                        <tr key={research.emp_id}>
+                        <tr key={research.id}>
                             <td>{index+1}</td>
                             <td>{research.position}</td>
                             <td>{research.institute}</td>
@@ -1277,7 +998,7 @@ function FinalPdf() {
                         </td>
                     </tr>
                     {industryData && industryData.map((industry, index) => (
-                            <tr key={industry.emp_id}>
+                            <tr key={industry.id}>
                             <td>{index+1}</td>
                             <td>{industry.organisation}</td>
                             <td>{industry.work_profile}</td>
@@ -1290,6 +1011,362 @@ function FinalPdf() {
             </table>
             <br />
             {/* ------------------------------------------------------------------------------------------ */}
+            <span className="label">
+                <h2 style={{ backgroundColor: "#e1f0d8", fontWeight: "bolder", color: "#54773c" }}>5. Publications</h2>
+            </span>
+
+            {/* (A) summary of pub */}
+
+            <table className="tab" style={{ borderCollapse: "collapse", border: "1px solid black", width: "100%" }}>
+                <h3> (A) Summary of Publications</h3>
+                <tbody>
+                    <tr style={{ backgroundColor: "#f1f1f1" }}>
+                        <td>
+                            <strong className="tr_title">Number of International Journal Papers</strong>
+                        </td>
+                        <td>
+                            <strong className="tr_title">Number of National Journal Papers</strong>
+                        </td>
+                        <td>
+                            <strong className="tr_title">Number of Books</strong>
+                        </td>
+                        <td>
+                            <strong className="tr_title">Number of Book Chapters</strong>
+                        </td>
+                        <td>
+                            <strong className="tr_title">Number of International Conference Papers</strong>
+                        </td>
+                        <td>
+                            <strong className="tr_title">Number of National Conference Papers</strong>
+                        </td>
+                        <td>
+                            <strong className="tr_title">Number of Patents:</strong>
+                        </td>
+                        <td>
+                            <strong className="tr_title">Google Scholar Link</strong>
+                        </td>
+                    </tr>
+                    {pubData && (
+                        <tr key={pubData.id}>
+                            <td>{pubData.intj_paper}</td>
+                            <td>{pubData.natj_paper}</td>
+                            <td>{pubData.no_book}</td>
+                            <td>{pubData.no_bookch}</td>
+                            <td>{pubData.intc_paper}</td>
+                            <td>{pubData.natc_paper}</td>
+                            <td>{pubData.no_patent}</td>
+                            <td>{pubData.google_link}</td>
+                        </tr>
+                    )}
+                </tbody>
+            </table>
+            <br />
+
+            {/*List of pub*/}
+            <table className="tab" style={{ borderCollapse: "collapse", border: "1px solid black", width: "100%" }}>
+                <h3>(B) List of Publications</h3>
+                <tbody>
+                    <tr style={{ backgroundColor: "#f1f1f1" }}>
+                        <td>
+                            <strong className="tr_title">S.No.</strong>
+                        </td>
+                        <td>
+                            <strong className="tr_title">Author(s)</strong>
+                        </td>
+                        <td>
+                            <strong className="tr_title">Title</strong>
+                        </td>
+                        <td>
+                            <strong className="tr_title">Name of Journal </strong>
+                        </td>
+                        <td>
+                            <strong className="tr_title">Year, Vol, Page</strong>
+                        </td>
+                        <td>
+                            <strong className="tr_title">impact Factor</strong>
+                        </td>
+                        <td>
+                            <strong className="tr_title">DOI</strong>
+                        </td>
+                        <td>
+                            <strong className="tr_title">Status</strong>
+                        </td>
+                    </tr>
+                    {bestPubData && bestPubData.map((bestPub, index) => (
+                            <tr key={bestPub.id}>
+                            <td>{index+1}</td>
+                            <td>{bestPub.author}</td>
+                            <td>{bestPub.title}</td>
+                            <td>{bestPub.name}</td>
+                            <td>{bestPub.yearvolpage}</td>
+                            <td>{bestPub.impact}</td>
+                            <td>{bestPub.doi}</td>
+                            <td>{bestPub.status}</td>
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
+
+            {/*List of patents*/}
+            <table className="tab" style={{ borderCollapse: "collapse", border: "1px solid black", width: "100%" }}>
+                <h3>(C) List of Patents</h3>
+                <tbody>
+                    <tr style={{ backgroundColor: "#f1f1f1" }}>
+                        <td>
+                            <strong className="tr_title">S.No.</strong>
+                        </td>
+                        <td>
+                            <strong className="tr_title">Inventor(s)</strong>
+                        </td>
+                        <td>
+                            <strong className="tr_title">Title</strong>
+                        </td>
+                        <td>
+                            <strong className="tr_title">Country of Patent </strong>
+                        </td>
+                        <td>
+                            <strong className="tr_title">Patent Number</strong>
+                        </td>
+                        <td>
+                            <strong className="tr_title">Date of Filing</strong>
+                        </td>
+                        <td>
+                            <strong className="tr_title">Date of Publish</strong>
+                        </td>
+                        <td>
+                            <strong className="tr_title">Status</strong>
+                        </td>
+                    </tr>
+                    {patentData && patentData.map((patent, index) => (
+                            <tr key={patent.id}>
+                            <td>{index+1}</td>
+                            <td>{patent.inventor}</td>
+                            <td>{patent.title}</td>
+                            <td>{patent.country}</td>
+                            <td>{patent.number}</td>
+                            <td>{patent.date_file}</td>
+                            <td>{patent.date_publish}</td>
+                            <td>{patent.status}</td>
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
+
+            {/*List of Books*/}
+            <table className="tab" style={{ borderCollapse: "collapse", border: "1px solid black", width: "100%" }}>
+                <h3>(D) List of Books</h3>
+                <tbody>
+                    <tr style={{ backgroundColor: "#f1f1f1" }}>
+                        <td>
+                            <strong className="tr_title">S.No.</strong>
+                        </td>
+                        <td>
+                            <strong className="tr_title">Author(s)</strong>
+                        </td>
+                        <td>
+                            <strong className="tr_title">Title</strong>
+                        </td>
+                        <td>
+                            <strong className="tr_title">Year of Publication </strong>
+                        </td>
+                        <td>
+                            <strong className="tr_title">ISBN</strong>
+                        </td>
+                    </tr>
+                    {booksData && booksData.map((books, index) => (
+                            <tr key={books.id}>
+                            <td>{index+1}</td>
+                            <td>{books.author}</td>
+                            <td>{books.title}</td>
+                            <td>{books.year}</td>
+                            <td>{books.isbn}</td>
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
+
+            {/*List of Books Ch*/}
+            <table className="tab" style={{ borderCollapse: "collapse", border: "1px solid black", width: "100%" }}>
+                <h3>(E) List of Books Chapters</h3>
+                <tbody>
+                    <tr style={{ backgroundColor: "#f1f1f1" }}>
+                        <td>
+                            <strong className="tr_title">S.No.</strong>
+                        </td>
+                        <td>
+                            <strong className="tr_title">Author(s)</strong>
+                        </td>
+                        <td>
+                            <strong className="tr_title">Title</strong>
+                        </td>
+                        <td>
+                            <strong className="tr_title">Year of Publication </strong>
+                        </td>
+                        <td>
+                            <strong className="tr_title">ISBN</strong>
+                        </td>
+                    </tr>
+                    {bookChaptersData && bookChaptersData.map((chapter, index) => (
+                            <tr key={chapter.id}>
+                            <td>{index+1}</td>
+                            <td>{chapter.author}</td>
+                            <td>{chapter.title}</td>
+                            <td>{chapter.year}</td>
+                            <td>{chapter.isbn}</td>
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
+            {/* ------------------------------------------------------------------------------------------- */}
+            <span className="label">
+                <h2 style={{ backgroundColor: "#e1f0d8", fontWeight: "bolder", color: "#54773c" }}>6. Membership</h2>
+            </span>
+
+            <table className="tab" style={{ borderCollapse: "collapse", border: "1px solid black", width: "100%" }}>
+                <h3> (A) Membership of Professional Societies</h3>
+                <tbody>
+                    <tr style={{ backgroundColor: "#f1f1f1" }}>
+                        <td>
+                            <strong className="tr_title">S.No.</strong>
+                        </td>
+                        <td>
+                            <strong className="tr_title">Name of professional society</strong>
+                        </td>
+                        <td>
+                            <strong className="tr_title">Membership Status</strong>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Gennedy</td>
+                        <td>Tourist</td>
+                        <td>Krotokevich</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <table className="tab" style={{ borderCollapse: "collapse", border: "1px solid black", width: "100%" }}>
+                <h3> (B) Professional Trainings</h3>
+                <tbody>
+                    <tr style={{ backgroundColor: "#f1f1f1" }}>
+                        <td>
+                            <strong className="tr_title">S.No.</strong>
+                        </td>
+                        <td>
+                            <strong className="tr_title">Type of Training</strong>
+                        </td>
+                        <td>
+                            <strong className="tr_title">Organisation</strong>
+                        </td>
+                        <td>
+                            <strong className="tr_title"> Year</strong>
+                        </td>
+                        <td>
+                            <strong className="tr_title"> Duration</strong>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Gennedy</td>
+                        <td>Tourist</td>
+                        <td>Krotokevich</td>
+                    </tr>
+                </tbody>
+            </table>
+            <br />
+
+            <table className="tab" style={{ borderCollapse: "collapse", border: "1px solid black", width: "100%" }}>
+                <h3> (C) Award(s) and Recognition(s)</h3>
+                <tbody>
+                    <tr style={{ backgroundColor: "#f1f1f1" }}>
+                        <td>
+                            <strong className="tr_title">S.No.</strong>
+                        </td>
+                        <td>
+                            <strong className="tr_title">Name of Award</strong>
+                        </td>
+                        <td>
+                            <strong className="tr_title">Awarded By</strong>
+                        </td>
+                        <td>
+                            <strong className="tr_title"> Year</strong>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Gennedy</td>
+                        <td>Tourist</td>
+                        <td>Krotokevich</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <table className="tab" style={{ borderCollapse: "collapse", border: "1px solid black", width: "100%" }}>
+                <h3> (D) Sponsored Projects</h3>
+                <tbody>
+                    <tr style={{ backgroundColor: "#f1f1f1" }}>
+                        <td>
+                            <strong className="tr_title">S.No.</strong>
+                        </td>
+                        <td>
+                            <strong className="tr_title">Sponsoring Agency </strong>
+                        </td>
+                        <td>
+                            <strong className="tr_title">Title of project</strong>
+                        </td>
+                        <td>
+                            <strong className="tr_title"> Sanctioned Amount</strong>
+                        </td>
+                        <td>
+                            <strong className="tr_title"> Period</strong>
+                        </td>
+                        <td>
+                            <strong className="tr_title"> Role</strong>
+                        </td>
+                        <td>
+                            <strong className="tr_title"> Status</strong>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Gennedy</td>
+                        <td>Tourist</td>
+                        <td>Krotokevich</td>
+                    </tr>
+                </tbody>
+            </table>
+            <br />
+            <table className="tab" style={{ borderCollapse: "collapse", border: "1px solid black", width: "100%" }}>
+                <h3> (D) Consultancy Projects</h3>
+                <tbody>
+                    <tr style={{ backgroundColor: "#f1f1f1" }}>
+                        <td>
+                            <strong className="tr_title">S.No.</strong>
+                        </td>
+                        <td>
+                            <strong className="tr_title">Organisation </strong>
+                        </td>
+                        <td>
+                            <strong className="tr_title">Title of project</strong>
+                        </td>
+                        <td>
+                            <strong className="tr_title"> Amount of Grant </strong>
+                        </td>
+                        <td>
+                            <strong className="tr_title"> Period</strong>
+                        </td>
+                        <td>
+                            <strong className="tr_title"> Role</strong>
+                        </td>
+                        <td>
+                            <strong className="tr_title"> Status</strong>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Gennedy</td>
+                        <td>Tourist</td>
+                        <td>Krotokevich</td>
+                    </tr>
+                </tbody>
+            </table>
+            <br />
+            {/* -------------------------------------------------------------------------------------------- */}
         </div>
     );
 }
