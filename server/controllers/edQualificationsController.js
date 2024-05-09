@@ -1,3 +1,4 @@
+//edQualificationsController.js
 const Educational_Qualifications = require('../models/Educational_Qualifications'); 
 const Phd_Details = require('../models/Phd_Details');
 const Pg_Details = require('../models/Pg_Details');

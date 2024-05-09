@@ -1,3 +1,4 @@
+//otherController.js
 const Memberships = require('../models/Memberships'); 
 const Trainings = require('../models/Trainings');
 const Awards = require('../models/Awards');

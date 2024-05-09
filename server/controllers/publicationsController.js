@@ -1,3 +1,4 @@
+//publicationsController.js
 const Publications = require('../models/Publications'); 
 const Best_Publications = require('../models/Best_Publications');
 const Patents = require('../models/Patents');
