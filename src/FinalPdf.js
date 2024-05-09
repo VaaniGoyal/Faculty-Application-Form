@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import html2pdf from 'html2pdf.js';
 
-
 function FinalPdf() {
     const app_number = localStorage.getItem("app_number");
     const [applicationData, setApplicationData] = useState(null); 
